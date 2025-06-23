@@ -37,8 +37,10 @@ for search in search_results:
 
     listings.append({"name": title, "brand": brand, "price": price}) # Each listing entry will use a dictionary to store the price, brand, and name
 
+    #For troubleshooting incorporating
+
 for idx, item in enumerate(listings, 1):
     print(f"{idx})\n {item['brand']}\n {item['price']}\n")
-
+    print()
 
 driver.quit()

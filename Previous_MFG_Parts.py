@@ -29,7 +29,7 @@ def get_top_3_ebay(item_query):
 
         #Brand often in the subtitle block but may not always exist
         try:
-            brand = search.find_element(By.CSS_SELECTOR, ".s-item__subtitle .s-item__subtitle--tagblock").text
+            brand = search.find_element(By.CSS_SELECTOR, ".s-item__seller-info-text").text
         except:
             brand = "Unknown"
 
@@ -55,5 +55,5 @@ if __name__ == "__main__":
     item = input("Enter an item to search on ebay: ")
     top3 = get_top_3_ebay(item)
     for i, listing in enumerate(top3, 1):
-        print(f"{i})  Title: [{listing['name']}] Brand:[{listing['brand']}] Price: [{listing['price']}] URL: [{listing["link"]}]\n")
+        print(f"{i})  Title: [{listing['name']}]\n Seller: [{listing['brand']}]\n Price: [{listing['price']}]\n URL: [{listing["link"]}]\n\n")
 

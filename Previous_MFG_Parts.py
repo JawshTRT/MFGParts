@@ -3,6 +3,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import locale # <---- currency formatting and conversion
+
+
+def USD_Convert(price):
+    #Checking the first character of the string price that denotes currency to see if it is equal to a dollar sign
+    if price[1:0] != '$':
+        pass
+
+
+
 
 def get_top_3_ebay(item_query):
     driver = webdriver.Chrome()  # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
@@ -10,14 +20,17 @@ def get_top_3_ebay(item_query):
     ebay_url = f"https://www.ebay.com/sch/i.html?_nkw={item_query.replace(' ', '+')}"  # <--- Ebay's URL, replacing spaces with '+'s
     driver.get(ebay_url)
 
+
+
     # Giving some time for the search tool to load
     wait = WebDriverWait(driver, 10)  # Function Parameters (Driver, time in seconds)
     wait.until(EC.presence_of_all_elements_located(
         (By.CSS_SELECTOR, "li.s-item")))
 
-    # Storing the first 3 results
+
+    # Storing the first 3 results via list slicing
     search_results = driver.find_elements(By.CSS_SELECTOR, "li.s-item")[
-                     2:5]  # <--- List indexing for the first 3 items skipping the first 2 because they appear to be ghost links?
+                     2:7]  # <--- List indexing for the first 3 items skipping the first 2 because they appear to be ghost links?
 
     # For each search result we need to extract the name, brand, and price
 

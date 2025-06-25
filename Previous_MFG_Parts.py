@@ -11,7 +11,7 @@ def USD_Convert(price):
     if price[1:0] != '$':
         pass
 
-def URL_Fetcher(Link, browser):
+def URL_Fetcher(browser):
     """
     :URL_Fetcher:
         Checks a URL to determine if it is a valid item page URL
@@ -33,6 +33,7 @@ def URL_Fetcher(Link, browser):
             Link.pop(0)
             Link.append(browser.find_elements(By.CSS_SELECTOR, ".s-item__link")[len(Link):len(Link) + 1])
 
+    return Link
 def get_top_3_ebay(item_query):
     driver = webdriver.Chrome()  # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
     # Prompting the user what they want to look for
@@ -48,8 +49,7 @@ def get_top_3_ebay(item_query):
 
 
     # Storing the first 3 results via list slicing
-    search_results = driver.find_elements(By.CSS_SELECTOR, ".s-item__link")[
-                     :7]  # <--- List indexing for the first 3 items skipping the first 2 because they appear to be ghost links?
+    search_results = URL_Fetcher(driver)  # <--- List indexing for the first 3 items skipping the first 2 because they appear to be ghost links?
 
     # For each search result we need to extract the name, brand, and price
 

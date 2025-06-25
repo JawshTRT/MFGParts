@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
+from selenium_stealth import stealth
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,8 +13,6 @@ def USD_Convert(price):
     # Checking the first character of the string price that denotes currency to see if it is equal to a dollar sign
     if price[1:0] != '$':
         pass
-
-
 def URL_Fetcher(browser):
     """
     Checks a url to determine if it is a valid item page on the URL...
@@ -24,8 +23,6 @@ def URL_Fetcher(browser):
     """
 
 
-    # First find all the entries
-    #while True:
     Link = browser.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
     #    if len(Link) > 0: #<------ will stall if there are no results
     #        break
@@ -37,7 +34,7 @@ def URL_Fetcher(browser):
 
         try:
             href = l.find_element(By.CSS_SELECTOR, "a.s-item__link").get_attribute("href")
-            title = l.find_element(By.CSS_SELECTOR, "h3.s-item__title").text
+            title = l.find_element(By.CSS_SELECTOR, ".s-item__title").text
             price = l.find_element(By.CSS_SELECTOR, ".s-item__price").text
         except NoSuchElementException:
             continue
@@ -50,21 +47,38 @@ def URL_Fetcher(browser):
         CleanLinks.append(l)
 
         # Limiting it to the first 12 links
-        if len(CleanLinks) == 12:
+        if len(CleanLinks) == 100:
             break
     return CleanLinks
-
-
 def get_top_3_ebay(item_query):
-    driver = webdriver.Chrome()  # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
+    options = webdriver.ChromeOptions()
+    driver = webdriver.Chrome(options = options)  # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
+
+    stealth(driver, vendor = "Google Inc.", platform = "Win32", webgl_vendor="Intel Inc.", renderer=
+            "Intel Iris OpenGL Engine",
+            fix_hairline= True)
+
     # Prompting the user what they want to look for
     ebay_url = f"https://www.ebay.com/sch/i.html?_nkw={item_query.replace(' ', '+')}"  # <--- Ebay's URL, replacing spaces with '+'s
     driver.get(ebay_url)
 
-    # Giving some time for the search tool to load
     wait = WebDriverWait(driver, 20)  # Waiting even longer (10 more seconds for the search results list to exit)
     wait.until(EC.presence_of_all_elements_located(
         (By.CSS_SELECTOR, "ul.srp-results")))  # <-- only shows up once ebay has rendered actual search hits
+    WebDriverWait(driver, 20).until(lambda d: d.execute_script("return document.readyState") == "complete")
+
+
+    # Even more debugging
+    print("URL\n", driver.current_url)
+    print("Title\n", driver.title)
+    html = driver.page_source
+    print("HTML", html[:500].replace("\n", " "))
+
+    #Giving it more time to render items
+    time.sleep(2)
+
+
+    # Giving some time for the search tool to load
 
 
     # Accepting cookie banner if it is present
@@ -73,10 +87,10 @@ def get_top_3_ebay(item_query):
         cookie.click()
     except:
         pass
+
     # Results are sometimes lazy loaded so scroll at least once
     driver.execute_script("window.scrollBy(0, 1000);")
     time.sleep(1)
-
     # Storing the results in the function URL_Fetcher
     search_results = URL_Fetcher(driver)
 

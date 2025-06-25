@@ -4,15 +4,34 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import locale # <---- currency formatting and conversion
-
+from urllib.parse import urlparse # <---- cleaning up URLs
 
 def USD_Convert(price):
     #Checking the first character of the string price that denotes currency to see if it is equal to a dollar sign
     if price[1:0] != '$':
         pass
 
+def URL_Fetcher(Link, browser):
+    """
+    :URL_Fetcher:
+        Checks a URL to determine if it is a valid item page URL
+    :param Link:
+        The Link to the webpage
+    :param browser:
+        The driver object to access the webpage
+    :return:
+        A list of 7 links to sift through items and their specifications
+    """
+    Link = browser.find_elements(By.CSS_SELECTOR, ".s-item__link")[:7] # <--- List indexing for the first 3 items skipping the first 2 because they appear to be ghost links?
 
-
+    # Iterating through links to see if there are any invalid links
+    for l in Link:
+        href = l.get_attribute("href")
+        # Only product pages have '/itm/' in their path
+        if href and "/itm/" not in urlparse(href).path:
+            # If the link does not have /itm/ then remove the weblink and append the list a new link
+            Link.pop(0)
+            Link.append(browser.find_elements(By.CSS_SELECTOR, ".s-item__link")[len(Link):len(Link) + 1])
 
 def get_top_3_ebay(item_query):
     driver = webdriver.Chrome()  # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
@@ -25,12 +44,12 @@ def get_top_3_ebay(item_query):
     # Giving some time for the search tool to load
     wait = WebDriverWait(driver, 10)  # Function Parameters (Driver, time in seconds)
     wait.until(EC.presence_of_all_elements_located(
-        (By.CSS_SELECTOR, "li.s-item")))
+        (By.CSS_SELECTOR, ".s-item__link")))
 
 
     # Storing the first 3 results via list slicing
-    search_results = driver.find_elements(By.CSS_SELECTOR, "li.s-item")[
-                     2:7]  # <--- List indexing for the first 3 items skipping the first 2 because they appear to be ghost links?
+    search_results = driver.find_elements(By.CSS_SELECTOR, ".s-item__link")[
+                     :7]  # <--- List indexing for the first 3 items skipping the first 2 because they appear to be ghost links?
 
     # For each search result we need to extract the name, brand, and price
 

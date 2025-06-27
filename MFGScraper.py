@@ -6,8 +6,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
-import locale  # <---- currency formatting and conversion
-
+import locale  # <---- Currency formatting and conversion
 import time
 
 def Driver_Init():
@@ -106,7 +105,8 @@ def get_top_3_ebay(item_query):
     for search in search_results:
         # Fetching name
         name = search.find_element(By.CSS_SELECTOR, ".s-item__title").text
-        # Condition
+        # Condition sometimes the condition has a different CSS selector will look into later
+        #TODO: Enter a new exception clause to tackle varying condition tags on item listings
         try:
             cond = search.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
         except NoSuchElementException:
@@ -120,9 +120,9 @@ def get_top_3_ebay(item_query):
         listings.append({"name": name, "cond": cond,
                          "price": price, "link": link})
 
+    #Close the driver
     driver.quit()
     return listings
-    # For troubleshooting incorporating a link to the webpage
 
 if __name__ == "__main__":
     products = ImportCSv('Sample Parts List - Sheet1.csv')

@@ -5,14 +5,27 @@ from selenium_stealth import stealth
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import pandas as pd
 import locale  # <---- currency formatting and conversion
+
 import time
 
 
 def USD_Convert(price):
-    # Checking the first character of the string price that denotes currency to see if it is equal to a dollar sign
+    """
+    Converts any non USD price to USD
+    :param price:
+        The price to be converted
+    :return:
+    """
     if price[1:0] != '$':
         pass
+def ImportCSv(filename):
+    """Reads the respective csv file"""
+    df = pd.read_csv(filename)
+    # Extracting the file column full of item names
+    search_terms = df['Name'].dropna().astype(str).tolist()
+    return search_terms
 def URL_Fetcher(browser):
     """
     Checks a url to determine if it is a valid item page on the URL...
@@ -21,7 +34,6 @@ def URL_Fetcher(browser):
     :return CleanLinks:
         A list of 7 links to sift through items and their specifications
     """
-
 
     Link = browser.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
     #    if len(Link) > 0: #<------ will stall if there are no results
@@ -47,16 +59,17 @@ def URL_Fetcher(browser):
         CleanLinks.append(l)
 
         # Limiting it to the first 12 links
-        if len(CleanLinks) == 100:
+        if len(CleanLinks) == 6:
             break
     return CleanLinks
 def get_top_3_ebay(item_query):
     options = webdriver.ChromeOptions()
-    driver = webdriver.Chrome(options = options)  # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
+    driver = webdriver.Chrome(
+        options=options)  # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
 
-    stealth(driver, vendor = "Google Inc.", platform = "Win32", webgl_vendor="Intel Inc.", renderer=
-            "Intel Iris OpenGL Engine",
-            fix_hairline= True)
+    stealth(driver, vendor="Google Inc.", platform="Win32", webgl_vendor="Intel Inc.", renderer=
+    "Intel Iris OpenGL Engine",
+            fix_hairline=True)
 
     # Prompting the user what they want to look for
     ebay_url = f"https://www.ebay.com/sch/i.html?_nkw={item_query.replace(' ', '+')}"  # <--- Ebay's URL, replacing spaces with '+'s
@@ -67,19 +80,16 @@ def get_top_3_ebay(item_query):
         (By.CSS_SELECTOR, "ul.srp-results")))  # <-- only shows up once ebay has rendered actual search hits
     WebDriverWait(driver, 20).until(lambda d: d.execute_script("return document.readyState") == "complete")
 
-
     # Even more debugging
     print("URL\n", driver.current_url)
     print("Title\n", driver.title)
     html = driver.page_source
     print("HTML", html[:500].replace("\n", " "))
 
-    #Giving it more time to render items
+    # Giving it more time to render items
     time.sleep(2)
 
-
     # Giving some time for the search tool to load
-
 
     # Accepting cookie banner if it is present
     try:
@@ -115,8 +125,10 @@ def get_top_3_ebay(item_query):
 
 
 if __name__ == "__main__":
-    item = input("Enter an item to search on ebay: ")
-    top3 = get_top_3_ebay(item)
-    for i, listing in enumerate(top3, 1):
-        print(
-            f"{i})  Title: [{listing['name']}]\n Condition: [{listing['cond']}]\n Price: [{listing['price']}]\n URL: [{listing["link"]}]\n\n")
+    products = ImportCSv('Sample Parts List - Sheet1.csv')
+    results = []
+    for item in products:
+        top_items = get_top_3_ebay(item)
+        for rank, top_item in enumerate(top_items, start =1):
+            results.append(top_item)
+            print(f"{rank}. Name: [{top_item['name']}]\n Cond: [{top_item['brand']}]Price: [{top_item['price']}]\n Link: [{top_item['link']}]")

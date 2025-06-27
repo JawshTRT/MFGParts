@@ -71,21 +71,22 @@ def get_top_3_ebay(item_query):
     "Intel Iris OpenGL Engine",
             fix_hairline=True)
 
-    # Prompting the user what they want to look for
-    ebay_url = f"https://www.ebay.com/sch/i.html?_nkw={item_query.replace(' ', '+')}"  # <--- Ebay's URL, replacing spaces with '+'s
-    driver.get(ebay_url)
-
-    wait = WebDriverWait(driver, 20)  # Waiting even longer (10 more seconds for the search results list to exit)
-    wait.until(EC.presence_of_all_elements_located(
-        (By.CSS_SELECTOR, "ul.srp-results")))  # <-- only shows up once ebay has rendered actual search hits
-    WebDriverWait(driver, 20).until(lambda d: d.execute_script("return document.readyState") == "complete")
-
-    # Even more debugging
-    print("URL\n", driver.current_url)
-    print("Title\n", driver.title)
-    html = driver.page_source
-    print("HTML", html[:500].replace("\n", " "))
-
+    driver = Driver_Init()
+    # Storing the results in the function URL_Fetcher function
+    search_results = URL_Fetcher(driver, item_query)
+    if len(search_results) == 0:
+        for attempt in range(1, 3 + 1):
+            print(f"Attempt {attempt}/{3}...")
+            driver = Driver_Init()
+            try:
+                search_results = URL_Fetcher(driver, item_query)
+            finally:
+                driver.quit()
+            if len(search_results) > 0:
+                break
+            print(f"No results, retrying in {2}s...")
+            time.sleep(2)
+    
 
     listings = []
     for search in search_results:

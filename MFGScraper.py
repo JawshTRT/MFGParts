@@ -132,3 +132,9 @@ if __name__ == "__main__":
         for rank, top_item in enumerate(top_items, start =1):
             results.append(top_item)
             print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}]")
+    # Converting to dataframe
+    df = pd.DataFrame(results)
+    df.to_csv("ebay_results.csv", index=False)
+
+    print("Saved", len(df), "rows to ebay_results.csv")
+

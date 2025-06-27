@@ -86,23 +86,6 @@ def get_top_3_ebay(item_query):
     html = driver.page_source
     print("HTML", html[:500].replace("\n", " "))
 
-    # Giving it more time to render items
-    time.sleep(2)
-
-    # Giving some time for the search tool to load
-
-    # Accepting cookie banner if it is present
-    try:
-        cookie = wait.until(EC.element_to_be_clickable((By.ID, "gdpr-banner-accept")))
-        cookie.click()
-    except:
-        pass
-
-    # Results are sometimes lazy loaded so scroll at least once
-    driver.execute_script("window.scrollBy(0, 1000);")
-    time.sleep(1)
-    # Storing the results in the function URL_Fetcher
-    search_results = URL_Fetcher(driver)
 
     listings = []
     for search in search_results:

@@ -107,6 +107,7 @@ def get_top_3_ebay(item_query):
             driver = Driver_Init()
             try:
                 search_results = URL_Fetcher(driver, item_query)
+                #TODO: Find a way to keep track of listings that are not found and alert the user
                 if len(search_results) > 0:
                     break
             except Exception as e:

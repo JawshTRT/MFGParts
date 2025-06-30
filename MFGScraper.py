@@ -9,6 +9,9 @@ import pandas as pd
 import locale  # <---- Currency formatting and conversion
 import time
 
+from Web_Class.WebScrapers import EbayScraper
+
+
 def Driver_Init():
     """
     Initializes the selenium webdriver via chromedriver
@@ -140,9 +143,10 @@ def get_top_3_ebay(item_query):
 
 if __name__ == "__main__":
     products, SKU = ImportCSv('Sample Parts List - Sheet1.csv')
+    Escraper = EbayScraper()
     results = []
     for item, number in zip(products, SKU):
-        top_items = get_top_3_ebay(item)
+        top_items = Escraper.scrape(item)
         for rank, top_item in enumerate(top_items, start =1):
             top_item['sku'] = number
             results.append(top_item)

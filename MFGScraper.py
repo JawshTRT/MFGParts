@@ -142,10 +142,14 @@ if __name__ == "__main__":
     results = []
     for item, number in zip(products, SKU):
         top_items = get_top_3_ebay(item)
+        summation, count = 0.0, 0.0
         for rank, top_item in enumerate(top_items, start =1):
             top_item['sku'] = number
+            summation += top_item['price']
+            count += 1.0
             results.append(top_item)
             print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
+        print(f"Average: {summation/count}")
     # Converting to dataframe
     df = pd.DataFrame(results)
     df.to_csv("ebay_results.csv", index=False)

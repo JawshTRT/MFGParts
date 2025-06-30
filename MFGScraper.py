@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
-from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
@@ -145,11 +144,11 @@ if __name__ == "__main__":
         summation, count = 0.0, 0.0
         for rank, top_item in enumerate(top_items, start =1):
             top_item['sku'] = number
-            summation += top_item['price']
+            summation += float(top_item['price'][1:].replace(',', '')) # <---- Excluding ($) from summation to avoid type mismatch
             count += 1.0
             results.append(top_item)
             print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
-        print(f"Average: {summation/count}")
+        print(f"Average: ${summation/count:.2f}")
     # Converting to dataframe
     df = pd.DataFrame(results)
     df.to_csv("ebay_results.csv", index=False)

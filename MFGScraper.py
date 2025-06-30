@@ -77,7 +77,6 @@ def URL_Fetcher(browser, item_query):
 
     # Iterating through links to see if there are any invalid links
     for l in Link:
-
         try:
             href = l.find_element(By.CSS_SELECTOR, "a.s-item__link").get_attribute("href")
             title = l.find_element(By.CSS_SELECTOR, ".s-item__title").text

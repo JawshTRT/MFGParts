@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.remote.webelement import WebElement
 
 
-#Inheriting from abstract class
+# Inheriting from abstract class
 class BaseScraper(ABC):
     """
     Template for defining other web scrapers for other websites
@@ -18,6 +18,7 @@ class BaseScraper(ABC):
         options = webdriver.ChromeOptions()
         if headless:
             options.add_argument("--headless")
+        self.driver = webdriver.Chrome(options=options)
 
     @abstractmethod
     def get_search_url(self, query: str) -> str:
@@ -49,6 +50,7 @@ class BaseScraper(ABC):
         url = self.get_search_url(search_query)
         self.driver.get(url)
 
+        print("Waiting for results...")
         self.driver.implicitly_wait(2)
 
         elems = self.select_result_items()

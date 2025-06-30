@@ -1,4 +1,4 @@
-import BaseScraper
+from Web_Class.BaseScraper import BaseScraper
 from selenium.webdriver.common.by import By
 
 
@@ -16,11 +16,12 @@ class EbayScraper(BaseScraper):
         return self.driver.find_elements(By.CSS_SELECTOR, "ul.srp-results li.s-item")
 
     def parse_item(self, element):
-        title = element.find_element(By.CSS_SELECTOR, "h3.s-item__title").text
+        title = element.find_element(By.CSS_SELECTOR, ".s-item__title").text
         price = element.find_element(By.CSS_SELECTOR, ".s-price").text
-        url = element.find_element(By.CSS_SELECTOR, "a.s-item__link").get_attribute("href")
+        url = element.find_element(By.CSS_SELECTOR, ".s-item__link").get_attribute("href")
+        condition = element.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
 
-        return {"title": title, "price": price, "url": url}
+        return {"title": title, "price": price, "url": url, "condition": condition}
 
 
 class RadwellScraper(BaseScraper):

@@ -51,7 +51,7 @@ def URL_Fetcher(browser, item_query):
     :param item_query:
         Item to be searched through ebay
     :param browser:
-        The driver object to access the webpage
+        The driver object to access the webpage using the URL
     :return CleanLinks:
         A list of 7 links to sift through items and their specifications
     """
@@ -137,7 +137,7 @@ def get_top_3_ebay(item_query):
     return listings
 
 if __name__ == "__main__":
-    products, SKU = ImportCSv('Sample Parts List - Sheet1.csv')
+    products, SKU = ImportCSv('Sample Parts List2 - Sheet1.csv')
     results = []
     for item, number in zip(products, SKU):
         top_items = get_top_3_ebay(item)
@@ -148,6 +148,9 @@ if __name__ == "__main__":
             count += 1.0
             results.append(top_item)
             print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
+            if summation == 0:
+                print("Unable to fetch price listings")
+                continue
         print(f"Average: ${summation/count:.2f}")
     # Converting to dataframe
     df = pd.DataFrame(results)

@@ -36,9 +36,9 @@ def ImportCSv(filename):
     :param filename:
         The name of the csv file in the workspace directory to be read
     :return search_terms:
-    The list of search terms for the webscraper to search on ebay
+        The list of search terms for the webscraper to search on ebay
     :return SKU:
-    The list of SKUs for the webscraper
+        The list of SKUs for the webscraper
     """
     df = pd.read_csv(filename)
     # Extracting the file column full of item names
@@ -152,9 +152,9 @@ if __name__ == "__main__":
             count += 1.0
             results.append(top_item)
             print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
-            if summation == 0:
-                print("Unable to fetch price listings")
-                continue
+        if summation == 0:
+            print("Unable to fetch listings from search entry either due to type mismatch/CSS selector tag/No listings available")
+            continue
         print(f"Average: ${summation/count:.2f}")
     # Converting to dataframe
     df = pd.DataFrame(results)

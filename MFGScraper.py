@@ -10,6 +10,11 @@ import locale  # <---- Currency formatting and conversion
 import time
 
 def Driver_Init():
+    """
+    Initializes the selenium webdriver via chromedriver
+    :return driver:
+        The webdriver instance to be returned
+    """
     options = webdriver.ChromeOptions()
     options.add_argument("--headless") #<---- Considering running headless
     # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
@@ -28,11 +33,19 @@ def USD_Convert(price):
     if price[1:0] != '$':
         pass
 def ImportCSv(filename):
-    """Reads the respective csv file"""
+    """Reads the respective csv file
+    :param filename:
+        The name of the csv file in the workspace directory to be read
+    :return search_terms:
+    The list of search terms for the webscraper to search on ebay
+    :return SKU:
+    The list of SKUs for the webscraper
+    """
     df = pd.read_csv(filename)
     # Extracting the file column full of item names
     search_terms = df['Name'].dropna().astype(str).tolist()
-    return search_terms
+    SKU = df['SKU'].dropna().dropna().astype(str).tolist()
+    return search_terms, SKU
 def URL_Fetcher(browser, item_query):
     """
     Checks a url to determine if it is a valid item page on the URL...
@@ -125,13 +138,14 @@ def get_top_3_ebay(item_query):
     return listings
 
 if __name__ == "__main__":
-    products = ImportCSv('Sample Parts List - Sheet1.csv')
+    products, SKU = ImportCSv('Sample Parts List - Sheet1.csv')
     results = []
-    for item in products:
+    for item, number in zip(products, SKU):
         top_items = get_top_3_ebay(item)
         for rank, top_item in enumerate(top_items, start =1):
+            top_item['sku'] = number
             results.append(top_item)
-            print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}]")
+            print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
     # Converting to dataframe
     df = pd.DataFrame(results)
     df.to_csv("ebay_results.csv", index=False)

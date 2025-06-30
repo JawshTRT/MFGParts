@@ -31,9 +31,32 @@ class RadwellScraper(BaseScraper):
     """
 
     def get_search_url(self, query):
-        return (f"https://www.radwell.com/Search/Advanced?q={query.replace('', '+')}")
+        return (f"https://www.radwell.com/Search/Advanced?qPartNumber={query.replace('', '+')}")
 
     def select_result_items(self):
         # Radwell uses a table of <tr> rows for results
         return self.driver.find_elements(By.CSS_SELECTOR, "table#SearchResultsGrid tbody tr")
+
+    def parse_item(self, element):
+        """
+        Separates the search results into individual items
+        :param element:
+             The search results
+        :var name:
+            The name of the item
+        :var brand:
+            The brand of the item
+        :var price:
+            The price of the item
+        :var url:
+            The url link of the item
+        :return:
+        A dictionary with the item's details
+        """
+        name = element.find_element(By.CSS_SELECTOR, "td:nth-child(1) a").text
+        brand = element.find_element(By.CSS_SELECTOR, "td:nth-child(2) a").text
+        price = element.find_element(By.CSS_SELECTOR, "td:nth-child(6) a").text
+        url = element.find_element(By.CSS_SELECTOR, "td:nth-child(1) a").get_attribute("href")
+
+        return {"name": name, "brand": brand, "price": price, "url": url}
 

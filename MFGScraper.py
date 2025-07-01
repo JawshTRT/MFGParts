@@ -15,7 +15,7 @@ def Driver_Init():
         The webdriver instance to be returned
     """
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless") #<---- Considering running headless
+    #options.add_argument("--headless") #<---- Considering running headless
     # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
     driver = webdriver.Chrome(options=options)
     stealth(driver, vendor="Google Inc.", platform="Win32", webgl_vendor="Intel Inc.", renderer=
@@ -42,9 +42,19 @@ def ImportCSv(filename):
     """
     df = pd.read_csv(filename)
     # Extracting the file column full of item names
-    search_terms = df['Name'].dropna().astype(str).tolist()
+    PartNum = df['Model'].dropna().astype(str).tolist()
+    Part = df['Product Type'].dropna().astype(str).tolist()
+    Brand = df['Brand'].dropna().astype(str).tolist()
     SKU = df['SKU'].dropna().dropna().astype(str).tolist()
+
+    # Creating ebay search entries
+    search_terms = []
+    for x, y, z in Brand, Part, PartNum:
+        search_terms.append(f"{x} -{y} -{z}")
     return search_terms, SKU
+def Check_Item(Brand, Part, Num):
+    pass
+
 def URL_Fetcher(browser, item_query):
     """
     Checks a url to determine if it is a valid item page on the URL...
@@ -66,7 +76,6 @@ def URL_Fetcher(browser, item_query):
     # Results are sometimes lazy loaded so scroll at least once
     browser.execute_script("window.scrollBy(0, 1000);")
     time.sleep(1)
-
     Link = browser.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
 
 
@@ -98,7 +107,7 @@ def URL_Fetcher(browser, item_query):
 def get_top_3_ebay(item_query):
 
     driver = Driver_Init()
-    # Storing the results in the function URL_Fetcher function
+    # Storing the results from the URL_Fetcher function
     search_results = URL_Fetcher(driver, item_query)
     if len(search_results) == 0:
         for attempt in range(1, 3 + 1):
@@ -112,8 +121,8 @@ def get_top_3_ebay(item_query):
                 print(f"No results, retrying in {2}s...")
             time.sleep(2)
 
-
     listings = []
+    # Scraping the data in each search result
     for search in search_results:
         # Fetching name
         name = search.find_element(By.CSS_SELECTOR, ".s-item__title").text
@@ -137,11 +146,15 @@ def get_top_3_ebay(item_query):
     return listings
 
 if __name__ == "__main__":
-    products, SKU = ImportCSv('Sample Parts List2 - Sheet1.csv')
+    products, SKU = ImportCSv('Sample Parts List - Sheet2.csv')
     results = []
+
+    # Iterating through each product from the imported list
     for item, number in zip(products, SKU):
         top_items = get_top_3_ebay(item)
-        summation, count = 0.0, 0.0
+        summation, count = 0.0, 0.
+
+        # Iterating through each search result from the product
         for rank, top_item in enumerate(top_items, start =1):
             top_item['sku'] = number
             try:

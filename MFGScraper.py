@@ -36,9 +36,9 @@ def ImportCSv(filename):
     :param filename:
         The name of the csv file in the workspace directory to be read
     :return search_terms:
-    The list of search terms for the webscraper to search on ebay
+        The list of search terms for the webscraper to search on ebay
     :return SKU:
-    The list of SKUs for the webscraper
+        The list of SKUs for the webscraper
     """
     df = pd.read_csv(filename)
     # Extracting the file column full of item names
@@ -62,6 +62,7 @@ def URL_Fetcher(browser, item_query):
         (By.CSS_SELECTOR, "ul.srp-results")))  # <-- only shows up once ebay has rendered actual search hits
     WebDriverWait(browser, 20).until(lambda d: d.execute_script("return document.readyState") == "complete")
 
+
     # Results are sometimes lazy loaded so scroll at least once
     browser.execute_script("window.scrollBy(0, 1000);")
     time.sleep(1)
@@ -76,7 +77,6 @@ def URL_Fetcher(browser, item_query):
 
     # Iterating through links to see if there are any invalid links
     for l in Link:
-
         try:
             href = l.find_element(By.CSS_SELECTOR, "a.s-item__link").get_attribute("href")
             title = l.find_element(By.CSS_SELECTOR, ".s-item__title").text
@@ -144,13 +144,16 @@ if __name__ == "__main__":
         summation, count = 0.0, 0.0
         for rank, top_item in enumerate(top_items, start =1):
             top_item['sku'] = number
-            summation += float(top_item['price'][1:].replace(',', '')) # <---- Excluding ($) from summation to avoid type mismatch
+            try:
+                summation += float(top_item['price'][1:].replace(',', '')) # <---- Excluding ($) from summation to avoid type mismatch
+            except ValueError:
+                print("Could not print out price")
             count += 1.0
             results.append(top_item)
             print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
-            if summation == 0:
-                print("Unable to fetch price listings")
-                continue
+        if summation == 0:
+            print("Unable to fetch listings from search entry either due to type mismatch/CSS selector tag/No listings available")
+            continue
         print(f"Average: ${summation/count:.2f}")
     # Converting to dataframe
     df = pd.DataFrame(results)

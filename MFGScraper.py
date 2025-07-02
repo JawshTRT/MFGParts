@@ -8,6 +8,13 @@ import pandas as pd
 import locale  # <---- Currency formatting and conversion
 import time
 
+def Append_Results_CSV(df: pd.DataFrame):
+    #If the file does exist write with headers otherwise just append
+    df.to_csv("ebay_results.csv",
+              mode='a',
+              header=False,
+              index=False)
+
 def Driver_Init():
     """
     Initializes the selenium webdriver via chromedriver
@@ -49,12 +56,14 @@ def ImportCSv(filename):
 
     # Creating ebay search entries
     search_terms = []
-    for x, y, z in Brand, Part, PartNum:
+    for x, y, z in zip(Brand, Part, PartNum):
         search_terms.append(f"{x} -{y} -{z}")
     return search_terms, SKU
-def Check_Item(Brand, Part, Num):
-    pass
-
+def Check_Item(Brand, Part, Num , Name):
+    if Num not in Name:
+        return False
+    else:
+        return True
 def URL_Fetcher(browser, item_query):
     """
     Checks a url to determine if it is a valid item page on the URL...
@@ -124,6 +133,11 @@ def get_top_3_ebay(item_query):
     listings = []
     # Scraping the data in each search result
     for search in search_results:
+
+        #Checking to see if the results are legit
+
+
+
         # Fetching name
         name = search.find_element(By.CSS_SELECTOR, ".s-item__title").text
         # Condition sometimes the condition has a different CSS selector will look into later
@@ -151,23 +165,30 @@ if __name__ == "__main__":
 
     # Iterating through each product from the imported list
     for item, number in zip(products, SKU):
-        top_items = get_top_3_ebay(item)
-        summation, count = 0.0, 0.
+        try:
+            top_items = get_top_3_ebay(item)
+            summation, count = 0.0, 0.
+            df = pd.DataFrame(results)
+            # Iterating through each search result from the product
+            for rank, top_item in enumerate(top_items, start =1):
+                top_item['sku'] = number
+                try:
+                    summation += float(top_item['price'][1:].replace(',', '')) # <---- Excluding ($) from summation to avoid type mismatch
+                except ValueError:
+                    print("Could not print out price")
+                count += 1.0
+                results.append(top_item)
 
-        # Iterating through each search result from the product
-        for rank, top_item in enumerate(top_items, start =1):
-            top_item['sku'] = number
-            try:
-                summation += float(top_item['price'][1:].replace(',', '')) # <---- Excluding ($) from summation to avoid type mismatch
-            except ValueError:
-                print("Could not print out price")
-            count += 1.0
-            results.append(top_item)
-            print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
-        if summation == 0:
-            print("Unable to fetch listings from search entry either due to type mismatch/CSS selector tag/No listings available")
-            continue
-        print(f"Average: ${summation/count:.2f}")
+                print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
+            if summation == 0:
+                print("Unable to fetch listings from search entry either due to type mismatch/CSS selector tag/No listings available")
+                continue
+            print(f"Average: ${summation / count:.2f}")
+            Append_Results_CSV(df) # < ------- Updating the CSV file
+        except Exception as e:
+            print(f"Error: on '{item}':", e)
+            # continue to next term-but all previous data already on disk
+
     # Converting to dataframe
     df = pd.DataFrame(results)
     df.to_csv("ebay_results.csv", index=False)

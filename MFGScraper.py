@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import locale  # <---- Currency formatting and conversion
 import time
+import os
 
 def Append_Results_CSV(df: pd.DataFrame):
     #If the file does exist write with headers otherwise just append
@@ -14,7 +15,6 @@ def Append_Results_CSV(df: pd.DataFrame):
               mode='a',
               header=False,
               index=False)
-
 def Driver_Init():
     """
     Initializes the selenium webdriver via chromedriver
@@ -23,6 +23,16 @@ def Driver_Init():
     """
     options = webdriver.ChromeOptions()
     #options.add_argument("--headless") #<---- Considering running headless
+
+    #Extra arguments added to bypass bot-captchas
+    options.add_argument('--disable-extensions')
+    options.add_argument('--profile-directory=Default')
+    options.add_argument("--incognito")
+    options.add_argument("--disable-plugins-discovery")
+    options.add_argument("--start-maximized")
+    options.add_argument("--proxy-server='direct://'")
+    options.add_argument("--proxy-bypass-list=*")
+
     # Selecting which search tool to use Google Chrome or Firefox, Edge, etc.
     driver = webdriver.Chrome(options=options)
     stealth(driver, vendor="Google Inc.", platform="Win32", webgl_vendor="Intel Inc.", renderer=
@@ -56,14 +66,25 @@ def ImportCSv(filename):
 
     # Creating ebay search entries
     search_terms = []
+    terms = []
     for x, y, z in zip(Brand, Part, PartNum):
-        search_terms.append(f"{x} -{y} -{z}")
-    return search_terms, SKU
-def Check_Item(Brand, Part, Num , Name):
-    if Num not in Name:
-        return False
-    else:
-        return True
+
+        if x in y: # <--- If Brand name is in the part string exclude it from the search term string to avoid search mismatching
+            x = ''
+        search_terms.append(f"{x} {y} {z}")
+        terms.append((x, y, z)) # Each entry contains a 'set' containing the brand part and partnumber
+    return search_terms, SKU, terms
+def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
+    """Checks the item based purely off of the name
+    to see if it contains the correct part number"""
+    name = Name.lower()
+
+    checks = [Num.lower() in name,
+              Part.lower() in name]
+
+    if Brand: # <--- only check brand if you actually searched with one
+        checks.append(Brand.lower() in name)
+    return all(checks)
 def URL_Fetcher(browser, item_query):
     """
     Checks a url to determine if it is a valid item page on the URL...
@@ -109,11 +130,11 @@ def URL_Fetcher(browser, item_query):
         seen_urls.add(href)
         CleanLinks.append(l)
 
-        # Limiting it to the first 12 links
+        # Limiting it to the first 6 links
         if len(CleanLinks) == 6:
             break
     return CleanLinks
-def get_top_3_ebay(item_query):
+def get_top_3_ebay(item_query, terms):
 
     driver = Driver_Init()
     # Storing the results from the URL_Fetcher function
@@ -132,7 +153,7 @@ def get_top_3_ebay(item_query):
 
     listings = []
     # Scraping the data in each search result
-    for search in search_results:
+    for search, (brand, part, num) in zip(search_results, zip(terms[0], terms[1], terms[2])):
 
         #Checking to see if the results are legit
 
@@ -141,6 +162,12 @@ def get_top_3_ebay(item_query):
         # Fetching name
         name = search.find_element(By.CSS_SELECTOR, ".s-item__title").text
         # Condition sometimes the condition has a different CSS selector will look into later
+
+        if not Check_Item(brand, part, num, name):
+            print(f"Skipping {name}... does not contain {brand} and {part} and {num} ")
+            time.sleep(.25)
+            # Skip listings whose title don't include all three in the name
+            continue
         #TODO: Enter a new exception clause to tackle varying condition tags on item listings
         try:
             cond = search.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
@@ -152,21 +179,21 @@ def get_top_3_ebay(item_query):
         link = search.find_element(By.CSS_SELECTOR, ".s-item__link").get_attribute("href")
 
         # Each listing entry will use a dictionary to store the price, brand, and name
+
         listings.append({"name": name, "cond": cond,
                          "price": price, "link": link})
 
     #Close the driver
     driver.quit()
     return listings
-
 if __name__ == "__main__":
-    products, SKU = ImportCSv('Sample Parts List - Sheet2.csv')
+    products, SKU, terms = ImportCSv('Sample Parts List - Sheet2.csv')
     results = []
 
     # Iterating through each product from the imported list
     for item, number in zip(products, SKU):
-        try:
-            top_items = get_top_3_ebay(item)
+        #try:
+            top_items = get_top_3_ebay(item, terms)
             summation, count = 0.0, 0.
             df = pd.DataFrame(results)
             # Iterating through each search result from the product
@@ -185,8 +212,8 @@ if __name__ == "__main__":
                 continue
             print(f"Average: ${summation / count:.2f}")
             Append_Results_CSV(df) # < ------- Updating the CSV file
-        except Exception as e:
-            print(f"Error: on '{item}':", e)
+        #except Exception as e:
+        #    print(f"Error: on '{item}':", e)
             # continue to next term-but all previous data already on disk
 
     # Converting to dataframe

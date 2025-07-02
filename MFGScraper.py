@@ -5,9 +5,8 @@ from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
-import locale  # <---- Currency formatting and conversion
 import time
-import os
+
 
 def Append_Results_CSV(df: pd.DataFrame):
     #If the file does exist write with headers otherwise just append
@@ -22,7 +21,7 @@ def Driver_Init():
         The webdriver instance to be returned
     """
     options = webdriver.ChromeOptions()
-    #options.add_argument("--headless") #<---- Considering running headless
+    options.add_argument("--headless") #<---- Considering running headless
 
     #Extra arguments added to bypass bot-captchas
     options.add_argument('--disable-extensions')
@@ -68,24 +67,31 @@ def ImportCSv(filename):
     search_terms = []
     terms = []
     for x, y, z in zip(Brand, Part, PartNum):
-
         if x in y: # <--- If Brand name is in the part string exclude it from the search term string to avoid search mismatching
-            x = ''
+            y = y.replace(x, '')[1:]
+        if '-' in x:
+            x = x.replace('-', ' ')
         search_terms.append(f"{x} {y} {z}")
-        terms.append((x, y, z)) # Each entry contains a 'set' containing the brand part and partnumber
+        terms.append((x, y, z)) # Each entry contains a 'set' containing the brand part and part number
     return search_terms, SKU, terms
 def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
-    """Checks the item based purely off of the name
-    to see if it contains the correct part number"""
-    name = Name.lower()
-
-    checks = [Num.lower() in name,
-              Part.lower() in name]
-
+    """Checks the item based purely off of the name of the search result
+    to see if it contains the correct part number
+    :param Brand:
+    The brand name
+    :param Part:
+    The name of the part
+    :param Num:
+    The number associated with the Part
+    :param Name:
+    The name of the search entry to be validated"""
+    name = Name.lower().replace('-', ' ')
+    checks = [Num.lower().replace('-', ' ') in name,
+              Part.lower().replace('-', ' ') in name]
     if Brand: # <--- only check brand if you actually searched with one
         checks.append(Brand.lower() in name)
     return all(checks)
-def URL_Fetcher(browser, item_query):
+def URL_Fetcher(browser, item_query, terms):
     """
     Checks a url to determine if it is a valid item page on the URL...
     :param item_query:
@@ -109,42 +115,54 @@ def URL_Fetcher(browser, item_query):
     Link = browser.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
 
 
+
     CleanLinks = []
     seen_urls = set()
     print(f"{len(Link)} listings found")  # <---- Debug
 
-
+    # Initializing local variables
+    title = ''
+    link = ''
+    price = ''
     # Iterating through links to see if there are any invalid links
     for l in Link:
         try:
-            href = l.find_element(By.CSS_SELECTOR, "a.s-item__link").get_attribute("href")
+            link = l.find_element(By.CSS_SELECTOR, "a.s-item__link").get_attribute("href")
             title = l.find_element(By.CSS_SELECTOR, ".s-item__title").text
             price = l.find_element(By.CSS_SELECTOR, ".s-item__price").text
         except NoSuchElementException:
             continue
-        if "/itm/" not in href:
+        if "/itm/" not in link:
             continue
 
-        if href in seen_urls:
+        if link in seen_urls:
             continue
-        seen_urls.add(href)
+        if not Check_Item(terms[0], terms[1], terms[2], title):
+            print(f"Skipping {title} missing either, {terms}")
+            time.sleep(1)
+            # Skip listings whose title don't include all three in the name
+            continue
+        seen_urls.add(link)
         CleanLinks.append(l)
 
         # Limiting it to the first 6 links
         if len(CleanLinks) == 6:
             break
+
+            # Checking to see if the results are legit
+
     return CleanLinks
 def get_top_3_ebay(item_query, terms):
 
     driver = Driver_Init()
     # Storing the results from the URL_Fetcher function
-    search_results = URL_Fetcher(driver, item_query)
+    search_results = URL_Fetcher(driver, item_query, terms)
     if len(search_results) == 0:
         for attempt in range(1, 3 + 1):
             print(f"Attempt {attempt}/{3}...")
             driver = Driver_Init()
             try:
-                search_results = URL_Fetcher(driver, item_query)
+                search_results = URL_Fetcher(driver, item_query, terms)
                 if len(search_results) > 0:
                     break
             except Exception as e:
@@ -153,21 +171,12 @@ def get_top_3_ebay(item_query, terms):
 
     listings = []
     # Scraping the data in each search result
-    for search, (brand, part, num) in zip(search_results, zip(terms[0], terms[1], terms[2])):
-
-        #Checking to see if the results are legit
-
+    for search in search_results:
 
 
         # Fetching name
         name = search.find_element(By.CSS_SELECTOR, ".s-item__title").text
-        # Condition sometimes the condition has a different CSS selector will look into later
 
-        if not Check_Item(brand, part, num, name):
-            print(f"Skipping {name}... does not contain {brand} and {part} and {num} ")
-            time.sleep(.25)
-            # Skip listings whose title don't include all three in the name
-            continue
         #TODO: Enter a new exception clause to tackle varying condition tags on item listings
         try:
             cond = search.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
@@ -191,9 +200,9 @@ if __name__ == "__main__":
     results = []
 
     # Iterating through each product from the imported list
-    for item, number in zip(products, SKU):
+    for item, number, term in zip(products, SKU, terms):
         #try:
-            top_items = get_top_3_ebay(item, terms)
+            top_items = get_top_3_ebay(item, term)
             summation, count = 0.0, 0.
             df = pd.DataFrame(results)
             # Iterating through each search result from the product

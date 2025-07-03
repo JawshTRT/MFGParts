@@ -22,7 +22,7 @@ def Driver_Init():
         The webdriver instance to be returned
     """
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless") #<---- Considering running headless
+    options.add_argument("--headless")  #<---- Considering running headless
 
     #Extra arguments added to bypass bot-captchas
     options.add_argument('--disable-extensions')
@@ -69,14 +69,14 @@ def ImportCSv(filename):
     search_terms = []
     terms = []
     for x, y, z in zip(Brand, Part, PartNum):
-        if x in y: # <--- If Brand name is in the part string exclude it from the search term string to avoid search mismatching
+        if x in y:  # <--- If Brand name is in the part string exclude it from the search term string to avoid search mismatching
             y = y.replace(x, '')[1:]
         if '-' in x:
             x = x.replace('-', ' ')
         if y[-1] == 's':
             y = p.singular_noun(y)
         search_terms.append(f"{x} {y} {z}")
-        terms.append((x, y, z)) # Each entry contains a 'set' containing the brand part and part number
+        terms.append((x, y, z))  # Each entry contains a 'set' containing the brand part and part number
     return search_terms, SKU, terms
 def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
     """Checks the item based purely off of the name of the search result
@@ -89,13 +89,15 @@ def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
     The number associated with the Part
     :param Name:
     The name of the search entry to be validated"""
-    name = Name.lower().replace('-', ' ')
+    name = Name.lower().replace('-', '')
     checks = [Num.lower().replace('-', ' ') in name,
               Part.lower().replace('-', ' ') in name]
-    partnum = Part.lower().replace('-', ' ') in name
-    if Brand: # <--- only check brand if you actually searched with one
+    partnum = Num.lower().replace('-', '') in name or Num.lower().replace(' ', '') in name
+    if Brand:  # <--- only check brand if you actually searched with one
         checks.append(Brand.lower() in name)
     return partnum
+
+
 def URL_Fetcher(browser, item_query, terms):
     """
     Checks a url to determine if it is a valid item page on the URL...
@@ -113,7 +115,6 @@ def URL_Fetcher(browser, item_query, terms):
         (By.CSS_SELECTOR, "ul.srp-results")))  # <-- only shows up once ebay has rendered actual search hits
     WebDriverWait(browser, 20).until(lambda d: d.execute_script("return document.readyState") == "complete")
 
-
     # Results are sometimes lazy loaded so scroll at least once
     browser.execute_script("window.scrollBy(0, 1000);")
     time.sleep(1)
@@ -126,7 +127,7 @@ def URL_Fetcher(browser, item_query, terms):
 
     CleanLinks = []
     seen_urls = set()
-    print(f"{len(Link)} listings found")  # <---- Debug
+    print(f"{len(Link)} listings found for {item_query}")  # <---- Debug
 
     # Initializing local variables
     Succesearch = 0
@@ -148,6 +149,8 @@ def URL_Fetcher(browser, item_query, terms):
             continue
         if not Check_Item(terms[0], terms[1], terms[2], title):
             print(f"Skipping {title} missing either, {terms}")
+            if l == Link[-1] and len(CleanLinks) == 0:
+                return 0
             #time.sleep(1)
             # Skip listings whose title don't include all three in the name
             continue
@@ -159,16 +162,19 @@ def URL_Fetcher(browser, item_query, terms):
             break
 
         #Checking to see if we have reached the end of the list and searched through every term
-        if l == link[-1] and len(CleanLinks) > 0:
-            return CleanLinks
-    return CleanLinks
-def get_top_3_ebay(item_query, terms):
 
+    return CleanLinks
+
+
+def get_top_3_ebay(item_query, terms):
     driver = Driver_Init()
 
     # Storing the results from the URL_Fetcher function
     search_results = URL_Fetcher(driver, item_query, terms)
+
     if search_results == 0:
+        print(f"No valid ebay listings for {item_query}; skipping this listing")
+        driver.quit()
         return 0
     if len(search_results) == 0:
         for attempt in range(1, 3 + 1):
@@ -188,7 +194,6 @@ def get_top_3_ebay(item_query, terms):
     # Scraping the data in each search result
     for search in search_results:
 
-
         # Fetching name
         name = search.find_element(By.CSS_SELECTOR, ".s-item__title").text
 
@@ -203,48 +208,54 @@ def get_top_3_ebay(item_query, terms):
         link = search.find_element(By.CSS_SELECTOR, ".s-item__link").get_attribute("href")
 
         # Each listing entry will use a dictionary to store the price, brand, and name
-
         listings.append({"name": name, "cond": cond,
                          "price": price, "link": link})
 
     #Close the driver
     driver.quit()
     return listings
+
+
 if __name__ == "__main__":
     products, SKU, terms = ImportCSv('Sample Parts List - Sheet2.csv')
     results = []
 
     # Iterating through each product from the imported list
     for item, number, term in zip(products, SKU, terms):
-        #try:
-            top_items = get_top_3_ebay(item, term)
-            summation, count = 0.0, 0.
-            df = pd.DataFrame(results)
-            # Iterating through each search result from the product]
-            if top_items == 0:
-                continue
-            for rank, top_item in enumerate(top_items, start =1):
-                top_item['sku'] = number
-                try:
-                    summation += float(top_item['price'][1:].replace(',', '')) # <---- Excluding ($) from summation to avoid type mismatch
-                except ValueError:
-                    print("Could not print out price")
-                count += 1.0
-                results.append(top_item)
-                print(f"Partnum: {term[2]}\n")
-                print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
-            if summation == 0:
-                print("Unable to fetch listings from search entry either due to type mismatch/CSS selector tag/No listings available")
-                continue
-            print(f"Average: ${summation / count:.2f}")
-            Append_Results_CSV(df) # < ------- Updating the CSV file
-        #except Exception as e:
-        #    print(f"Error: on '{item}':", e)
-            # continue to next term-but all previous data already on disk
+        top_items = get_top_3_ebay(item, term)
+        summation, count = 0.0, 0.
+
+        # Iterating through each search result from the product]
+        if top_items == 0:
+            results.append((item, number, term, f"Listings unable to be found for this entry"))
+            continue
+        for rank, top_item in enumerate(top_items, start=1):
+            top_item['sku'] = number
+            try:
+                summation += float(
+                    top_item['price'][1:].replace(',', ''))  # <---- Excluding ($) from summation to avoid type mismatch
+            except ValueError:
+                print("Could not print out price")
+            count += 1.0
+            #results.append(top_item)
+            print(f"Partnum: {term[2]}\n")
+            print(
+                f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
+        if summation == 0:
+            print(
+                "Unable to fetch listings from search entry either due to type mismatch/CSS selector tag/No listings available")
+            continue
+        print(f"Average: ${summation / count:.2f}")
+
+        results.append((item, number, term, f"${summation/count:.2f}"))
+        df = pd.DataFrame(results)
+        Append_Results_CSV(df)  # < ------- Updating the CSV file
+    #except Exception as e:
+    #    print(f"Error: on '{item}':", e)
+    # continue to next term-but all previous data already on disk
 
     # Converting to dataframe
     df = pd.DataFrame(results)
     df.to_csv("ebay_results.csv", index=False)
 
     print("Saved", len(df), "rows to ebay_results.csv")
-

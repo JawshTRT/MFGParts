@@ -11,11 +11,11 @@ ID,SKU,Name,Brand,Product Type,Model
 20503,MFG-000-1699,Bell &amp; Gossett Relief Valve 790‑30,Bell & Gossett,Relief Valve,790
 4180,017-001-0139,Bondhus Coupler 480345020,Bondhus,Coupler,480345020
 4183,MFG-000-0164,Celem Power Capacitors CSP 305A,Celem,Capacitors,305A
-20708,014-004-0690,Linear Bearing SELBWM16-110,CIS,"Bearings, Linear Bearing",SELBWM16-110
+20708,014-004-0690,Linear Bearing SELBWM16-110,CIS,Bearings,SELBWM16-110
 4718,002-001-0618,CKD Valve APK11-25A-02C-AC120V,CKD,Valves,APK11-25A-02C-AC120V
 6374,MFG-000-0318,CKD Valve AB41-02-5,CKD,Valves,AB41-02-5
 6378,039-003-1675,CKD Cylinder SSD-L-40-40,CKD,Cylinders,SSD-L-40-40
-20568,008-002-0138,CKD Auto Switch 8981014378*,CKD,"Auto-Breakers, Switches",8981014378
+20568,008-002-0138,CKD Auto Switch 8981014378*,CKD,Switches,8981014378
 20638,002-007-0038,CKD Valve PV5-6-FPG-D-3,CKD,Valves,PV5-6-FPG-D-3
 4185,MFG-000-0165,Daihen Nozzle H21B20,Daihen,Nozzels,H21B20
 4187,MFG-000-0167,Denso Squeeze Roller M-3801955-130,Denso,Rollers,M-3801955-130
@@ -24,19 +24,19 @@ ID,SKU,Name,Brand,Product Type,Model
 4198,056-001-0060,Martin Pulley 14H 100,Eaton,Pullies,100
 20545,022-001-0033,Eaton/Moeller Breaker PKZM0-1,Eaton,Circuit Breakers,PKZM0-1
 1547,MFG-000-0109,IFM PN7004 Pressure Sensor PN-010-RBR14-QFRKG/US,IFM,Pressure Sensors,PN-010-RBR14-QFRKG
-20577,008-003-0166,IFM Pressure Switch PN7004,IFM,"Pressure Switches, Switches",PN7004
+20577,008-003-0166,IFM Pressure Switch PN7004,IFM,Pressure Switches,PN7004
 20570,014-002-0115,IKO Cam Follower NURT15RQ,IKO,Cam Followers,NURT15RQ
-1315,MFG-000-0036,Siemens ED43B020 3p 20a 480v Breaker,Keyence,Circuit Breakers,480
-20584,014-001-0403,Koyo Bearing 7207BGC3FY,Keyence,Bearings,7207BGC3FY
-20683,022-004-0009,Kyoto Volt Distributor LSC-DIS,Keyence,Regulators,LSC-DIS
+1315,MFG-000-0036,Siemens ED43B020 3p 20a 480v Breaker,Keyence,Circuit Breakers,ED43B020
+20584,014-001-0403,Koyo Bearing 7207BGC3FY,Koyo,Bearings,7207BGC3FY
+20683,022-004-0009,Kyoto Volt Distributor LSC-DIS,Kyoto,Regulators,LSC-DIS
 20564,061-001-0060,KHK Gear QKSSOORO2457,KHK,Gears,QKSSOORO2457
-20681,051-001-0133,Endine Shock Absorber OEM1.0MF,Konsei,Shock Absorbers,0MF
+20681,051-001-0133,Endine Shock Absorber OEM1.0MF,Endine,Shock Absorbers,0MF
 20583,009-900-0188,Koyo Bearing 700C-5GLX3,Koyo,Bearings,700C-5GLX3
 20585,014-015-0019,Koyo Bearing 7007C-TDULP4,Koyo,Bearings,7007C-TDULP4
-20601,022-038-0230,Honda Cable MR-50L,Kyoto Denkiki,Cables,MR-50L
-20691,027-001-0343,GP Reeves Grease Dispenser GPMD15080,Kyoto Denkiki,Lubricators,GPMD15080
-4192,008-007-0072,IDEC Push Button ABN111W,LIMITRON,Buttons,ABN111W
-4189,017-001-0179,Emerson Liquid Line Filter Drier EK-305 S,MCDONNELL & MILLER,Filters,EK-305
+20601,022-038-0230,Honda Cable MR-50L,Honda,Cables,MR-50L
+20691,027-001-0343,GP Reeves Grease Dispenser GPMD15080,GP Reeves,Lubricators,GPMD15080
+4192,008-007-0072,IDEC Push Button ABN111W,IDEC,Buttons,ABN111W
+4189,017-001-0179,Emerson Liquid Line Filter Drier EK-305 S,Emerson,Filters,EK-305
 4200,014-003-0144,Misumi Flange Type Linear Bushing LHFR12,Misumi,Bushings,LHFR12
 20562,009-900-0153,Misumi Mounting Plate JUAA-SSB,Misumi,Mounts,JUAA-SSB
 20595,036-001-0655,Misumi Pivot Pin CCGH8-25.5,Misumi,Pins,CCGH8-25
@@ -48,8 +48,8 @@ ID,SKU,Name,Brand,Product Type,Model
 5292,022-035-0005,Nemic-Lambda Noise Filter MAS-1220-33,Nemic-Lambda,Noise Filters,MAS-1220-33
 20517,022-035-0019,Nemic-Lambda Noise Filter MC1210DIN,Nemic-Lambda,Power Line FIlters,MC1210DIN
 5402,219-001-0840,Nidec UDMD-5R AG Oyako Gear Motor 3 Phase,Nidec,Motors,UDMD-5R
-4206,004-001-0002,NKS Pressure Sensor Switch Gauge GC74-134-B5BXX,NKS,"Gauges, Pressure Gauges",GC74-134-B5BXX
-20641,239-003-2103,NSK (repaired) Rodless Cylinder MY1H-Z25-50L,NSK,"Cylinders, Rodless Cylinders",MY1H-Z25-50L
+4206,004-001-0002,NKS Pressure Sensor Switch Gauge GC74-134-B5BXX,NKS,Gauges,GC74-134-B5BXX
+20641,239-003-2103,NSK (repaired) Rodless Cylinder MY1H-Z25-50L,NSK,Cylinders,MY1H-Z25-50L
 6358,2014-1-17,NTN Spherical Bearing 21313D1C3,NTN,Bearings,21313D1C3
 1290,008-014-0080,Omron Limit Switch CA2-2N,Omron,Limit Switch,CA2-2N
 1535,008-014-0178,Omron Limit Switch D4C-1303,Omron,Limit Switch,D4C-1303
@@ -66,12 +66,12 @@ ID,SKU,Name,Brand,Product Type,Model
 40697,MFG-000-2030,OPTIBELT-VB Belt B73,Optibelt,Belts,B73
 1282,019-002-0003,Oriental Motor 5GU6K Gear Head,Oriental Motor,Gear Heads,5GU6K
 1285,018-002-0117,Oriental Motor 4GC30K,Oriental Motor,Motors,4GC30K
-1288,019-001-0270,Oriental Motor 5IK90GS-ATF,Oriental Motor,"Induction Motors, Motors",5IK90GS-ATF
+1288,019-001-0270,Oriental Motor 5IK90GS-ATF,Oriental Motor,Induction Motors,5IK90GS-ATF
 1543,019-001-0616,Oriental Motor 6RK60RGK-CM,Oriental Motor,Motors,6RK60RGK-CM
 5397,MFG-000-0249,Oriental Motor Co. PVC Cable LC1300BG,Oriental Motor,Cables,LC1300BG
-4704,MFG-000-0193,Lumberg Automation Cable 4-643/5m,ORIENTIAL MOTOR,Cables,4-643
+4704,MFG-000-0193,Lumberg Automation Cable 4-643/5m,Lumberg,Cables,4-643
 4722,022-038-0472,Panasonic NAIS Camera Cord ANM84002ACE,Panasonic,Camera Cord,ANM84002ACE
-20672,021-005-0014,Endo Kogyo Spring Balancer 30-40kg ELF-40,PRAXAIR,Spring Balancers,ELF-40
+20672,021-005-0014,Endo Kogyo Spring Balancer 30-40kg ELF-40,Endo Kogyo,Spring Balancers,ELF-40
 6376,MFG-000-0319,Showa Induction Motor M211E,Showa,Servo Motors,M211E
 20553,014-001-0481,SKF Bearing KUG6002,SKF,Bearings,KUG6002
 20587,009-400-0025,SKF Bearing 6007 2ZJEM,SKF,Bearings,2ZJEM
@@ -88,7 +88,7 @@ ID,SKU,Name,Brand,Product Type,Model
 20500,039-003-0682,SMC Rodless Cylinder Cylinder CY2B25H-200,SMC,Rodless Cylinder,CY2B25H-200
 20501,039-006-0083,SMC Mounting Band Band 3E3-057,SMC,Mounting Band,3E3-057
 20592,003-001-0251,SMC Precision Regulator AC40-04G,SMC,Precision Regulator,AC40-04G
-20687,049-001-0363,Orion Filter RA-05,STI,Filters,RA-05
+20687,049-001-0363,Orion Filter RA-05,Orion,Filters,RA-05
 20642,018-002-0071,Sumitomo SM-Cyclo Gear Box CNVMO24075-YBB11,Sumitomo,Gear Reducers,CNVMO24075-YBB11
 4705,022-040-0035,SunX Bracket Mount MS-SFB-1-T,SunX,Mounts,MS-SFB-1-T
 5287,039-003-1586,THK Slide Table KR45H10B 940LH0-1-60C,THK,Slide Table,940LH0-1-60C
@@ -103,11 +103,11 @@ ID,SKU,Name,Brand,Product Type,Model
 20551,002-014-3124,Toyo-oki Valve 01Fl,Toyo-oki,Valves,01F
 5283,044-001-0072,Tsubaki Torque Limiter TL500-1-9.5-28,Tsubaki,Torque Limiter,5-28
 5290,000-001-0274,Tsubaki Flexible Coupling KK-422X25J,Tsubaki,Flexible Coupling,KK-422X25J
-4193,MFG-000-0168,IKO Cam Follower J42-24R,Turck,Cam Followers,J42-24R
-20643,022-038-0104,Denso Cable 8M 410141-0160,Turck,Cables,410141-0160
-20644,022-038-0105,Denso Cable 8M 410141-0180,Turck,Cables,410141-0180
-20709,043-002-0007,GP Reeves Grease Regulator GRP4100,Ulvac,Grease Regulator,GRP4100
-20710,022-012-0422,GP Reeves Grease Flow Sensor FS3009NPN,Ulvac,Sensors,FS3009NPN
-20605,051-001-0026,KYB Shock Absorber KBM7-15-6C,WITTMANN,Shock Absorbers,KBM7-15-6C
+4193,MFG-000-0168,IKO Cam Follower J42-24R,IKO,Cam Followers,J42-24R
+20643,022-038-0104,Denso Cable 8M 410141-0160,Denso,Cables,410141-0160
+20644,022-038-0105,Denso Cable 8M 410141-0180,Denso,Cables,410141-0180
+20709,043-002-0007,GP Reeves Grease Regulator GRP4100,GP Reeves,Grease Regulator,GRP4100
+20710,022-012-0422,GP Reeves Grease Flow Sensor FS3009NPN,GP Reeves,Sensors,FS3009NPN
+20605,051-001-0026,KYB Shock Absorber KBM7-15-6C,KYP,Shock Absorbers,KBM7-15-6C
 1217,019-004-0053,Yaskawa AC Servo Motor SGM-04VW14-C,Yaskawa,Servo Motor,SGM-04VW14-C
 40147,219-004-0177,Yaskawa Servo Motor SGM-04UW14-C,Yaskawa,Servo Motor,SGM-04UW14-C

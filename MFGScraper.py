@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import time
+import inflect
 
 
 def Append_Results_CSV(df: pd.DataFrame):
@@ -62,6 +63,7 @@ def ImportCSv(filename):
     Part = df['Product Type'].dropna().astype(str).tolist()
     Brand = df['Brand'].dropna().astype(str).tolist()
     SKU = df['SKU'].dropna().dropna().astype(str).tolist()
+    p = inflect.engine()
 
     # Creating ebay search entries
     search_terms = []
@@ -71,6 +73,8 @@ def ImportCSv(filename):
             y = y.replace(x, '')[1:]
         if '-' in x:
             x = x.replace('-', ' ')
+        if y[-1] == 's':
+            y = p.singular_noun(y)
         search_terms.append(f"{x} {y} {z}")
         terms.append((x, y, z)) # Each entry contains a 'set' containing the brand part and part number
     return search_terms, SKU, terms
@@ -88,9 +92,10 @@ def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
     name = Name.lower().replace('-', ' ')
     checks = [Num.lower().replace('-', ' ') in name,
               Part.lower().replace('-', ' ') in name]
+    partnum = Part.lower().replace('-', ' ') in name
     if Brand: # <--- only check brand if you actually searched with one
         checks.append(Brand.lower() in name)
-    return all(checks)
+    return partnum
 def URL_Fetcher(browser, item_query, terms):
     """
     Checks a url to determine if it is a valid item page on the URL...
@@ -113,18 +118,22 @@ def URL_Fetcher(browser, item_query, terms):
     browser.execute_script("window.scrollBy(0, 1000);")
     time.sleep(1)
     Link = browser.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
+    no_match = browser.find_elements(By.XPATH, "//*[contains(text(),'No exact matches found')]")
 
-
+    if no_match:
+        print("No exact matches found on eBay - skipping this part")
+        return 0
 
     CleanLinks = []
     seen_urls = set()
     print(f"{len(Link)} listings found")  # <---- Debug
 
     # Initializing local variables
+    Succesearch = 0
     title = ''
     link = ''
     price = ''
-    # Iterating through links to see if there are any invalid links
+    # Iterating through links to see if there are any invalid links and to check if any of the parts are valid
     for l in Link:
         try:
             link = l.find_element(By.CSS_SELECTOR, "a.s-item__link").get_attribute("href")
@@ -139,7 +148,7 @@ def URL_Fetcher(browser, item_query, terms):
             continue
         if not Check_Item(terms[0], terms[1], terms[2], title):
             print(f"Skipping {title} missing either, {terms}")
-            time.sleep(1)
+            #time.sleep(1)
             # Skip listings whose title don't include all three in the name
             continue
         seen_urls.add(link)
@@ -149,21 +158,27 @@ def URL_Fetcher(browser, item_query, terms):
         if len(CleanLinks) == 6:
             break
 
-            # Checking to see if the results are legit
-
+        #Checking to see if we have reached the end of the list and searched through every term
+        if l == link[-1] and len(CleanLinks) > 0:
+            return CleanLinks
     return CleanLinks
 def get_top_3_ebay(item_query, terms):
 
     driver = Driver_Init()
+
     # Storing the results from the URL_Fetcher function
     search_results = URL_Fetcher(driver, item_query, terms)
+    if search_results == 0:
+        return 0
     if len(search_results) == 0:
         for attempt in range(1, 3 + 1):
             print(f"Attempt {attempt}/{3}...")
             driver = Driver_Init()
             try:
                 search_results = URL_Fetcher(driver, item_query, terms)
-                if len(search_results) > 0:
+                if search_results == 0:
+                    return 0
+                elif len(search_results) > 0:
                     break
             except Exception as e:
                 print(f"No results, retrying in {2}s...")
@@ -205,7 +220,9 @@ if __name__ == "__main__":
             top_items = get_top_3_ebay(item, term)
             summation, count = 0.0, 0.
             df = pd.DataFrame(results)
-            # Iterating through each search result from the product
+            # Iterating through each search result from the product]
+            if top_items == 0:
+                continue
             for rank, top_item in enumerate(top_items, start =1):
                 top_item['sku'] = number
                 try:
@@ -214,7 +231,7 @@ if __name__ == "__main__":
                     print("Could not print out price")
                 count += 1.0
                 results.append(top_item)
-
+                print(f"Partnum: {term[2]}\n")
                 print(f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
             if summation == 0:
                 print("Unable to fetch listings from search entry either due to type mismatch/CSS selector tag/No listings available")

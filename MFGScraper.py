@@ -60,7 +60,7 @@ def URL_Fetcher(browser, item_query):
         A list of 7 links to sift through items and their specifications
     """
     ebay_url = f"https://www.ebay.com/sch/i.html?_nkw={item_query.replace(' ', '+')}"  # <--- Ebay's URL, replacing spaces with '+'s
-    browser.get(ebay_url)
+    browser.get(ebay_url) #< ---Going to ebays web page
     wait = WebDriverWait(browser, 20)  # Waiting even longer (10 more seconds for the search results list to exit)
     wait.until(EC.presence_of_all_elements_located(
         (By.CSS_SELECTOR, "ul.srp-results")))  # <-- only shows up once ebay has rendered actual search hits

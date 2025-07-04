@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from selenium import webdriver
+from selenium.common import TimeoutException
 from selenium_stealth import stealth
 from selenium.webdriver.remote.webelement import WebElement
 from webdriver_manager.chrome import ChromeDriverManager
@@ -37,7 +38,7 @@ class BaseScraper(ABC):
     def select_result_items(self):
         """Return a list of WebElements pointing at each result container"""
         pass
-    def Check_Matches(self, Items: list[str], brand, part, num) -> bool:
+    def Check_Matches(self, title, brand, part, num) -> bool:
         """Check to see if any of the items match the search query
         :param Items: The list of items to check
 
@@ -49,13 +50,15 @@ class BaseScraper(ABC):
 
         :returns: True if the item is a match, False otherwise
         """
-        name = brand.lower().replace('-', '')  # <-- Removing hyphens from string
-        partnumSpace = num.lower().replace('-', '')
+        newTitle = title.lower().replace('-', '')  # <-- Removing hyphens from string
+        name = brand.lower().replace('-', '')
+        part = part.lower().replace('-', '')
+        partnumSpace = num.lower().replace(' ', '')
         partnumHyphen = num.lower().replace('-', '')
-        if partnumHyphen in name or partnumHyphen in name:
+        if partnumHyphen in newTitle or partnumHyphen in newTitle:
             return True
         else:
-            print("N")
+            print(f"Skipping {title} does not contain {num}")
             return False
     @abstractmethod
     def parse_item(self, element) -> dict:
@@ -72,10 +75,10 @@ class BaseScraper(ABC):
         link = self.select_result_items()
         # Checking if there are no matches pulled first
         if len(link) == 0:
-            for attempt in range(n, n+1):
+            for attempt in range(0, n+1):
                 print(f"Couldn't find results for {attempt}/{n} retrying")
                 self.driver.quit()
-                self.driver = self.Driver_Init(headless=False)
+                self.driver = self.Driver_Init(headless=True)
                 link = self.select_result_items()
 
                 #Checking if zero exact matches were found
@@ -135,9 +138,8 @@ class BaseScraper(ABC):
         print("Waiting for results...")
 
         self.WaitResults()
-
         # self.driver.implicitly_wait(2) <-- A different method to wait for results to load
-        items = self.get_items(n)
+        items = self.get_items(3)
         # First check if there are any results
         if not self.check_Results():
             return []
@@ -156,7 +158,7 @@ class BaseScraper(ABC):
         for result in results:
             if self.Check_Matches(result['title'], self.Brand, self.Part, self.PartNum):
                 CleanResults.append(result)
-        return CleanResults
+        return CleanResults[:n] # < -- returning the first 6 clean results
 
     def close(self):
         self.driver.quit()

@@ -41,9 +41,6 @@ class EbayScraper(BaseScraper):
             return False
         else:
             return True
-
-
-
 class RadwellScraper(BaseScraper):
     """
     Inherits from the BaseScraper abstract base class

@@ -36,6 +36,14 @@ class BaseScraper(ABC):
 
         """
         pass
+    def Driver_Init(self, headless: bool = False):
+        """
+        Initializes the selenium webdriver
+        :return:
+        """
+        options = webdriver.ChromeOptions()
+        if headless:
+            options.add_argument("--headless") # <-- Running without browser window
 
     def scrape(self, search_query: str, n: int = 3) -> list[dict]:
         """

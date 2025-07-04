@@ -122,7 +122,7 @@ class BaseScraper(ABC):
         "Intel Iris OpenGL Engine",
                 fix_hairline=True)
         return driver
-    def scrape(self, search_query: str, n: int = 3) -> tuple[list[dict], list[dict]]:
+    def scrape(self, search_query: str, n: int = 3) -> list[dict]:
         """
         This is where most of the magic happens, where the actual scraping is done
         :param search_query:
@@ -160,6 +160,6 @@ class BaseScraper(ABC):
             else:
                 # Add to list to search on another site
                 noresults.append(result)
-        return CleanResults[:n], noresults # < -- returning the first 6 clean results
+        return CleanResults[:n] # < -- returning the first 6 clean results
 
 

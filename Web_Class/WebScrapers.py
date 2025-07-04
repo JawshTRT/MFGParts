@@ -1,3 +1,5 @@
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
 from selenium.webdriver.common.by import By
 
@@ -22,6 +24,14 @@ class EbayScraper(BaseScraper):
         condition = element.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
 
         return {"title": title, "price": price, "url": url, "condition": condition}
+    def WaitResults(self):
+        """Waits for the web page to finish loading the results based on the selector tag"""
+        wait = WebDriverWait(self.driver, 20)
+        wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "ul.srp-results")))
+        WebDriverWait(self.driver, 20).until(
+            lambda d: d.execute_script("return document.querySelector('ul.srp-results')") == "complete")
+
+
 
 
 class RadwellScraper(BaseScraper):

@@ -5,12 +5,12 @@ from selenium.webdriver.remote.webelement import WebElement
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+
 
 # Inheriting from abstract class
 class BaseScraper(ABC):
     """
-    Template for defining other web scrapers for other websites
+    This is an abstract base class that defines the interface or template to create other website classes
     :var driver: webdriver instance
     """
     def __init__(self, Items: list[dict], headless: bool = False):
@@ -33,10 +33,26 @@ class BaseScraper(ABC):
     def select_result_items(self):
         """Return a list of WebElements pointing at each result container"""
         pass
-    @abstractmethod
-    def Check_Matches(self, Items: list[str]) -> bool:
-        """Check to see if any of the items match the search query"""
-        pass
+    def Check_Matches(self, Items: list[str], brand, num, part) -> bool:
+        """Check to see if any of the items match the search query
+        :param Items: The list of items to check
+
+        :param brand: The brand of the items from the search query
+
+        :param num: The part model of the items from the search query
+
+        :param part: The part name of the items from the search query
+
+        :returns: True if the item is a match, False otherwise
+        """
+        name = brand.lower().replace('-', '')  # <-- Removing hyphens from string
+        partnumSpace = num.lower().replace(' ', '')
+        partnumHyphen = num.lower().replace('-', '')
+        if partnumHyphen in name or partnumHyphen in name:
+            return True
+        else:
+            return False
+
     @abstractmethod
     def parse_item(self, element) -> dict:
         """Parse a WebElement and return a dictionary
@@ -44,11 +60,41 @@ class BaseScraper(ABC):
         :return dict: The parsed item
         """
         pass
-    def get_items(self):
-        """Gets the items from the web page"""
-        link = self.driver.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
+    def get_items(self, n: int):
+        """Gets the items from the web page, handles if no results were fetched properly
+        :param n: The number of times to retry searching for an item
+        :return link: The list of webelements that contain each search result
+        :returns An empty list If no exact matches were found:"""
+        link = self.select_result_items()
+        # Checking if there are no matches pulled first
+        if len(link) == 0:
+            for attempt in range(n, n+1):
+                print(f"Couldn't find results for {attempt}/{n} retrying")
+                self.driver.quit()
+                self.driver = self.Driver_Init(headless=False)
+                link = self.select_result_items()
+
+                #Checking if zero exact matches were found
+                if not self.check_Results():
+                    return []
+                #Checking if results were pulled
+                elif len(link) > 0:
+                    print(f"Found {len(link)} results for {attempt}/{n}")
+                    return link
+        else:
+            # Results pulled
+            return link
 
 
+    @abstractmethod
+    def check_Results(self) -> bool:
+        """Checks to see if the web page spits out '0 exact matches found
+        :returns: False if the web page spits out '0 exact matches found,
+        True otherwise"""
+    @abstractmethod
+    def WaitResults(self):
+        """Waits for the web page to finish loading the results based on the selector tag
+        """
     def Driver_Init(self, headless: bool = False):
         """
         Initializes the selenium webdriver
@@ -73,27 +119,35 @@ class BaseScraper(ABC):
         return driver
     def scrape(self, search_query: str, n: int = 3) -> list[dict]:
         """
-
+        This is where most of the magic happens, where the actual scraping is done
         :param search_query:
-            The item to search for
+            The search query representing the item to search for
         :param n:
-            Determines the number of results to grab from the search listings
+            Determines the number of results to grab from each successful search listing
         :return results:
-        A list of dictionaries containing the search results
+            :A list of dictionaries containing the search results
         """
         url = self.get_search_url(search_query)
         self.driver.get(url)
 
         print("Waiting for results...")
-        wait = WebDriverWait(self.driver, 20)
-        wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "ul.srp-results")))
-        WebDriverWait(self.driver, 20).until(lambda d: d.execute_script("return document.querySelector('ul.srp-results')") == "complete")
+
+        self.WaitResults()
 
         # self.driver.implicitly_wait(2) <-- A different method to wait for results to load
-
-
-        elems = self.select_result_items()
-        results = [self.parse_item(el) for el in elems]
+        items = self.get_items(n)
+        # First check if there are any results
+        if not self.check_Results():
+            return []
+        else:
+            #Then check if any of the results are fetched
+            items = self.get_items(n)
+            # If items == 0 it means that there were no exact matches
+            if not items:
+                return []
+            else:
+                # Lastly, check if the results are a match, they first must be parsed into pieces and into list of dictionary
+                results = [self.parse_item(item) for item in items]
         return results
 
     def close(self):

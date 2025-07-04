@@ -217,30 +217,32 @@ if __name__ == "__main__":
 
     # Iterating through each product from the imported list
     for item, number, term in zip(products, SKU, terms):
-        Escraper = EbayScraper(term, True) # <----Initialize with the terms in the list
-        summation, count = 0.0, 6
-        results = Escraper.scrape(item, count) # <----Scrape with the parsed string
-        results['SKU'] = str(number)
+        Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
+        summation, count = 0.0, 0
+        results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
         # Iterating through each search result from the product]
         for result in results:
+            result['SKU'] = str(number)
             print(f"Partnum: {term[2]}\n")
-            print(
-                f"Name: [{result["title"]}]\n Condition: [{result['condition']}]\nPrice: [{result['price']}]\n Link: [{result['url']}\nSKU: [{result['SKU']}]\n")
-            summation += 1
-        if summation == 0:
-            print(
-                "Unable to fetch listings from search entry either due to type mismatch/CSS selector tag/No listings available")
-        print(f"Average: ${summation / count:.2f}")
+            print(f"Name: [{result["title"]}]\n Condition: [{result['condition']}]\nPrice: [{result['price']}]\n Link: [{result['url']}\nSKU: [{result['SKU']}]\n")
+            try:
+                summation += float(result['price'][1:].replace(',', ''))
+            except ValueError:
+                print("Could not parse price properly taking lower portion of price")
+                summation += float(result['price'][1:].replace(',', '').split(' ')[0])
+            count += 1
+        if summation != 0:
+            print(f"Average: ${summation / count:.2f}")
 
-        spread.append((item, number, term, f"${summation/count:.2f}"))
-        df = pd.DataFrame(results)
+        spread.append((item, number, term, f"${summation/float(count):.2f}" if summation != 0 else ""))
+        df = pd.DataFrame(spread)
         Append_Results_CSV(df)  # < ------- Updating the CSV file
     #except Exception as e:
     #    print(f"Error: on '{item}':", e)
     # continue to next term-but all previous data already on disk
 
     # Converting to dataframe
-    df = pd.DataFrame(results)
-    df.to_csv("ebay_results.csv", index=False)
+    df = pd.DataFrame(spread)
+    df.to_csv("ResultsList/ebay_results.csv", index=False)
 
-    print("Saved", len(df), "rows to ebay_results.csv")
+    print("Saved", len(df), "rows to ResultsList/ebay_results.csv")

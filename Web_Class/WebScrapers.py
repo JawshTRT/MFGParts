@@ -1,3 +1,4 @@
+from selenium.common import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
@@ -12,31 +13,31 @@ class EbayScraper(BaseScraper):
     """
 
     def get_search_url(self, query: str):
-        return f"https://www.ebay.com/search/sch/i.html?_nkw={query.replace(' ', '+')}"
+        return f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}"
 
     def select_result_items(self):
         return self.driver.find_elements(By.CSS_SELECTOR, "ul.srp-results li.s-item")
 
     def parse_item(self, element):
         title = element.find_element(By.CSS_SELECTOR, ".s-item__title").text
-        price = element.find_element(By.CSS_SELECTOR, ".s-price").text
+        price = element.find_element(By.CSS_SELECTOR, ".s-item__price").text
         url = element.find_element(By.CSS_SELECTOR, ".s-item__link").get_attribute("href")
-        condition = element.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
-
+        try:
+            condition = element.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
+        except NoSuchElementException:
+            condition = "Invalid Condition Element"
+            print("Invalid Condition Element found")
         return {"title": title, "price": price, "url": url, "condition": condition}
     def WaitResults(self):
         """Waits for the web page to finish loading the results based on the selector tag"""
         wait = WebDriverWait(self.driver, 20)
-        wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "ul.srp-results")))
-        WebDriverWait(self.driver, 20).until(lambda d: d.execute_script("return document.querySelector('ul.srp-results')") == "complete")
+        wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
+        #WebDriverWait(self.driver, 20).until(lambda d: d.execute_script("return document.querySelector('ul.srp-results')") == "complete")
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "li.s-item")))
     def check_Results(self):
         no_match = self.driver.find_elements(By.XPATH,"//*[contains(text(), 'No exact matches found')]")
-        no_find = self.driver.find_elements(By.XPATH, "//*[contains(text(), We looked everywhere.")
         if no_match:
             print("No exact matches found")
-            return False
-        elif no_find:
-            print("Looked everywhere couldn't find anything")
             return False
         else:
             return True

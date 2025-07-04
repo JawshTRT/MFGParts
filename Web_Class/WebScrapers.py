@@ -28,9 +28,18 @@ class EbayScraper(BaseScraper):
         """Waits for the web page to finish loading the results based on the selector tag"""
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "ul.srp-results")))
-        WebDriverWait(self.driver, 20).until(
-            lambda d: d.execute_script("return document.querySelector('ul.srp-results')") == "complete")
-
+        WebDriverWait(self.driver, 20).until(lambda d: d.execute_script("return document.querySelector('ul.srp-results')") == "complete")
+    def check_Results(self):
+        no_match = self.driver.find_elements(By.XPATH,"//*[contains(text(), 'No exact matches found')]")
+        no_find = self.driver.find_elements(By.XPATH, "//*[contains(text(), We looked everywhere.")
+        if no_match:
+            print("No exact matches found")
+            return False
+        elif no_find:
+            print("Looked everywhere couldn't find anything")
+            return False
+        else:
+            return True
 
 
 

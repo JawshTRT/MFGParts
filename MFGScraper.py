@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from Web_Class.WebScrapers import EbayScraper
 import pandas as pd
 import time
 import inflect
@@ -85,7 +86,7 @@ def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
     """Checks the item based purely off of the name of the search result
     to see if it contains the correct part number
     :param Brand:
-    The brand name
+    The Brand name
     :param Part:
     The name of the part
     :param Num:
@@ -99,8 +100,6 @@ def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
     if Brand:  # <--- only check brand if you actually searched with one
         checks.append(Brand.lower() in name)
     return partnum
-
-
 def URL_Fetcher(browser, item_query, terms):
     """
     Checks a url to determine if it is a valid item page on the URL...
@@ -132,11 +131,6 @@ def URL_Fetcher(browser, item_query, terms):
     seen_urls = set()
     print(f"{len(Link)} listings found for {item_query}")  # <---- Debug
 
-    # Initializing local variables
-    Succesearch = 0
-    title = ''
-    link = ''
-    price = ''
     # Iterating through links to see if there are any invalid links and to check if any of the parts are valid
     for l in Link:
         try:
@@ -167,8 +161,6 @@ def URL_Fetcher(browser, item_query, terms):
         #Checking to see if we have reached the end of the list and searched through every term
 
     return CleanLinks
-
-
 def get_top_3_ebay(item_query, terms):
     driver = Driver_Init()
 
@@ -220,36 +212,27 @@ def get_top_3_ebay(item_query, terms):
 
 
 if __name__ == "__main__":
-    products, SKU, terms = ImportCSv('2014 w_Josh - Josh $$ Check.csv')
-    results = []
+    products, SKU, terms = ImportCSv('PartsList/Sample Parts List2 - Sheet1.csv')
+    spread = []
 
     # Iterating through each product from the imported list
     for item, number, term in zip(products, SKU, terms):
-        top_items = get_top_3_ebay(item, term)
-        summation, count = 0.0, 0.
-
+        Escraper = EbayScraper(term, True) # <----Initialize with the terms in the list
+        summation, count = 0.0, 6
+        results = Escraper.scrape(item, count) # <----Scrape with the parsed string
+        results['SKU'] = str(number)
         # Iterating through each search result from the product]
-        if top_items == 0:
-            continue
-        for rank, top_item in enumerate(top_items, start=1):
-            top_item['sku'] = number
-            try:
-                summation += float(
-                    top_item['price'][1:].replace(',', ''))  # <---- Excluding ($) from summation to avoid type mismatch
-            except ValueError:
-                print("Could not print out price")
-            count += 1.0
-            #results.append(top_item)
+        for result in results:
             print(f"Partnum: {term[2]}\n")
             print(
-                f"{rank}. Name: [{top_item['name']}]\n Condition: [{top_item['cond']}]\nPrice: [{top_item['price']}]\n Link: [{top_item['link']}\nSKU: [{top_item['sku']}]\n")
+                f"Name: [{result["title"]}]\n Condition: [{result['condition']}]\nPrice: [{result['price']}]\n Link: [{result['url']}\nSKU: [{result['SKU']}]\n")
+            summation += 1
         if summation == 0:
             print(
                 "Unable to fetch listings from search entry either due to type mismatch/CSS selector tag/No listings available")
-            continue
         print(f"Average: ${summation / count:.2f}")
 
-        results.append((item, number, term, f"${summation/count:.2f}"))
+        spread.append((item, number, term, f"${summation/count:.2f}"))
         df = pd.DataFrame(results)
         Append_Results_CSV(df)  # < ------- Updating the CSV file
     #except Exception as e:

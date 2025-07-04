@@ -122,7 +122,7 @@ class BaseScraper(ABC):
         "Intel Iris OpenGL Engine",
                 fix_hairline=True)
         return driver
-    def scrape(self, search_query: str, n: int = 3) -> list[dict]:
+    def scrape(self, search_query: str, n: int = 3) -> tuple[list[dict], list[dict]]:
         """
         This is where most of the magic happens, where the actual scraping is done
         :param search_query:
@@ -134,9 +134,8 @@ class BaseScraper(ABC):
         """
         url = self.get_search_url(search_query)
         self.driver.get(url)
-
+        noresults = []
         print("Waiting for results...")
-
         self.WaitResults()
         # self.driver.implicitly_wait(2) <-- A different method to wait for results to load
         items = self.get_items(3)
@@ -145,7 +144,7 @@ class BaseScraper(ABC):
             return []
         else:
             #Then check if any of the results are fetched
-            items = self.get_items(n)
+            items = self.get_items(3)
             # If items == 0 it means that there were no exact matches
             if not items:
                 return []
@@ -158,9 +157,9 @@ class BaseScraper(ABC):
         for result in results:
             if self.Check_Matches(result['title'], self.Brand, self.Part, self.PartNum):
                 CleanResults.append(result)
-        return CleanResults[:n] # < -- returning the first 6 clean results
-
-    def close(self):
-        self.driver.quit()
+            else:
+                # Add to list to search on another site
+                noresults.append(result)
+        return CleanResults[:n], noresults # < -- returning the first 6 clean results
 
 

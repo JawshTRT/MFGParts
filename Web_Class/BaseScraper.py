@@ -13,27 +13,31 @@ class BaseScraper(ABC):
     This is an abstract base class that defines the interface or template to create other website classes
     :var driver: webdriver instance
     """
-    def __init__(self, Items: list[dict], headless: bool = False):
+    def __init__(self, terms: list[str], headless: bool = False):
         """
         Default Constructor for BaseScraper abstract class
         :param headless:
             True by default, it determines
              whether the driver will run headless (without a window)
+        :param terms:
+            The Brand, Part, and Part number of the item being searched for
         """
         self.driver = self.Driver_Init(headless) # <--- Initializing the driver
-        self.Items = Items
+        self.Brand = terms[0]
+        self.Part = terms[1]
+        self.PartNum = terms[2]
+
 
     @abstractmethod
     def get_search_url(self, query: str) -> str:
         """Build the URL to load for a given search query
         :param query: search query for the website"""
         pass
-
     @abstractmethod
     def select_result_items(self):
         """Return a list of WebElements pointing at each result container"""
         pass
-    def Check_Matches(self, Items: list[str], brand, num, part) -> bool:
+    def Check_Matches(self, Items: list[str], brand, part, num) -> bool:
         """Check to see if any of the items match the search query
         :param Items: The list of items to check
 
@@ -46,13 +50,13 @@ class BaseScraper(ABC):
         :returns: True if the item is a match, False otherwise
         """
         name = brand.lower().replace('-', '')  # <-- Removing hyphens from string
-        partnumSpace = num.lower().replace(' ', '')
+        partnumSpace = num.lower().replace('-', '')
         partnumHyphen = num.lower().replace('-', '')
         if partnumHyphen in name or partnumHyphen in name:
             return True
         else:
+            print("N")
             return False
-
     @abstractmethod
     def parse_item(self, element) -> dict:
         """Parse a WebElement and return a dictionary
@@ -84,8 +88,6 @@ class BaseScraper(ABC):
         else:
             # Results pulled
             return link
-
-
     @abstractmethod
     def check_Results(self) -> bool:
         """Checks to see if the web page spits out '0 exact matches found
@@ -121,11 +123,11 @@ class BaseScraper(ABC):
         """
         This is where most of the magic happens, where the actual scraping is done
         :param search_query:
-            The search query representing the item to search for
+            The search query represents the item to search for
         :param n:
             Determines the number of results to grab from each successful search listing
-        :return results:
-            :A list of dictionaries containing the search results
+        :return CleanResults: A list of dictionaries containing the search results
+        :returns: A list of dictionaries containing the search results
         """
         url = self.get_search_url(search_query)
         self.driver.get(url)
@@ -148,7 +150,13 @@ class BaseScraper(ABC):
             else:
                 # Lastly, check if the results are a match, they first must be parsed into pieces and into list of dictionary
                 results = [self.parse_item(item) for item in items]
-        return results
+
+        CleanResults = []
+        #Checking if the search title matches what we want
+        for result in results:
+            if self.Check_Matches(result['title'], self.Brand, self.Part, self.PartNum):
+                CleanResults.append(result)
+        return CleanResults
 
     def close(self):
         self.driver.quit()

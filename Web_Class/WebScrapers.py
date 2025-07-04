@@ -16,7 +16,7 @@ class EbayScraper(BaseScraper):
         return f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}"
 
     def select_result_items(self):
-        return self.driver.find_elements(By.CSS_SELECTOR, "ul.srp-results li.s-item")
+        return self.driver.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
 
     def parse_item(self, element):
         title = element.find_element(By.CSS_SELECTOR, ".s-item__title").text
@@ -77,4 +77,5 @@ class RadwellScraper(BaseScraper):
         url = element.find_element(By.CSS_SELECTOR, "td:nth-child(1) a").get_attribute("href")
 
         return {"name": name, "brand": brand, "price": price, "url": url}
-
+    def Check_Results(self):
+        return True

@@ -73,8 +73,11 @@ def ImportCSv(filename):
             y = y.replace(x, '')[1:]
         if '-' in x:
             x = x.replace('-', ' ')
-        if y[-1] == 's':
-            y = p.singular_noun(y)
+        try:
+            if y[-1] == 's':
+                y = p.singular_noun(y)
+        except IndexError:
+            print(f"Error printing {x, y, z}")
         search_terms.append(f"{x} {y} {z}")
         terms.append((x, y, z))  # Each entry contains a 'set' containing the brand part and part number
     return search_terms, SKU, terms
@@ -217,7 +220,7 @@ def get_top_3_ebay(item_query, terms):
 
 
 if __name__ == "__main__":
-    products, SKU, terms = ImportCSv('Sample Parts List - Sheet2.csv')
+    products, SKU, terms = ImportCSv('2014 w_Josh - Josh $$ Check.csv')
     results = []
 
     # Iterating through each product from the imported list
@@ -227,7 +230,6 @@ if __name__ == "__main__":
 
         # Iterating through each search result from the product]
         if top_items == 0:
-            results.append((item, number, term, f"Listings unable to be found for this entry"))
             continue
         for rank, top_item in enumerate(top_items, start=1):
             top_item['sku'] = number

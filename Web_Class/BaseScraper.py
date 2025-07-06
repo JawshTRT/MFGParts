@@ -138,7 +138,7 @@ class BaseScraper(ABC):
         print("Waiting for results...")
         self.WaitResults()
         # self.driver.implicitly_wait(2) <-- A different method to wait for results to load
-        items = self.get_items(3)
+        #items = self.get_items(3)
         # First check if there are any results
         if not self.check_Results():
             return []

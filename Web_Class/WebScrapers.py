@@ -126,12 +126,12 @@ class GraingerScraper(BaseScraper):
         # wait for the spinner to go away, then for at least one item
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.k-loading-mask, .loading-overlay")))
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "ul#searchResultsList > li.search-results-item")))
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "ul#searchResultsList > li.search-results-item"))) # # < #
 class MotionScraper(BaseScraper):
     def get_search_url(self, query):
-        return f"https://www.motionindustries.com/search?searchTerm={query.replace(' ', '+')}"
+        return f"https://www.motionindustries.com/products/search;q={query.replace(' ', '%20')}"
     def select_result_items(self):
-        self.driver.wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "div.product-list__item")))
+        return self.driver.find_elements(By.CSS_SELECTOR, "div.product-list__item")
     def parse_item(self, element) -> dict:
         a = element.find_element(By.CSS_SELECTOR, "a.product-list__item-link")
         title = a.find_element(By.CSS_SELECTOR, "a.product-list__item-title").text
@@ -149,7 +149,7 @@ class MotionScraper(BaseScraper):
 
         return {"title": title, "brand": brand, "price": price, "url": url}
     def check_Results(self):
-        no_results = self.driver.find_elements(By.CSS_SELECTOR, "div.empty-state, div.search-results-noMatches")
+        no_results = self.driver.find_elements(By.XPATH, "//p[contains(text(), 'No results for')]")
 
         if no_results:
             print("No exact matches found")
@@ -158,5 +158,5 @@ class MotionScraper(BaseScraper):
             return True
     def WaitResults(self):
         wait = WebDriverWait(self.driver, 20)
-        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.k-loading-mask, .loading-overlay")))
+        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.product-list_results__a_env")))
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "ul#searchResultsList > li.search-results-item")))

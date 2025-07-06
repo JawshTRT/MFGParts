@@ -134,16 +134,17 @@ class MotionScraper(BaseScraper):
         return self.driver.find_elements(By.CSS_SELECTOR, "div.item-card.root-item-card_itemCard__KhLXr")
     def parse_item(self, element) -> dict:
 
-        #Price
-        price= element.find_element(By.CSS_SELECTOR, "span.product-price_price__KhAJm").text
+        #Have to fetch the price seperately because it lives in a different card container
+        priceContainer = element.find_elements(By.CSS_SELECTOR, "div.item-card-price-container_price__LruJI.list-item-card-content_price__oGaOt")
+        price= element.find_element(By.CSS_SELECTOR, ".product-price_price__KhAJm").text
 
         #URL Link
 
         url = element.find_element(By.CSS_SELECTOR, "a.nounderline").get_attribute("href")
 
         #manufacturer/brand
-        title = element.find_element(By.CSS_SELECTOR, "div.OneLinkNoTx name_title__JU8GV.item-card-details_title__90M_y.titleDecorated").text
-        brand = element.find_element(By.CSS_SELECTOR, "span.name_manufacturerName__WWyRd name_hasSeparator__AeW5f").text.split(" ")[1]
+        title = element.find_element(By.CSS_SELECTOR, "div.OneLinkNoTx.name_title__JU8GV.item-card-details_title__90M_y.titleDecorated").text
+        brand = element.find_element(By.CSS_SELECTOR, ".name_manufacturerName__WWyRd.name_hasSeparator__AeW5f").text.split(" ")[1]
 
         # Motion's "MPN" (their SKU) <--- do we really need to output this?
         mpn = element.find_element(By.CSS_SELECTOR, "span.name_manufacturerPartNumber__8cmLN").text

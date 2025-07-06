@@ -4,8 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
 from selenium.webdriver.common.by import By
 import urllib
-
-
 class EbayScraper(BaseScraper):
     """
     Inherits from the BaseScraper abstract base class
@@ -136,7 +134,12 @@ class MotionScraper(BaseScraper):
 
         #Have to fetch the price seperately because it lives in a different card container
         priceContainer = element.find_elements(By.CSS_SELECTOR, "div.item-card-price-container_price__LruJI.list-item-card-content_price__oGaOt")
-        price= element.find_element(By.CSS_SELECTOR, ".product-price_price__KhAJm").text
+
+        try:
+            price= element.find_element(By.CSS_SELECTOR, ".product-price_price__KhAJm").text
+        except NoSuchElementException:
+            print("No price found or quote required")
+            price = "0"
 
         #URL Link
 

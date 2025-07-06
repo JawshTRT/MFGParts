@@ -14,7 +14,7 @@ import time
 import inflect
 def Append_Results_CSV(df: pd.DataFrame):
     #If the file does exist write with headers otherwise just append
-    df.to_csv("ebay_results.csv",
+    df.to_csv("ResultsList/ebay_results.csv",
               mode='a',
               header=False,
               index=False)

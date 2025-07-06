@@ -160,6 +160,6 @@ class BaseScraper(ABC):
             else:
                 # Add to list to search on another site
                 noresults.append(result)
-        return CleanResults[:n] # < -- returning the first 6 clean results
+        return CleanResults[:n] # < -- returning the first 'n' clean results
 
 

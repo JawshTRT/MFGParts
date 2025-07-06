@@ -38,6 +38,7 @@ class BaseScraper(ABC):
         pass
     def Check_Matches(self, title, brand, part, num) -> bool:
         """Check to see if any of the items match the search query
+        :param title: The title of the item to compare with
         :param Items: The list of items to check
 
         :param brand: The brand of the items from the search query
@@ -160,6 +161,11 @@ class BaseScraper(ABC):
             else:
                 # Add to list to search on another site
                 noresults.append(result)
-        return CleanResults[:n] # < -- returning the first 'n' clean results
+
+        # If there were no results appended to clean results then we need to skip the part and scrape on a different site
+        if len(CleanResults) == 0:
+            return []
+        else:
+            return CleanResults[:n] # < -- returning the first 'n' clean results
 
 

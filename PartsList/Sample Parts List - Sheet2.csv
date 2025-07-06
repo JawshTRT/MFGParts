@@ -1,5 +1,5 @@
 ID,SKU,Name,Brand,Product Type,Model
-1470,005-005-0030,Allen-Bradley 1771-OVN/B Output Module,Allen-Bradley,OUTPUT MODULE,1771-OVN
+6360,039-003-1903,SMC Air Cylinder ACNL-X2-40X600,SMC,Air Cylinder,ACNL-X2-40X600
 20697,"035-800-0020, 035-800-0019",ATC Master Plate QC10AM,ATC,ATC Master Plate,QC10AM
 20536,068-514-0005,Auburn 16946001 Spark Plug,Auburn,Spark Plugs,16946001
 4717,MFG-000-0198,Baldor Industrial Motor M3587T,Baldor,Motors,M3587T
@@ -19,9 +19,9 @@ ID,SKU,Name,Brand,Product Type,Model
 20638,002-007-0038,CKD Valve PV5-6-FPG-D-3,CKD,Valves,PV5-6-FPG-D-3
 4185,MFG-000-0165,Daihen Nozzle H21B20,Daihen,Nozzels,H21B20
 4187,MFG-000-0167,Denso Squeeze Roller M-3801955-130,Denso,Rollers,M-3801955-130
-4196,014-001-0417,Koyo Bearings 6007ZZC3GXM,Denso,Bearings,6007ZZC3GXM
+4196,014-001-0417,Koyo Bearings 6007ZZC3GXM,Koyo,Bearings,6007ZZC3GXM
 20524,040-490-0001,Denso Oil Tube 01S-001,Denso,Tubing,01S-001
-4198,056-001-0060,Martin Pulley 14H 100,Eaton,Pullies,100
+4198,056-001-0060,Martin Pulley 14H 100,Martin,Pullies,100
 20545,022-001-0033,Eaton/Moeller Breaker PKZM0-1,Eaton,Circuit Breakers,PKZM0-1
 1547,MFG-000-0109,IFM PN7004 Pressure Sensor PN-010-RBR14-QFRKG/US,IFM,Pressure Sensors,PN-010-RBR14-QFRKG
 20577,008-003-0166,IFM Pressure Switch PN7004,IFM,Pressure Switches,PN7004
@@ -111,3 +111,4 @@ ID,SKU,Name,Brand,Product Type,Model
 20605,051-001-0026,KYB Shock Absorber KBM7-15-6C,KYP,Shock Absorbers,KBM7-15-6C
 1217,019-004-0053,Yaskawa AC Servo Motor SGM-04VW14-C,Yaskawa,Servo Motor,SGM-04VW14-C
 40147,219-004-0177,Yaskawa Servo Motor SGM-04UW14-C,Yaskawa,Servo Motor,SGM-04UW14-C
+6360,039-003-1903,SMC Air Cylinder ACNL-X2-40X600,SMC,Air Cylinder,ACNL-X2-40X600

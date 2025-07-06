@@ -6,12 +6,12 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.remote.webelement import WebElement
 
-driver = webdriver.Chrome('/Users/hunterferaco/PycharmProjects/craigslist/venv/chromedriver')
+driver = webdriver.Chrome()
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--disable-extensions')
 chrome_options.add_argument('--profile-directory=Default')
 chrome_options.add_argument("--incognito")
-chrome_options.add_argument("--disable-plugins-discovery");
+chrome_options.add_argument("--disable-plugins-discovery")
 chrome_options.add_argument("--start-maximized")
 chrome_options.add_argument("--proxy-server='direct://'")
 chrome_options.add_argument("--proxy-bypass-list=*")

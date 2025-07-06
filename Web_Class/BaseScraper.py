@@ -27,8 +27,6 @@ class BaseScraper(ABC):
         self.Brand = terms[0]
         self.Part = terms[1]
         self.PartNum = terms[2]
-
-
     @abstractmethod
     def get_search_url(self, query: str) -> str:
         """Build the URL to load for a given search query
@@ -40,6 +38,7 @@ class BaseScraper(ABC):
         pass
     def Check_Matches(self, title, brand, part, num) -> bool:
         """Check to see if any of the items match the search query
+        :param title: The title of the item to compare with
         :param Items: The list of items to check
 
         :param brand: The brand of the items from the search query
@@ -114,13 +113,15 @@ class BaseScraper(ABC):
         options.add_argument("--start-maximized")
         options.add_argument("--proxy-server='direct://'")
         options.add_argument("--proxy-bypass-list=*")
-
+        prefs = {"profile.managed_default_content_settings.images": 2, 'disk-cache-size': 4096}
+        options.add_experimental_option('prefs', prefs)
         if headless:
             options.add_argument("--headless") # <-- Running without browser window
         driver = webdriver.Chrome(options=options)
         stealth(driver, vendor="Google Inc.", platform="Win32", webgl_vendor="Intel Inc.", renderer=
         "Intel Iris OpenGL Engine",
                 fix_hairline=True)
+        driver.delete_all_cookies() # <--- Deleting the cookie monsters
         return driver
     def scrape(self, search_query: str, n: int = 3) -> list[dict]:
         """
@@ -138,7 +139,7 @@ class BaseScraper(ABC):
         print("Waiting for results...")
         self.WaitResults()
         # self.driver.implicitly_wait(2) <-- A different method to wait for results to load
-        items = self.get_items(3)
+        #items = self.get_items(3)
         # First check if there are any results
         if not self.check_Results():
             return []
@@ -160,6 +161,11 @@ class BaseScraper(ABC):
             else:
                 # Add to list to search on another site
                 noresults.append(result)
-        return CleanResults[:n] # < -- returning the first 6 clean results
+
+        # If there were no results appended to clean results then we need to skip the part and scrape on a different site
+        if len(CleanResults) == 0:
+            return []
+        else:
+            return CleanResults[:n] # < -- returning the first 'n' clean results
 
 

@@ -213,7 +213,7 @@ def get_top_3_ebay(item_query, terms):
     driver.quit()
     return listings
 if __name__ == "__main__":
-    products, IDs, terms = ImportCSv('PartsList/Sample Parts List2 - Sheet1.csv')
+    products, IDs, terms = ImportCSv('PartsList/Sample Parts List - Sheet2.csv')
     spread = []
     # Iterating through each product from the imported list
     for item, number, term in zip(products, IDs, terms):

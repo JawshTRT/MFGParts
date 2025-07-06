@@ -131,21 +131,24 @@ class MotionScraper(BaseScraper):
     def get_search_url(self, query):
         return f"https://www.motionindustries.com/products/search;q={query.replace(' ', '%20')}"
     def select_result_items(self):
-        return self.driver.find_elements(By.CSS_SELECTOR, "div.product-list__item")
+        return self.driver.find_elements(By.CSS_SELECTOR, "div.item-card.root-item-card_itemCard__KhLXr")
     def parse_item(self, element) -> dict:
-        a = element.find_element(By.CSS_SELECTOR, "a.product-list__item-link")
-        title = a.find_element(By.CSS_SELECTOR, "a.product-list__item-title").text
-        url = a.get_attribute("href")
 
         #Price
-        price= element.find_element(By.CSS_SELECTOR, ".product-list__price .price-current").text
+        price= element.find_element(By.CSS_SELECTOR, "span.product-price_price__KhAJm").text
 
+        #URL Link
+
+        url = element.find_element(By.CSS_SELECTOR, "a.nounderline").get_attribute("href")
 
         #manufacturer/brand
-        brand = element.find_element(By.CSS_SELECTOR, ".product-list_manufacturer").text
+        title = element.find_element(By.CSS_SELECTOR, "div.OneLinkNoTx name_title__JU8GV.item-card-details_title__90M_y.titleDecorated").text
+        brand = element.find_element(By.CSS_SELECTOR, "span.name_manufacturerName__WWyRd name_hasSeparator__AeW5f").text.split(" ")[1]
 
         # Motion's "MPN" (their SKU) <--- do we really need to output this?
-        mpn = element.find_element(By.CSS_SELECTOR, ".product-list__mpn").text
+        mpn = element.find_element(By.CSS_SELECTOR, "span.name_manufacturerPartNumber__8cmLN").text
+
+        #Weird formatting compared to ebay so we'll have to restructure
 
         return {"title": title, "brand": brand, "price": price, "url": url}
     def check_Results(self):

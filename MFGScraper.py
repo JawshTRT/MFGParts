@@ -4,12 +4,11 @@ from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Web_Class.WebScrapers import EbayScraper
+from Web_Class.WebScrapers import EbayScraper, GraingerScraper
+from Web_Class.WebScrapers import RadwellScraper
 import pandas as pd
 import time
 import inflect
-
-
 def Append_Results_CSV(df: pd.DataFrame):
     #If the file does exist write with headers otherwise just append
     df.to_csv("ebay_results.csv",
@@ -64,6 +63,7 @@ def ImportCSv(filename):
     Part = df['Product Type'].dropna().astype(str).tolist()
     Brand = df['Brand'].dropna().astype(str).tolist()
     SKU = df['SKU'].dropna().dropna().astype(str).tolist()
+    ID = df['ID'].dropna().astype(str).tolist()
     p = inflect.engine()
 
     # Creating ebay search entries
@@ -81,7 +81,7 @@ def ImportCSv(filename):
             print(f"Error printing {x, y, z}")
         search_terms.append(f"{x} {y} {z}")
         terms.append((x, y, z))  # Each entry contains a 'set' containing the brand part and part number
-    return search_terms, SKU, terms
+    return search_terms, (SKU, ID), terms
 def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
     """Checks the item based purely off of the name of the search result
     to see if it contains the correct part number
@@ -209,22 +209,24 @@ def get_top_3_ebay(item_query, terms):
     #Close the driver
     driver.quit()
     return listings
-
-
 if __name__ == "__main__":
-    products, SKU, terms = ImportCSv('PartsList/Sample Parts List2 - Sheet1.csv')
+    products, IDs, terms = ImportCSv('PartsList/Sample Parts List2 - Sheet1.csv')
     spread = []
-
     # Iterating through each product from the imported list
-    for item, number, term in zip(products, SKU, terms):
-        Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
+    for item, number, term in zip(products, IDs, terms):
+        GrainScraper = GraingerScraper(term) # <----Initialize with the terms in the list
         summation, count = 0.0, 0
-        results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
+        results = GrainScraper.scrape(item, 6) # <----Scrape with the parsed string
         # Iterating through each search result from the product]
         for result in results:
-            result['SKU'] = str(number)
+            result['SKU'] = str(number[0])
+            result['ID'] = str(number[1])
             print(f"Partnum: {term[2]}\n")
-            print(f"Name: [{result["title"]}]\n Condition: [{result['condition']}]\nPrice: [{result['price']}]\n Link: [{result['url']}\nSKU: [{result['SKU']}]\n")
+            print(f"Name: [{result["title"]}]\n"
+                  f"Condition: [{result['condition']}]\n"
+                  f"Price: [{result['price']}]\n "
+                  f"Link: [{result['url']}\n"
+                  f"SKU: [{result['SKU']}]\n")
             try:
                 summation += float(result['price'][1:].replace(',', ''))
             except ValueError:
@@ -234,7 +236,7 @@ if __name__ == "__main__":
         if summation != 0:
             print(f"Average: ${summation / count:.2f}")
 
-        spread.append((item, number, term, f"${summation/float(count):.2f}" if summation != 0 else ""))
+        spread.append((item, number[0], number[1], term, f"${summation/float(count):.2f}" if summation != 0 else ""))
         df = pd.DataFrame(spread)
         Append_Results_CSV(df)  # < ------- Updating the CSV file
     #except Exception as e:

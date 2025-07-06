@@ -6,7 +6,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.remote.webelement import WebElement
 
-driver = webdriver.Chrome('/Users/hunterferaco/PycharmProjects/craigslist/venv/chromedriver')
+driver = webdriver.Chrome()
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--disable-extensions')
 chrome_options.add_argument('--profile-directory=Default')

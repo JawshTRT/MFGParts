@@ -27,8 +27,6 @@ class BaseScraper(ABC):
         self.Brand = terms[0]
         self.Part = terms[1]
         self.PartNum = terms[2]
-
-
     @abstractmethod
     def get_search_url(self, query: str) -> str:
         """Build the URL to load for a given search query

@@ -112,13 +112,15 @@ class BaseScraper(ABC):
         options.add_argument("--start-maximized")
         options.add_argument("--proxy-server='direct://'")
         options.add_argument("--proxy-bypass-list=*")
-
+        prefs = {"profile.managed_default_content_settings.images": 2, 'disk-cache-size': 4096}
+        options.add_experimental_option('prefs', prefs)
         if headless:
             options.add_argument("--headless") # <-- Running without browser window
         driver = webdriver.Chrome(options=options)
         stealth(driver, vendor="Google Inc.", platform="Win32", webgl_vendor="Intel Inc.", renderer=
         "Intel Iris OpenGL Engine",
                 fix_hairline=True)
+        driver.delete_all_cookies() # <--- Deleting the cookie monsters
         return driver
     def scrape(self, search_query: str, n: int = 3) -> list[dict]:
         """

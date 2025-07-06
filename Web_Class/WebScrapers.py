@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
 from selenium.webdriver.common.by import By
+import urllib
 
 
 class EbayScraper(BaseScraper):
@@ -126,3 +127,36 @@ class GraingerScraper(BaseScraper):
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.k-loading-mask, .loading-overlay")))
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "ul#searchResultsList > li.search-results-item")))
+class MotionScraper(BaseScraper):
+    def get_search_url(self, query):
+        return f"https://www.motionindustries.com/search?searchTerm={query.replace(' ', '+')}"
+    def select_result_items(self):
+        self.driver.wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "div.product-list__item")))
+    def parse_item(self, element) -> dict:
+        a = element.find_element(By.CSS_SELECTOR, "a.product-list__item-link")
+        title = a.find_element(By.CSS_SELECTOR, "a.product-list__item-title").text
+        url = a.get_attribute("href")
+
+        #Price
+        price= element.find_element(By.CSS_SELECTOR, ".product-list__price .price-current").text
+
+
+        #manufacturer/brand
+        brand = element.find_element(By.CSS_SELECTOR, ".product-list_manufacturer").text
+
+        # Motion's "MPN" (their SKU) <--- do we really need to output this?
+        mpn = element.find_element(By.CSS_SELECTOR, ".product-list__mpn").text
+
+        return {"title": title, "brand": brand, "price": price, "url": url}
+    def check_Results(self):
+        no_results = self.driver.find_elements(By.CSS_SELECTOR, "div.empty-state, div.search-results-noMatches")
+
+        if no_results:
+            print("No exact matches found")
+            return False
+        else:
+            return True
+    def WaitResults(self):
+        wait = WebDriverWait(self.driver, 20)
+        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.k-loading-mask, .loading-overlay")))
+        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "ul#searchResultsList > li.search-results-item")))

@@ -4,8 +4,11 @@ from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Web_Class.WebScrapers import EbayScraper, GraingerScraper
-from Web_Class.WebScrapers import RadwellScraper
+from Web_Class.WebScrapers import (EbayScraper,
+                                   GraingerScraper,
+                                   RadwellScraper,
+                                   MotionScraper)
+
 import pandas as pd
 import time
 import inflect
@@ -214,9 +217,9 @@ if __name__ == "__main__":
     spread = []
     # Iterating through each product from the imported list
     for item, number, term in zip(products, IDs, terms):
-        GrainScraper = GraingerScraper(term) # <----Initialize with the terms in the list
+        MotionScrape = MotionScraper(term) # <----Initialize with the terms in the list
         summation, count = 0.0, 0
-        results = GrainScraper.scrape(item, 6) # <----Scrape with the parsed string
+        results = MotionScrape.scrape(item, 6) # <----Scrape with the parsed string
         # Iterating through each search result from the product]
         for result in results:
             result['SKU'] = str(number[0])

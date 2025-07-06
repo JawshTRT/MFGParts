@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Web_Class.WebScrapers import (EbayScraper, MotionScraper)
+from Web_Class.WebScrapers import (EbayScraper, MotionScraper, MScraper)
 import pandas as pd
 import time
 import inflect
@@ -218,9 +218,11 @@ if __name__ == "__main__":
     # Iterating through each product from the imported list
     for item, number, term in zip(products, SKU, terms):
 
-        # Initializing scrapers
+        # Initializing scrapers with their respective terms
         Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
         MotionScrape = MotionScraper(term, headless=True)
+        MSCScraper= MScraper(term, headless=True)
+
 
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
@@ -228,10 +230,11 @@ if __name__ == "__main__":
 
         if not results:
         # If there were no matches found for the part, then scrape on to the next website
-            print("No compatible matches found for part scraping on a different website")
+            print("No compatible matches found for part scraping on Motion Industries")
             results = MotionScrape.scrape(item, 6)
         if not results:
-            pass
+            results = MSCScraper.scrape(item, 6)
+            print("No compatible matches found for part scraping on MSC")
         # Iterating through each search result from the product
         for result in results:
             result['SKU'] = str(number)

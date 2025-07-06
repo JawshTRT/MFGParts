@@ -134,7 +134,6 @@ class MotionScraper(BaseScraper):
 
         #Have to fetch the price seperately because it lives in a different card container
         priceContainer = element.find_elements(By.CSS_SELECTOR, "div.item-card-price-container_price__LruJI.list-item-card-content_price__oGaOt")
-
         try:
             price= element.find_element(By.CSS_SELECTOR, ".product-price_price__KhAJm").text
         except NoSuchElementException:
@@ -157,7 +156,6 @@ class MotionScraper(BaseScraper):
         return {"title": title, "brand": brand, "price": price, "url": url}
     def check_Results(self):
         no_results = self.driver.find_elements(By.XPATH, "//p[contains(text(), 'No results for')]")
-
         if no_results:
             print("No exact matches found")
             return False
@@ -169,12 +167,29 @@ class MotionScraper(BaseScraper):
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "ul#searchResultsList > li.search-results-item")))
 class MScraper(BaseScraper):
     def get_search_url(self, query):
-        pass
+        return f"https://www.mscdirect.com/browse/tn?rd=k&searchterm={query.replace(' ', '+')}"
     def select_result_items(self):
-        pass
+        return self.driver.find_elements(By.CSS_SELECTOR, "div.flex.flex-col.md:flex-row.gap-2.justify-between ")
     def parse_item(self, element) -> dict:
-        pass
+        # The infocard contains the product type, dimensions, and manufacturer/Brand
+        infocard = element.find_elements(By.CSS_SELECTOR, "div.tn-product-title-wrapper.w-full.md:pr-4.hover:underline.tnview-title-container.flex.flex-col.gap-1")
+
+        brand = infocard.find_element(By.CSS_SELECTOR, "p.font-bold.uppercase.text-xs.hover:underline").text
+        title = infocard.find_element(By.CSS_SELECTOR, "p.font-bold.text-sm.overflow-hidden.line-clamp").text
+        url = infocard.find_element(By.CSS_SELECTOR, "a.font-bold.uppercase.text-xs.hover:underline").get_attribute("href")
+
+        # The price is inside a completely seperate card wrapper
+        pricecard = element.find_element(By.CSS_SELECTOR, "div.pt-3.px-3 pb-2.border-b-1 flex.items-center w-full.justify-between.new-search-item-top-border ")
+        price = pricecard.find_element(By.CSS_SELECTOR, "p.text-xl.leading-7.font-bold.whitespace-nowrap").text
+
+        return {"brand": brand, "title": title, "price": price, "url": url}
     def check_Results(self):
-        pass
+        no_results = self.driver.find_elements(By.XPATH, "//*[@id='main']/div[1]/div/div[1]/div/div/div[1]/text()")
+        if no_results:
+            return True
+        else:
+            return False
     def WaitResults(self):
-        pass
+        wait = WebDriverWait(self.driver, 20)
+        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.product-list_results__a_env")))
+        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.flex.p-3")))

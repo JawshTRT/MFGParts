@@ -227,12 +227,12 @@ if __name__ == "__main__":
         results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
 
         if not results:
-        # If there were no matches found for the item then scrape on to the next website
+        # If there were no matches found for the part, then scrape on to the next website
             print("No compatible matches found for part scraping on a different website")
             results = MotionScrape.scrape(item, 6)
         if not results:
             pass
-        # Iterating through each search result from the product]
+        # Iterating through each search result from the product
         for result in results:
             result['SKU'] = str(number)
             print(f"Partnum: {term[2]}\n")

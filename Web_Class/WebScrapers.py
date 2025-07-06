@@ -167,3 +167,14 @@ class MotionScraper(BaseScraper):
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.product-list_results__a_env")))
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "ul#searchResultsList > li.search-results-item")))
+class MScraper(BaseScraper):
+    def get_search_url(self, query):
+        pass
+    def select_result_items(self):
+        pass
+    def parse_item(self, element) -> dict:
+        pass
+    def check_Results(self):
+        pass
+    def WaitResults(self):
+        pass

@@ -232,7 +232,7 @@ if __name__ == "__main__":
             results = MotionScrape.scrape(item, 6)
         if not results:
             pass
-        # Iterating through each searc result from the product]
+        # Iterating through each search result from the product]
         for result in results:
             result['SKU'] = str(number)
             print(f"Partnum: {term[2]}\n")

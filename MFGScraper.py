@@ -63,8 +63,8 @@ def ImportCSv(filename):
     PartNum = df['Model'].dropna().astype(str).tolist()
     Part = df['Product Type'].dropna().astype(str).tolist()
     Brand = df['Brand'].dropna().astype(str).tolist()
-    SKU = df['SKU'].dropna().astype(str).tolist()
-    ID = df['Id'].dropna().astype(str).tolist()
+    #SKU = df['SKU'].dropna().astype(str).tolist()
+    #ID = df['Id'].dropna().astype(str).tolist()
     p = inflect.engine()
 
     # Creating ebay search entries
@@ -82,7 +82,7 @@ def ImportCSv(filename):
             print(f"Error printing {x, y, z}")
         search_terms.append(f"{x} {y} {z}")
         terms.append((x, y, z))  # Each entry contains a 'set' containing the brand part and part number
-    return search_terms, SKU, terms, ID
+    return search_terms, terms
 def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
     """Checks the item based purely off of the name of the search result
     to see if it contains the correct part number
@@ -211,11 +211,11 @@ def get_top_3_ebay(item_query, terms):
     driver.quit()
     return listings
 if __name__ == "__main__":
-    products, SKU, terms, ID = ImportCSv('PartsList/2014 w_Josh - Josh $$ Check.csv')
+    products, terms = ImportCSv('PartsList/Cummins Parts July9.csv')
     spread = []
 
     # Iterating through each product from the imported list
-    for item, number, term, Id in zip(products, SKU, terms, ID):
+    for item, term  in zip(products, terms):
 
         # Initializing scrapers with their respective terms
         Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
@@ -225,8 +225,8 @@ if __name__ == "__main__":
         results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
 
         for result in results:
-            result['SKU'] = str(number)
-            result['Id'] = str(Id)
+            # result['SKU'] = str(number)
+            # result['Id'] = str(Id)
             print(f"Partnum: {term[2]}\n")
             print(f"Name: [{result["title"]}]\n Condition: [{result['condition']}]\nPrice: [{result['price']}]\n Link: [{result['url']}\nSKU: [{result['SKU']}]\n")
             try:
@@ -237,12 +237,12 @@ if __name__ == "__main__":
             count += 1
         if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
             print(f"Average: ${summation / count:.2f}")
-            spread.append((Id, item, number, term, f"${summation / float(count):.2f}" if summation != 0 else ""))
+            spread.append(( item,  term, f"${summation / float(count):.2f}" if summation != 0 else ""))
             df = pd.DataFrame(spread)
             Append_Results_CSV(df)  # < ------- Updating the CSV file
         else:
             #Append listings  with no average anyways so that way they are easier to align with
-            spread.append((Id, item, number, term, f"No price listings for average"))
+            spread.append(( item, term, f"No price listings for average"))
 
 
     # Converting to dataframe

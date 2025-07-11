@@ -228,7 +228,7 @@ if __name__ == "__main__":
             # result['SKU'] = str(number)
             # result['Id'] = str(Id)
             print(f"Partnum: {term[2]}\n")
-            print(f"Name: [{result["title"]}]\n Condition: [{result['condition']}]\nPrice: [{result['price']}]\n Link: [{result['url']}\nSKU: [{result['SKU']}]\n")
+            print(f"Name: [{result["title"]}]\n Condition: [{result['condition']}]\nPrice: [{result['price']}]\n Link: [{result['url']}\n")
             try:
                 summation += float(result['price'][1:].replace(',', ''))
             except ValueError:
@@ -237,7 +237,7 @@ if __name__ == "__main__":
             count += 1
         if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
             print(f"Average: ${summation / count:.2f}")
-            spread.append(( item,  term, f"${summation / float(count):.2f}" if summation != 0 else ""))
+            spread.append(( item, term, f"${summation / float(count):.2f}" if summation != 0 else ""))
             df = pd.DataFrame(spread)
             Append_Results_CSV(df)  # < ------- Updating the CSV file
         else:

@@ -3,7 +3,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
 from selenium.webdriver.common.by import By
-import urllib
 class EbayScraper(BaseScraper):
     """
     Inherits from the BaseScraper abstract base class

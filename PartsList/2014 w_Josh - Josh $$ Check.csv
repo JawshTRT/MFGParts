@@ -1,5 +1,5 @@
 ID,SKU,Name,Weight (lbs),Regular price,Attribute 1 name,Brand,Attribute 2 name,Product Type,Attribute 3 name,Model,Attribute 4 name,Attribute 4 value(s),Attribute 5 name,Attribute 5 value(s)
-40018,005-005-0557,Action Instruments Signal Conditioner 4380-2000-1,1,190.25,Brand,Action Instruments,Product Type,Signal Conditioners,Model,4380-2000-1,Location,2014C1_LC3,eBay ID,
+20503,MFG-000-1699,Bell &amp; Gossett Relief Valve 790-30,2,55,Brand,Bell & Gossett,Product Type,"Relief Valves, Valves",Model,790-30,Location,2014c4_LC1,eBay ID,
 20646,222-056-0113,Action Instruments Signal Conditioner G408-1001 *Repaired*,1,200,Brand,Action Instruments,Product Type,Signal Conditioners,Model,G408-1001,Location,2014c3,eBay ID,
 5402,219-001-0840,AG Oyako Gear Motor 3 Phase UDMD-5R,125,800,Brand,AG Oyako,Product Type,Motors,Model,UDMD-5R,Location,2014c1,eBay ID,
 40059,019-001-0840,AG Oyako Geared Motor 460V UDMD-5R,30,129.99,Brand,AG Oyako,Product Type,Motors,Model,460V UDMD-5R,Location,2014c1,eBay ID,
@@ -429,3 +429,4 @@ ID,SKU,Name,Weight (lbs),Regular price,Attribute 1 name,Brand,Attribute 2 name,P
 40136,000-000-0318,Yokogawa Pen Cartridge B9902AM,1,12,Brand,Yokogawa,Product Type,Pen Cartridge,Model,B9902AM,Location,2014C2_LC4,eBay ID,
 40135,000-000-0317,Yokogawa Pen Cartridge B9902AN,1,12,Brand,Yokogawa,Product Type,Pen Cartridge,Model,B9902AN,Location,2014C2_LC4,eBay ID,
 40137,000-000-0319,Yokogawa Pen Cartridge B9902ARKC,1,12,Brand,Yokogawa,Product Type,Pen Cartridge,Model,B9902ARKC,Location,2014C2_LC4,eBay ID,
+4706,022-038-0565,Blackbox Interface Cable CBCC275830,2,40,Brand,Black Box,Product Type,Cables,Model,CBCC275830,Location,2014c3_LC1,eBay ID,

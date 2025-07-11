@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Web_Class.WebScrapers import (EbayScraper, MotionScraper, MScraper)
+from Web_Class.WebScrapers import (EbayScraper, MotionScraper, MScraper, IndustPartsResults)
 import pandas as pd
 import time
 import inflect
@@ -12,7 +12,7 @@ import inflect
 
 def Append_Results_CSV(df: pd.DataFrame):
     #If the file does exist write with headers otherwise just append
-    df.to_csv("ebay_results.csv",
+    df.to_csv("ResultsList/ebay_results.csv",
               mode='a',
               header=False,
               index=False)
@@ -209,10 +209,8 @@ def get_top_3_ebay(item_query, terms):
     #Close the driver
     driver.quit()
     return listings
-
-
 if __name__ == "__main__":
-    products, SKU, terms = ImportCSv('PartsList/Sample Parts List2 - Sheet1.csv')
+    products, SKU, terms = ImportCSv('PartsList/2014 w_Josh - Josh $$ Check.csv')
     spread = []
 
     # Iterating through each product from the imported list
@@ -220,21 +218,17 @@ if __name__ == "__main__":
 
         # Initializing scrapers with their respective terms
         Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
-        MotionScrape = MotionScraper(term, headless=True)
-        MSCScraper= MScraper(term, headless=True)
+        #MotionScrape = MotionScraper(term, headless=False)
+        #MSCScraper= MScraper(term)
+        IndustScraper = IndustPartsResults(term, headless=False)
 
 
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
         results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
-
-        if not results:
-        # If there were no matches found for the part, then scrape on to the next website
-            print("No compatible matches found for part scraping on Motion Industries")
-            results = MotionScrape.scrape(item, 6)
-        if not results:
-            results = MSCScraper.scrape(item, 6)
-            print("No compatible matches found for part scraping on MSC")
+        # if not results:
+        #     print("No results found on ebay searching on MotionIndustries")
+        #     results = MotionScrape.scrape(item, 6)
         # Iterating through each search result from the product
         for result in results:
             result['SKU'] = str(number)
@@ -246,12 +240,14 @@ if __name__ == "__main__":
                 print("Could not parse price properly taking lower portion of price")
                 summation += float(result['price'][1:].replace(',', '').split(' ')[0])
             count += 1
-        if summation != 0:
+        if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
             print(f"Average: ${summation / count:.2f}")
+            spread.append((item, number, term, f"${summation / float(count):.2f}" if summation != 0 else ""))
+            df = pd.DataFrame(spread)
+            Append_Results_CSV(df)  # < ------- Updating the CSV file
+        else:
+            continue
 
-        spread.append((item, number, term, f"${summation/float(count):.2f}" if summation != 0 else ""))
-        df = pd.DataFrame(spread)
-        Append_Results_CSV(df)  # < ------- Updating the CSV file
     #except Exception as e:
     #    print(f"Error: on '{item}':", e)
     # continue to next term-but all previous data already on disk

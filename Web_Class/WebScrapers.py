@@ -13,7 +13,12 @@ class EbayScraper(BaseScraper):
     def get_search_url(self, query: str):
         return f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}"
     def select_result_items(self):
-        return self.driver.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
+
+        try:
+            return self.driver.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
+        except NoSuchElementException:
+            print("No listings could be found")
+            return []
     def parse_item(self, element):
         title = element.find_element(By.CSS_SELECTOR, ".s-item__title").text
         price = element.find_element(By.CSS_SELECTOR, ".s-item__price").text
@@ -29,7 +34,7 @@ class EbayScraper(BaseScraper):
         wait = WebDriverWait(self.driver, 20)
         wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
         #WebDriverWait(self.driver, 20).until(lambda d: d.execute_script("return document.querySelector('ul.srp-results')") == "complete")
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "li.s-item")))
+        wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "ul.srp-results")))
     def check_Results(self):
         no_match = self.driver.find_elements(By.XPATH,"//*[contains(text(), 'No exact matches found')]")
         if no_match:
@@ -37,7 +42,7 @@ class EbayScraper(BaseScraper):
             return False
         else:
             return True
-class RadwellScraper(BaseScraper):
+class RadwellScraper(BaseScraper):#< -- Bot captchas
     """
     Inherits from the BaseScraper abstract base class
     :var BaseScraper:
@@ -81,8 +86,8 @@ class RadwellScraper(BaseScraper):
     def WaitResults(self):
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, ".k-loading-mask")))
-        rows = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "#ResultGrid .k-grid-content tr")))
-class GraingerScraper(BaseScraper):
+        rows = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "#ResultGrid .k-grid-content tr")))#< -- Bot captchas#< -- Bot captchas#< -- Bot captchas
+class GraingerScraper(BaseScraper):#< -- Bot captchas
     """
         Inherits from the BaseScraper abstract base class
         :var BaseScraper:
@@ -124,7 +129,7 @@ class GraingerScraper(BaseScraper):
         # wait for the spinner to go away, then for at least one item
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.k-loading-mask, .loading-overlay")))
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "ul#searchResultsList > li.search-results-item"))) # # < #
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "ul#searchResultsList > li.search-results-item"))) # # < # # <
 class MotionScraper(BaseScraper):
     def get_search_url(self, query):
         return f"https://www.motionindustries.com/products/search;q={query.replace(' ', '%20')}"
@@ -153,7 +158,7 @@ class MotionScraper(BaseScraper):
 
         #Weird formatting compared to ebay so we'll have to restructure
 
-        return {"title": title, "brand": brand, "price": price, "url": url}
+        return {"title": title, "brand": brand, "price": price, "url": url, "condition": "new"}# <---Motion industries is a manufacturer so their listings are all brand new
     def check_Results(self):
         no_results = self.driver.find_elements(By.XPATH, "//p[contains(text(), 'No results for')]")
         if no_results:
@@ -193,3 +198,23 @@ class MScraper(BaseScraper):
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.product-list_results__a_env")))
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.flex.p-3")))
+class IndustPartsResults(BaseScraper):
+    def get_search_url(self, query):
+        return f"https://industrialpartsrus.com/?srsltid=AfmBOop5RMMRoYWsvIsIit0uxuWPSBoRyr_7faWEAw1R8VK5ShwelbaZ#fa57/fullscreen/m=and&q={query.replace(' ', '+')}"
+    def select_result_items(self):
+        return self.driver.find_elements(By.CSS_SELECTOR, "div.dfd-results-grid")
+    def parse_item(self, element) -> dict:
+        title = element.find_element(By.CSS_SELECTOR, "div.dfd-card-title").text
+        price = element.find_element(By.CSS_SELECTOR, "div.dfd-card-pricing span.dfd-card-price").text
+        url = element.find_element(By.CSS_SELECTOR, "a.dfd-card-link").get_attribute("href")
+        return {'title': title, 'price': price, 'url': url, 'condition': 'used'}
+    def check_Results(self):
+        no_match = self.driver.find_element(By.XPATH, "//*[@id='dfd-tabs-4C6j6']/div[2]/div/div[1]")
+        if no_match:
+            return True
+        else:
+            return False
+    def WaitResults(self):
+        wait = WebDriverWait(self.driver, 20)
+        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.dfd-results-grid")))
+        #wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.flex.p-3")))

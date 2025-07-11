@@ -92,7 +92,7 @@ class BaseScraper(ABC):
             return link
     @abstractmethod
     def check_Results(self) -> bool:
-        """Checks to see if the web page spits out '0 exact matches found
+        """Checks to see if the web page spits out '0 exact matches found'
         :returns: False if the web page spits out '0 exact matches found,
         True otherwise"""
     @abstractmethod

@@ -211,7 +211,7 @@ def get_top_3_ebay(item_query, terms):
     driver.quit()
     return listings
 if __name__ == "__main__":
-    products, terms, SKU = ImportCSv('PartsList/Cummins Parts July9.csv')
+    products, terms, SKU = ImportCSv('PartsList/2020 Crate WIP - Good One.csv')
     spread = []
 
     # Iterating through each product from the imported list
@@ -241,7 +241,7 @@ if __name__ == "__main__":
             df = pd.DataFrame(spread)
             Append_Results_CSV(df)  # < ------- Updating the CSV file
         else:
-            #Append listings with no average anyways so that way they are easier to align with
+            #Append listings with no average anyway so that way they are easier to align with
             spread.append((number, item, term, f"No price listings for average"))
 
 

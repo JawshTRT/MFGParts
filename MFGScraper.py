@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Web_Class.WebScrapers import (EbayScraper, GoogleScraper)
+from Web_Class.WebScrapers import (EbayScraper, GoogleScraper, PartsRus)
 import pandas as pd
 import time
 import inflect
@@ -211,11 +211,11 @@ if __name__ == "__main__":
         # Initializing scrapers with their respective terms
         Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
 
-        GooScrape = GoogleScraper(term, headless=False)
+        Partscraper = PartsRus(term, headless=False)
 
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
-        results = GooScrape.scrape(item, 6) # <----Scrape with the parsed string
+        results = Partscraper.scrape(item, 6) # <----Scrape with the parsed string
 
         for result in results:
             result['SKU'] = str(number)

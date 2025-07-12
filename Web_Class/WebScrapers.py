@@ -244,12 +244,12 @@ class PartsRus(BaseScraper):
         return {"price": price, "title": title, "condition": condition, "brand": brand, "url": url}
 
     def check_Results(self):
-        no_match = self.driver.find_element(By.CSS_SELECTOR, "div.dfd-title-xl")
+        no_match = self.driver.find_elements(By.XPATH, '//*[@id="dfd-tabs-j7uqz"]/div[2]/div/div[1]')
 
         if no_match:
-            return True
-        else:
             return False
+        else:
+            return True
     def WaitResults(self):
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product")))

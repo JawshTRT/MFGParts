@@ -215,5 +215,36 @@ class IndustPartsResults(BaseScraper):
             return False
     def WaitResults(self):
         wait = WebDriverWait(self.driver, 20)
-        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.dfd-results-grid")))
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.dfd-results-grid")))
         #wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.flex.p-3")))
+class GoogleScraper(BaseScraper):
+
+    def get_search_url(self, query):
+        return f"https://www.google.com/search?tbm=shop&q={query.replace(" ", "+")}"
+
+    def select_result_items(self):
+        return self.driver.find_elements(By.CSS_SELECTOR, "div.njFjte")
+
+    def parse_item(self, element) -> dict:
+
+        title = element.find_element(By.CSS_SELECTOR, "div.gkQHve.SsM98d.RmEs5b").text
+
+        price = element.find_element(By.CSS_SELECTOR, "div.lmQWe").text
+
+        url = element.find_element(By.CSS_SELECTOR, "div.VeBrne").get_attribute("src")
+
+        merchant = element.find_element(By.CSS_SELECTOR, "span.WJMUdc.rw5ecc").text
+
+        return {"title": title, "price": price, "url": url, "condition": "New", "brand": merchant}
+
+    def check_Results(self):
+        no_match = self.driver.find_element(By.CSS_SELECTOR, "div.sh-np__message")
+        if no_match:
+            return True
+        else:
+            return False
+
+    def WaitResults(self):
+        wait = WebDriverWait(self.driver, 20)
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.sh-dgr__grid-result, div.sh-dlr__list-result")))
+

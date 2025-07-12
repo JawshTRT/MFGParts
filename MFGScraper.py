@@ -40,15 +40,6 @@ def Driver_Init():
     "Intel Iris OpenGL Engine",
             fix_hairline=True)
     return driver
-def USD_Convert(price):
-    """
-    Converts any non USD price to USD
-    :param price:
-        The price to be converted
-    :return:
-    """
-    if price[1:0] != '$':
-        pass
 def ImportCSv(filename):
     """Reads the respective csv file
     :param filename:

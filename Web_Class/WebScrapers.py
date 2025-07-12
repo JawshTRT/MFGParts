@@ -248,3 +248,4 @@ class GoogleScraper(BaseScraper):
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.sh-dgr__grid-result, div.sh-dlr__list-result")))
 
+

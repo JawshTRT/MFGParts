@@ -236,7 +236,7 @@ class PartsRus(BaseScraper):
 
     def parse_item(self, element) -> dict:
         price = element.find_element(By.CSS_SELECTOR, "div.dfd-card-pricing").text
-        title = element.find_elemnt(By.CSS_SELECTOR, "div.dfd-card-content.dfd-card-flex").text
+        title = element.find_elemnt(By.CSS_SELECTOR, "div.dfd-card-title").text
         url = element.find_element(By.CSS_SELECTOR, "a.dfd-card-link").get_attribute("href")
         brand = "N/A"
         condition = "Used"

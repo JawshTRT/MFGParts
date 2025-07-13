@@ -1,11 +1,6 @@
 from abc import ABC, abstractmethod
 from selenium import webdriver
-from selenium.common import TimeoutException
 from selenium_stealth import stealth
-from selenium.webdriver.remote.webelement import WebElement
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
 
 
 # Inheriting from abstract class

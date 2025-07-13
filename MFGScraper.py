@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Web_Class.WebScrapers import (EbayScraper, MotionScraper, MScraper, IndustPartsResults)
+from Web_Class.WebScrapers import (EbayScraper, GoogleScraper, PartsRus)
 import pandas as pd
 import time
 import inflect
@@ -40,15 +40,6 @@ def Driver_Init():
     "Intel Iris OpenGL Engine",
             fix_hairline=True)
     return driver
-def USD_Convert(price):
-    """
-    Converts any non USD price to USD
-    :param price:
-        The price to be converted
-    :return:
-    """
-    if price[1:0] != '$':
-        pass
 def ImportCSv(filename):
     """Reads the respective csv file
     :param filename:
@@ -220,9 +211,11 @@ if __name__ == "__main__":
         # Initializing scrapers with their respective terms
         Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
 
+        Partscraper = PartsRus(term, headless=False)
+
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
-        results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
+        results = Partscraper.scrape(item, 6) # <----Scrape with the parsed string
 
         for result in results:
             result['SKU'] = str(number)

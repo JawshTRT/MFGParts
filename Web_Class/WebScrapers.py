@@ -197,23 +197,61 @@ class MScraper(BaseScraper):
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.product-list_results__a_env")))
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.flex.p-3")))
-class IndustPartsResults(BaseScraper):
+class GoogleScraper(BaseScraper):
+
     def get_search_url(self, query):
-        return f"https://industrialpartsrus.com/?srsltid=AfmBOop5RMMRoYWsvIsIit0uxuWPSBoRyr_7faWEAw1R8VK5ShwelbaZ#fa57/fullscreen/m=and&q={query.replace(' ', '+')}"
+        return f"https://www.google.com/search?tbm=shop&q={query.replace(" ", "+")}"
+
     def select_result_items(self):
-        return self.driver.find_elements(By.CSS_SELECTOR, "div.dfd-results-grid")
+        return self.driver.find_elements(By.CSS_SELECTOR, "div.njFjte")
+
     def parse_item(self, element) -> dict:
-        title = element.find_element(By.CSS_SELECTOR, "div.dfd-card-title").text
-        price = element.find_element(By.CSS_SELECTOR, "div.dfd-card-pricing span.dfd-card-price").text
-        url = element.find_element(By.CSS_SELECTOR, "a.dfd-card-link").get_attribute("href")
-        return {'title': title, 'price': price, 'url': url, 'condition': 'used'}
+
+        title = element.find_element(By.CSS_SELECTOR, "div.gkQHve.SsM98d.RmEs5b").text
+
+        price = element.find_element(By.CSS_SELECTOR, "div.lmQWe").text
+
+        url = element.find_element(By.CSS_SELECTOR, "div.VeBrne").get_attribute("src")
+
+        merchant = element.find_element(By.CSS_SELECTOR, "span.WJMUdc.rw5ecc").text
+
+        return {"title": title, "price": price, "url": url, "condition": "New", "brand": merchant}
+
     def check_Results(self):
-        no_match = self.driver.find_element(By.XPATH, "//*[@id='dfd-tabs-4C6j6']/div[2]/div/div[1]")
+        no_match = self.driver.find_element(By.CSS_SELECTOR, "div.sh-np__message")
         if no_match:
             return True
         else:
             return False
+
     def WaitResults(self):
         wait = WebDriverWait(self.driver, 20)
-        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.dfd-results-grid")))
-        #wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.flex.p-3")))
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.sh-dgr__grid-result, div.sh-dlr__list-result")))
+class PartsRus(BaseScraper):
+    def get_search_url(self, query):
+        return f"https://industrialpartsrus.com/?srsltid=AfmBOopYYG5XsWnubPElCRUwab2t-aMUEQPwnnVVt3BJdADFQVJ6hz99#fa57/fullscreen-brand-categories/m=and&q={query.replace(' ', '+')}"
+
+    def select_result_items(self):
+        return self.driver.find_elements(By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product ")
+
+    def parse_item(self, element) -> dict:
+        price = element.find_element(By.CSS_SELECTOR, "div.dfd-card-pricing").text
+        title = element.find_elemnt(By.CSS_SELECTOR, "div.dfd-card-content.dfd-card-flex").text
+        url = element.find_element(By.CSS_SELECTOR, "a.dfd-card-link").get_attribute("href")
+        brand = "N/A"
+        condition = "Used"
+
+        return {"price": price, "title": title, "condition": condition, "brand": brand, "url": url}
+
+    def check_Results(self):
+        no_match = self.driver.find_elements(By.XPATH, '//*[@id="dfd-tabs-j7uqz"]/div[2]/div/div[1]')
+
+        if no_match:
+            return False
+        else:
+            return True
+    def WaitResults(self):
+        wait = WebDriverWait(self.driver, 20)
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product")))
+
+

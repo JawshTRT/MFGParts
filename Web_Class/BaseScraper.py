@@ -157,8 +157,11 @@ class BaseScraper(ABC):
                 # Add to list to search on another site
                 noresults.append(result)
 
+        #Finally quitting the driver
+        self.driver.quit()
         # If there were no results appended to clean results then we need to skip the part and scrape on a different site
         if len(CleanResults) == 0:
+
             return []
         else:
             return CleanResults[:n] # < -- returning the first 'n' clean results

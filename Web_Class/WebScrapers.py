@@ -229,14 +229,14 @@ class GoogleScraper(BaseScraper):
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.sh-dgr__grid-result, div.sh-dlr__list-result")))
 class PartsRus(BaseScraper):
     def get_search_url(self, query):
-        return f"https://industrialpartsrus.com/?srsltid=AfmBOopYYG5XsWnubPElCRUwab2t-aMUEQPwnnVVt3BJdADFQVJ6hz99#fa57/fullscreen-brand-categories/m=and&q={query.replace(' ', '+')}"
+        return f"https://industrialpartsrus.com/?srsltid=AfmBOopRCnIgBVR3jZdsmfy76VRLdIJ-6f7FAfAwmQhGonEKU1DA1RMR#fa57/fullscreen/m=or&q={query.replace(' ', '+')}"
 
     def select_result_items(self):
         return self.driver.find_elements(By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product ")
 
     def parse_item(self, element) -> dict:
-        price = element.find_element(By.CSS_SELECTOR, "div.dfd-card-pricing").text
-        title = element.find_elemnt(By.CSS_SELECTOR, "div.dfd-card-title").text
+        price = element.find_element(By.CSS_SELECTOR, "span.dfd-card-price").text
+        title = element.find_element(By.CSS_SELECTOR, "div.dfd-card-title").text
         url = element.find_element(By.CSS_SELECTOR, "a.dfd-card-link").get_attribute("href")
         brand = "N/A"
         condition = "Used"
@@ -253,5 +253,7 @@ class PartsRus(BaseScraper):
     def WaitResults(self):
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product")))
+
+
 
 

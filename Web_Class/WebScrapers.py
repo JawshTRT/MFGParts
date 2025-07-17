@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
 from selenium.webdriver.common.by import By
+import time
 class EbayScraper(BaseScraper):
     """
     Inherits from the BaseScraper abstract base class
@@ -251,8 +252,29 @@ class PartsRus(BaseScraper):
         else:
             return True
     def WaitResults(self):
+
+        # 1) Wait for the results container to appear
         wait = WebDriverWait(self.driver, 20)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product")))
+        container = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.dfd-content[id^='df-hook-results']")))
+
+        # 2) now wait until at least one product card is inside it
+        wait.until(lambda d: len(container.find_elements(By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product")) > 0)
+
+        last_height = self.driver.execute_script("return arguments[0].scrollHeight", container)
+        for _ in range(20):
+
+            self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", container)
+            time.sleep(0.3)
+
+            new_height = self.driver.execute_script("return arguments[0].scrollHeight", container)
+            # Scrolling to the bottom of the web page or at least until the max iterations
+
+            if new_height == last_height:
+                # Break out if the new scroll height is the same of the last meaning we couldn't scroll any further
+                break
+            last_height = new_height
+
+
 
 
 

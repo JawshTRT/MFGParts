@@ -202,7 +202,7 @@ def get_top_3_ebay(item_query, terms):
     driver.quit()
     return listings
 if __name__ == "__main__":
-    products, terms, SKU = ImportCSv('PartsList/2020 Crate WIP - Good One.csv')
+    products, terms, SKU = ImportCSv('PartsList/Remaining 2020 Crate WIP2.csv')
     spread = []
 
     # Iterating through each product from the imported list
@@ -210,14 +210,17 @@ if __name__ == "__main__":
 
         # Initializing scrapers with their respective terms
         Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
-        Partscraper = PartsRus(term, headless=True)
+
+        Partscraper = PartsRus(term, headless=False)
 
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
         results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
-        if len(results) <= 0:
-            print("No results found on Ebay scraping on Industrial parts R us")
+
+        if len(results) == 0:
+            print("No results found searching on industrial parts R us")
             results = Partscraper.scrape(item, 6)
+
         for result in results:
             result['SKU'] = str(number)
             # result['Id'] = str(Id)

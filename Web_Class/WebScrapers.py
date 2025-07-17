@@ -261,7 +261,7 @@ class PartsRus(BaseScraper):
         wait.until(lambda d: len(container.find_elements(By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product")) > 0)
 
         last_height = self.driver.execute_script("return arguments[0].scrollHeight", container)
-        for _ in range(20):
+        for _ in range(10): # Should only scroll for the first 10 times to a avoid a timeout error
 
             self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", container)
             time.sleep(0.3)

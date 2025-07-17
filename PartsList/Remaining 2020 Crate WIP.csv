@@ -1,42 +1,232 @@
-Number,Type,SKU,Name,Attribute 1 name,Attribute 1 value(s),Attribute 2 name,Attribute 2 value(s),Attribute 3 name,Attribute 3 value(s),Attribute 4 name,Attribute 4 value(s),Attribute 5 name,Attribute 5 value(s),Weight,Stock,Regular Price,Images,Attribute 1 visible,Attribute 1 global,Attribute 2 visible,Attribute 2 global,Attribute 3 visible,Attribute 3 global,Attribute 2 visible,Attribute 4 global,Published,Visibility in catalog,In stock?
-1,simple,231-003-0002,Cosmo Air Leak Tester LS-1840H15,Brand,Cosmo,Product Type,Air Leak Tester,Model,LS-1840H15,Location,2020C3,eBay ID,-,,4,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0001.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0002.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0003.jpg",1,1,1,1,1,1,1,1,1,visible,1
-2,simple,031-001-0705,Denso Robot Controller RC5-AM6B-BN,Brand,Denso,Product Type,Robot Controller,Model,RC5-AM6B-BN,Location,2020C3,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0004.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0005.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0006.jpg",1,1,1,1,1,1,1,1,1,visible,1
-4,simple,MFG-000-2141,Mitsubishi Graphic Operation Terminal GT1562-VNBA,Brand,Mitsubishi,Product Type,Graphic Operation Terminal,Model,GT1562-VNBA,Location,2020C3,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0010.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0011.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0012.jpg",1,1,1,1,1,1,1,1,1,visible,1
-6,simple,MFG-000-2143,Allen-Bradley Operator Interface 2711-B6C20,Brand,Allen-Bradley,Product Type,Operator Interface,Model,2711-B6C20,Location,2020C3,eBay ID,-,,3,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0016.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0017.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0018.jpg",1,1,1,1,1,1,1,1,1,visible,1
-8,simple,MFG-000-2145,Eclipse Manual Reset Shut-Off Valve 206LI-1S-3,Brand,Eclipse,Product Type,Manual Reset Shut-Off Valve,Model,206LI-1S-3,Location,2020C3,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0022.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0023.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0024.jpg",1,1,1,1,1,1,1,1,1,visible,1
-9,simple,005-022-0003,"=F8&"" ""&H8&"" ""&J8",Brand,Star,Product Type,Relay Output Module / PCB,Model,IL401,Location,2020C3,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0025.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0026.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0027.jpg",1,1,1,1,1,1,1,1,1,visible,1
-11,simple,MFG-000-2147,Penn Pressure Control Switch High Pressure All-Range,Brand,Penn,Product Type,Pressure Control Switch,Model,High Pressure All-Range,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0031.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0032.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0033.jpg",1,1,1,1,1,1,1,1,1,visible,1
-12,simple,MFG-000-2148,Norgren Electronic Pressure Switch 33D (0863214 Ver. B),Brand,Norgren,Product Type,Electronic Pressure Switch,Model,33D (0863214 Ver. B),Location,2020C3_LC1,eBay ID,-,,3,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0034.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0035.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0036.jpg",1,1,1,1,1,1,1,1,1,visible,1
-15,simple,MFG-000-2150,SMC Clutch Pressure Switch PSP-230CB-X1,Brand,SMC,Product Type,Clutch Pressure Switch,Model,PSP-230CB-X1,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0043.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0044.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0045.jpg",1,1,1,1,1,1,1,1,1,visible,1
-16,simple,008-005-0404,"=F14&"" ""&H14&"" ""&J14",Brand,IFM,Product Type,Photoelectric Sensor,Model,OGE-HB0A/LS-100,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0046.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0047.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0048.jpg",1,1,1,1,1,1,1,1,1,visible,1
-17,simple,MFG-000-2151,IFM Laser Photoelectric Sensor OGELFNKG/V4A/US,Brand,IFM,Product Type,Laser Photoelectric Sensor,Model,OGELFNKG/V4A/US,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0049.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0050.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0051.jpg",1,1,1,1,1,1,1,1,1,visible,1
-18,simple,MFG-000-2152,IFM Photoelectric Sensor OG0030 (OGS-00OALS-100),Brand,IFM,Product Type,Photoelectric Sensor,Model,OG0030 (OGS-00OALS-100),Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0052.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0053.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0054.jpg",1,1,1,1,1,1,1,1,1,visible,1
-19,simple,MFG-000-2153,Sanwa Denki Pressure Switch SPS-8T,Brand,Sanwa Denki,Product Type,Pressure Switch,Model,SPS-8T,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0055.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0056.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0057.jpg",1,1,1,1,1,1,1,1,1,visible,1
-20,simple,MFG-000-2154,IDEC Key Selector Switch ASN3K11-RA,Brand,IDEC,Product Type,Key Selector Switch,Model,ASN3K11-RA,Location,2020C3_LC1,eBay ID,-,,3,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0058.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0059.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0060.jpg",1,1,1,1,1,1,1,1,1,visible,1
-22,simple,MFG-000-2156,Honeywell Gas Pressure Switch 81408276-004-06,Brand,Honeywell,Product Type,Gas Pressure Switch,Model,81408276-004-06,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0064.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0065.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0066.jpg",1,1,1,1,1,1,1,1,1,visible,1
-24,simple,MFG-000-2158,Sharp - FLQ05416-BPAA,Brand,Sharp,Product Type,-,Model,FLQ05416-BPAA,Location,2020C3,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0070.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0071.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0072.jpg",1,1,1,1,1,1,1,1,1,visible,1
-25,simple,MFG-000-2159,"=F22&"" ""&H22&"" ""&J22",Brand,SMC,Product Type,Pressure Switch,Model,ISG120-030-X3,Location,2020C3_LC1,eBay ID,-,,2,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0073.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0074.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0075.jpg",1,1,1,1,1,1,1,1,1,visible,1
-27,simple,MFG-000-2161,Kuroda Air Line Filter F02W-02,Brand,Kuroda,Product Type,Air Line Filter,Model,F02W-02,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0079.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0080.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0081.jpg",1,1,1,1,1,1,1,1,1,visible,1
-28,simple,MFG-000-2162,"=F26&"" ""&H26&"" ""&J26",Brand,-,Product Type,Hazardous Location Indicator Light,Model,Type 4.13,Location,2020C3_LC1,eBay ID,-,,2,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0082.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0083.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0084.jpg",1,1,1,1,1,1,1,1,1,visible,1
-30,simple,MFG-000-2164,IFM Photoelectric Sensor OT5010 OTE-FNKG/US,Brand,IFM,Product Type,Photoelectric Sensor,Model,OT5010 OTE-FNKG/US,Location,2020C3_LC1,eBay ID,,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0088.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0089.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0090.jpg",1,1,1,1,1,1,1,1,1,visible,1
-34,simple,085-012-0135,Accu-Coder Rotary Encoder 711-0024-S-S-S-S-6-G10-00-N,Brand,Accu-Coder,Product Type,Rotary Encoder,Model,711-0024-S-S-S-S-6-G10-00-N,Location,2020C3,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0100.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0101.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0102.jpg",1,1,1,1,1,1,1,1,1,visible,1
-36,simple,008-005-0385,Banner Engineering Photo Sensor SMW915DSR,Brand,Banner Engineering,Product Type,Photo Sensor,Model,SMW915DSR,Location,2020C3,eBay ID,-,,3,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0106.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0107.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0108.jpg",1,1,1,1,1,1,1,1,1,visible,1
-38,simple,008-002-0145,Taiyo Reed Switch BR255,Brand,Taiyo,Product Type,Reed Switch,Model,BR255,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0112.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0113.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0114.jpg",1,1,1,1,1,1,1,1,1,visible,1
-39,simple,008-002-0108,CKD Auto Switch 200MA/24VDC,Brand,CKD,Product Type,Auto Switch,Model,200MA/24VDC,Location,2020C3_LC1,eBay ID,-,,2,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0115.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0116.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0117.jpg",1,1,1,1,1,1,1,1,1,visible,1
-40,simple,008-002-0138,CKD Auto Switch 89810,Brand,CKD,Product Type,Auto Switch,Model,89810,Location,2020C3_LC1,eBay ID,-,,2,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0118.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0119.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0120.jpg",1,1,1,1,1,1,1,1,1,visible,1
-41,simple,008-003-0195,- Pressure Sensor KPM11R34M5112-H01,Brand,-,Product Type,Pressure Sensor,Model,KPM11R34M5112-H01,Location,2020C3_LC1,eBay ID,-,,2,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0121.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0122.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0123.jpg",1,1,1,1,1,1,1,1,1,visible,1
-42,simple,008-005-0358,Banner Photo Sensor SMA31EQD,Brand,Banner,Product Type,Photo Sensor,Model,SMA31EQD,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0124.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0125.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0126.jpg",1,1,1,1,1,1,1,1,1,visible,1
-44,simple,008-002-0083,PHD Auto Switch 18884501,Brand,PHD,Product Type,Auto Switch,Model,###############################################################################################################################################################################################################################################################,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0130.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0131.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0132.jpg",1,1,1,1,1,1,1,1,1,visible,1
-45,simple,MFG-000-2166,Cosmo Air Leak Tester Manual Kit LS-R900,Brand,Cosmo,Product Type,Air Leak Tester Manual Kit,Model,LS-R900,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0133.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0134.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0135.jpg",1,1,1,1,1,1,1,1,1,visible,1
-46,simple,MFG-000-2167,Omron Connector Block XM2S-37,Brand,Omron,Product Type,Connector Block,Model,XM2S-37,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0136.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0137.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0138.jpg",1,1,1,1,1,1,1,1,1,visible,1
-47,simple,008-005-0418,IFM Photo Sensor OJ5036,Brand,IFM,Product Type,Photo Sensor,Model,OJ5036,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0139.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0140.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0141.jpg",1,1,1,1,1,1,1,1,1,visible,1
-51,simple,008-005-0222,IFM Photo Sensor OT5011 OTR-FPKG,Brand,IFM,Product Type,Photo Sensor,Model,OT5011 OTR-FPKG,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0151.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0152.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0153.jpg",1,1,1,1,1,1,1,1,1,visible,1
-52,simple,008-003-0075,"=F46&"" ""&H46&"" ""&J46",Brand,-,Product Type,Pressure Switch,Model,632-02858-01,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0154.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0155.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0156.jpg",1,1,1,1,1,1,1,1,1,visible,1
-53,simple,008-002-0133,Parker Auto Switch SMD-1LC,Brand,Parker,Product Type,Auto Switch,Model,SMD-1LC,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0157.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0158.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0159.jpg",1,1,1,1,1,1,1,1,1,visible,1
-58,simple,MFG-000-2172,Omron Pushbutton Switch A3SA-708,Brand,Omron,Product Type,Pushbutton Switch,Model,A3SA-708,Location,2020C3_LC1,eBay ID,-,,5,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0172.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0173.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0174.jpg",1,1,1,1,1,1,1,1,1,visible,1
-59,simple,MFG-000-2173,Humphrey Proximity Sensor CS4MB,Brand,Humphrey,Product Type,Proximity Sensor,Model,CS4MB,Location,2020C3_LC1,eBay ID,-,,6,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0175.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0176.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0177.jpg",1,1,1,1,1,1,1,1,1,visible,1
-62,simple,MFG-000-2176,Taco Pressure Sensor NPS-030-10,Brand,Taco,Product Type,Pressure Sensor,Model,NPS-030-10,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0184.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0185.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0186.jpg",1,1,1,1,1,1,1,1,1,visible,1
-63,simple,005-025-0048,Nissei Glass Protector 09525KX0919-11,Brand,Nissei,Product Type,Glass Protector,Model,09525KX0919-11,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0187.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0188.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0189.jpg",1,1,1,1,1,1,1,1,1,visible,1
-65,simple,008-002-0135,SMC Auto Switch Mount BA70404,Brand,SMC,Product Type,Auto Switch Mount,Model,BA70404,Location,2020C3_LC1,eBay ID,-,,4,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0193.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0194.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0195.jpg",1,1,1,1,1,1,1,1,1,visible,1
-66,simple,008-012-0010,IFM Angle Bracket E20461,Brand,IFM,Product Type,Angle Bracket,Model,E20461,Location,2020C3_LC1,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0196.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0197.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0198.jpg",1,1,1,1,1,1,1,1,1,visible,1
-67,simple,217-001-0277,- Knife Fly Set 406.13290.04-REPAIR,Brand,-,Product Type,Knife Fly Set,Model,406.13290.04-REPAIR,Location,2020C3,eBay ID,-,,1,,"https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0199.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0200.jpg, https://mfgpartsplus.com/wp-content/uploads/2025/07/C2020-25-0201.jpg",1,1,1,1,1,1,1,1,1,visible,1
+Stock,SKU,Brand,Product Type,Model,Location,Description
+4,231-003-0002,Cosmo,Air Leak Tester,LS-1840H15,2020C3,"- Power Supply: AC 115V
+- Manufacturer: Cosmo Instruments Co., Ltd.
+- Model: LS-1840H15"
+1,031-001-0705,Denso,Robot Controller,RC5-AM6B-BN,2020C3,"- Power Input: 3PH 200–230V 50/60Hz; 1PH 230V 50/60Hz
+- Capacity: 1.5 kVA
+- Output: 1000W
+- Weight: 19 kg
+- Operating Temperature: 0–40°C
+- Humidity Range: Under 90% RH"
+1,-,Allen-Bradley,Operator Interface,2711-B5A8,2020C3,"- Input Voltage: 100–240 VAC
+- Current: 0.25–0.15 A
+- Frequency: 50/60 Hz
+- Power Consumption: 36 VA
+- UL/CE Listed for Hazardous Locations (Class I, Div 2; Class II, III)"
+1,-,Mitsubishi,Graphic Operation Terminal,GT1562-VNBA,2020C3,"- Input Voltage: 100–240 VAC, 50/60Hz
+- Power Consumption: Max 11.0 VA
+- Series: GT15
+- Backlight Type: GT15-60VLTN
+- Made in Japan"
+1,-,Allen-Bradley,Operator Interface,2711-B6C20X,2020C3,"- Input Voltage: 100–240 VAC
+- Current: 0.6–0.3 A
+- Frequency: 50/60 Hz
+- Power: 60 VA
+- Ports: RS-232, Ethernet 10/100
+- Enclosure: IP65 or IP54 (indoor use only)
+- Certification: UL, CE, Class I Zone 2 Group IIC"
+3,-,Allen-Bradley,Operator Interface,2711-B6C20,2020C3,"- Input Voltage: 100–240 VAC
+- Current: 0.6–0.3 A
+- Frequency: 50/60 Hz
+- Power: 60 VA
+- Ports: RS-232, Ethernet 10/100
+- Enclosure: IP65 or IP54 (indoor use only)
+- Certification: UL, CE, Class I Zone 2 Group IIC"
+1,-,Allen-Bradley,Operator Interface,2711-B6C16,2020C3,"- Input Voltage: 100–240 VAC
+- Current: 0.6–0.3 A
+- Frequency: 50/60 Hz
+- Power: 60 VA
+- Ports: RS-232
+- Enclosure: IP65 or IP54 (indoor use only)
+- Certification: UL, CE, Class I Zone 2 Group IIC"
+1,-,Eclipse,Manual Reset Shut-Off Valve,206LI-1S-3,2020C3,"- Voltage: 120V, 1 Phase
+- Holding VA: 15
+- Frequency: 60 Hz (AC)
+- Pipe Size: 1.5 in.
+- Max Operating Pressure: 30 PSIG
+- Certifications: UL, FM, CSA
+- Ambient Temperature Rating: 125°F"
+1,005-022-0003,Star,Relay Output Module / PCB,IL401,2020C3,"- Relay Output Board
+- Markings: IL401, DSM102X10
+- Designed for integration with PLC or control systems"
+7,-,Omron,Photoelectric Sensor,E3C-T1A,2020C3_LC1,"- Operating Voltage: 12–24 VDC
+- Cable Length: 2m
+- Sensor Type: Reflective
+- Country of Origin: Japan"
+1,-,Penn,Pressure Control Switch,High Pressure All-Range,2020C3_LC1,"- Pressure Range: 150–450 PSI
+- Type: Manual Reset
+- Application: Refrigeration or high-pressure systems"
+3,-,Norgren,Electronic Pressure Switch,33D (0863214 Ver. B),2020C3_LC1,"- Supply Voltage: 10–32 VDC
+- Max Pressure: 30 bar
+- Adjustable Range: 0–16 bar
+- Output Current: Max 0.5 A
+- Operating Temp: -10 to +60 °C"
+3,-,Keyence,Photoelectric Sensor Amplifier,FS-V21,2020C3_LC1,"- Power Supply: 12–24 VDC
+- Output: NPN, Max 100 mA
+- Sensitivity adjustment via digital interface
+- Includes fiber optic sensor connection"
+2,008-003-0136,Keyence,Pressure Switch,AP-40,2020C3_LC1,"- Operating Voltage: 12–24 VDC
+- Output 1: Digital
+- Output 2: Digital
+- Analog Output: Present
+- AP Series"
+1,-,SMC,Clutch Pressure Switch,PSP-230CB-X1,2020C3_LC1,"- Proof Pressure: 1.5 MPa
+- Voltage Rating: AC 250V, 10A
+- Set Pressure: ON at 0.45 MPa, OFF at 0.35 MPa
+- Pressure Range: 0.05–0.7 MPa
+- Differential Range: 0.1–0.3 MPa
+- Country of Origin: Japan"
+1,008-005-0404,IFM,Photoelectric Sensor,OGE-HB0A/LS-100,2020C3_LC1,"- Sensor Type: Photoelectric
+- Voltage Range: 10–30 VDC
+- Housing: Cylindrical, threaded
+- Protection Rating: IP67"
+1,-,IFM,Laser Photoelectric Sensor,OGELFNKG/V4A/US,2020C3_LC1,"- Laser Class: 2
+- Wavelength: 675 nm
+- Power: ?1 mW
+- Pulse: ?2.2 mW
+- Frequency: 1.2 kHz
+- Pulse width: 25 µs"
+1,-,IFM,Photoelectric Sensor,OG0030 (OGS-00OALS-100),2020C3_LC1,"- Type: Diffuse reflection sensor
+- Sensor Family: effector200
+- Manufacturer: ifm electronic gmbh
+- Country of Origin: Germany
+- UL Certified"
+1,-,Sanwa Denki,Pressure Switch,SPS-8T,2020C3_LC1,"- Set Pressure: ON at 0.10 MPa, OFF at 0.13 MPa
+- Voltage Rating: AC250/125V, DC100/24V
+- Contact Ratings: 5/10A (AC), 1/5A (DC)"
+3,-,IDEC,Key Selector Switch,ASN3K11-RA,2020C3_LC1,"- Key-operated rotary selector switch
+- Maintained 2-position
+- Mounting diameter: 22 mm
+- CE Certified"
+1,-,IFM,Electronic Pressure Sensor,PN5204,2020C3_LC1,"- Voltage Range: 18–30 VDC
+- Output Current: 250 mA
+- Pressure Range: -14.5 to 145 PSI
+- Port: 1/4"" NPT
+- Housing: Stainless steel
+- Country of Origin: Germany"
+1,-,Honeywell,Gas Pressure Switch,81408276-004-06,2020C3_LC1,"- Electrical Rating: 30AFL / 18A @ 120/240VAC
+- Temperature Range: -40°F to 140°F (-40°C to 60°C)
+- Certifications: UL, FM, CSA
+- Application: Heating/Cooling Appliance Switch
+- Country of Origin: Japan"
+1,-,IFM,Photoelectric Sensor,OT5011 OTR-FPKG,2020C3_LC1,"- Operating Voltage: 10–55 VDC
+- Output Current: 250 mA
+- Protection Rating: IP67
+- Sensing Distance: up to 5 m
+- Housing Material: Plastic
+- Country of Origin: Germany"
+1,-,Sharp,-,FLQ05416-BPAA,2020C3,"- Label ID: LQ0DDB5367
+- Quantity: 1
+- Lot Date: 12.06.25
+- No identifiable product branding or specs"
+2,-,SMC,Pressure Switch,ISG120-030-X3,2020C3_LC1,"- Proof Pressure: 1.5 MPa
+- Set Pressure: ON at 0.38 MPa, OFF at 0.35 MPa
+- Pressure Range: 0.02–0.7 MPa
+- Differential Range: 0.02–0.35 MPa
+- Country of Origin: Japan"
+1,-,Sanwa Denki,Pressure Switch,SPS-8WP,2020C3_LC1,"- Set Pressure: ON at 1.0 MPa, OFF at 0.8 MPa
+- Voltage Rating: AC250V 5A, DC100V 1A
+- Metal body with wire leads"
+1,-,Kuroda,Air Line Filter,F02W-02,2020C3_LC1,"- Operating Pressure Range: 0.8–1.0 MPa
+- Port Size: 1/4""
+- Used for compressed air filtration
+- Industrial pneumatic applications"
+2,-,-,Hazardous Location Indicator Light,Type 4.13,2020C3_LC1,"- Certification: UL Listed A196
+- Suitable for: Class I, Groups A, B, C, D or Div. 2 Loc
+- Markings: Ex nW IIC T5, DEMKO 97.122018U
+- Standard: IEC 947-5-1"
+2,-,IFM,Laser Photoelectric Sensor,OJ5039,2020C3_LC1,"- Sensing Distance: 15 m
+- Operating Voltage: 10–30 VDC
+- Output Current: 200 mA (max)
+- Protection: IP67
+- Class 1 Laser Product
+- Country of Origin: Germany"
+1,-,SMC,Pressure Sensor Controller,PSE101-B,2020C3_LC1,"- Input: 1–5V or 4–20 mA
+- Measurement Range: 0–1 MPa
+- Alternate Range: -760 mmHg to 101 kPa
+- Output: Dual PNP (max 80 mA each)
+- Supply Voltage: 12–24V DC
+- Mounting: DIN rail or panel"
+14,008-005-0020,Omron,Photoelectric Switch,E3S-2LB4,2020C3,"- Operating Voltage: 12–24V DC
+- LED Indicator for status
+- Compact rectangular housing
+- Wiring: Brown, Blue, Pink (standard 3-wire)
+- Sensing Type: Reflective"
+2,008-007-0167,Allen-Bradley,Push Button Unit,800H-R6A,2020C3,"- Button Type: Push-to-activate
+- Enclosure Type: 4, 4X, 13
+- Series: F
+- Color: Green
+- Heavy-duty pilot-duty rated
+- Locking ring bezel"
+1,085-012-0135,Accu-Coder,Rotary Encoder,711-0024-S-S-S-S-6-G10-00-N,2020C3,"- 5–28 VDC input
+- 12 PPR
+- 0.375” shaft
+- Single-turn absolute
+- Tethered mounting"
+4,008-005-0203,Omron,Photoelectric Switch,E3S-AT16,2020C3,"- 10–30 VDC
+- 4-wire configuration
+- Output via pin 4
+- CE marked"
+3,008-005-0385,Banner Engineering,Photo Sensor,SMW915DSR,2020C3,"- 12–28 V AC/DC input
+- 50 mA current draw
+- SPDT relay
+- 120V AC / 30V DC switching"
+3,008-003-0176,Norgren,Pressure Sensor,33D,2020C3,"- 10–32 VDC
+- ±1 bar pressure range
+- 2 outputs
+- Max 10 bar
+- Max current: 0.5 A"
+1,008-002-0145,Taiyo,Reed Switch,BR255,2020C3_LC1,"- Operating voltage: 20–50 VDC
+- Compact square metal housing with prewired cable
+- Suitable for cylinder or actuator position detection"
+2,008-002-0108,CKD,Auto Switch,200MA/24VDC,2020C3_LC1,"- Rated 200 mA / 24 VDC
+- 3-wire configuration
+- Stripped wire leads"
+2,008-002-0138,CKD,Auto Switch,89810,2020C3_LC1,"- General-purpose auto switch
+- Standard 3-wire cable
+- Use with pneumatic actuators"
+2,008-003-0195,-,Pressure Sensor,KPM11R34M5112-H01,2020C3_LC1,"- Low pressure sensor type
+- Cable-connected with molded strain relief
+- Gray jacketed wire"
+1,008-005-0358,Banner,Photo Sensor,SMA31EQD,2020C3_LC1,"- Mini-Beam series emitter
+- 24–250 VAC operation
+- 3-pin quick disconnect
+- Indicator LEDs for power and operation"
+1,008-002-0160,SMC,Switch,D-F5PL,2020C3_LC1,-
+1,008-002-0083,PHD,Auto Switch,###############################################################################################################################################################################################################################################################,2020C3_LC1,Input: 4.5–24VDC; Load: 100mA Max
+1,-,Cosmo Instruments,Air Leak Tester Accessory Kit,LS-R900,2020C3_LC1,"Includes USB cable, green terminal blocks, and software CD"
+1,-,Omron,Interface Unit,XM2S-37,2020C3_LC1,Connector block for Omron devices (37-pin interface)
+1,008-002-0083,PHD,Auto Switch,###############################################################################################################################################################################################################################################################,2020C3_LC2,"Input: 4.5–24 VDC, Load: 100mA max, Includes connector and wire leads."
+1,008-002-0016,SMC,Switch,D-F5PL,2020C3_LC3,"Cable switch with flat rectangular connector, gray sheath."
+1,-,Cosmo,Air Leak Tester Manual Kit,LS-R900,2020C3_LC1,"Includes CD with operation manuals, data cable, interface connectors, and quality certificate."
+1,-,Omron,Connector Block,XM2S-37,2020C3_LC1,"37-pin connector module, heavy-duty aluminum housing."
+1,008-005-0418,IFM,Photo Sensor,OJ5036,2020C3_LC1,"Range: 8 m, Voltage: 10–30 VDC, Output Current: 200 mA SCP, IP67 rated, Class 1 laser product."
+DUPLICATE?,-,IFM,Laser Sensor,OJ5038,,"10–30VDC, Class 1 laser product, 15m sensing range, IP67."
+1,-,Allen-Bradley,Contact Block,800F-N3R,2020C3_LC1,"Contact Block for push button, Ue: 24V AC/DC, EN/IEC 60947-5-1 compliant."
+1,008-008-0018,Allen-Bradley,Push Button,800FMMT44MX11,2020C3_LC1,"E-stop push button, fits 800F series modules."
+1,-,-,Pressure Sensor,PS-102,2020C3_LC1,"Stainless steel sensor with cable, 3.5 psi range."
+1,008-005-0222,IFM,Photo Sensor,OT5011 OTR-FPKG,2020C3_LC1,"Range: 5 m, Voltage: 10–55 VDC, Output Current: 250 mA SCP, IP67 rated, Includes cable."
+1,008-003-0075,-,Pressure Switch,632-02858-01,2020C3_LC1,"For temperature control system 8412-DX, includes brass adapter and wiring terminals."
+1,008-002-0133,Parker,Auto Switch,SMD-1LC,2020C3_LC1,Compact sensor switch with short wire and mini connector
+1,-,Banner,Photoelectric Sensor,SMA31EQD,2020C3_LC1,"Mini-Beam emitter, 24–240VAC, 3-wire quick-disconnect, yellow plastic housing"
+2,008-005-0367,Omron,Photoelectric Switch,E3JK-5L-US,2020C3_LC1,"Voltage range 24–240VAC / 12–240VDC, red lens, black/white housing"
+2,-,Allen-Bradley,Push Button,800A-M,2020C3_LC1,"Oil-tight type 13, max contact ratings: 1A 125V AC, 1A 250V AC, 1A 28V DC"
+4,008-002-0111,SMC,Auto Switch,D-F59,2020C3_LC1,"Auto switch with gray cable and metal label, typical for pneumatic actuators"
+5,-,Omron,Pushbutton Switch,A3SA-708,2020C3_LC1,"Lamp Max 1.2W, 0.1A 30VDC / 125VAC, black face, Made in Japan"
+6,-,Humphrey,Proximity Sensor,CS4MB,2020C3_LC1,"Magnetic sensor, black housing, wired, labeled “Japan”"
+1,005-025-0048,Nissei,Glass Protector,09525KX0919-11,2020C3_LC1,Overlay panel protector for HMI screens.
+2,-,Omron,Photoelectric Switch,E3JK-5L-US,2020C3_LC1,"24–240VAC / 12–240VDC, rectangular body, diffuse reflective sensor."
+2,-,IFM,Proximity Sensor,OF5021,2020C3_LC1,"Inductive proximity sensor, 10mm sensing range, 10–30VDC, M18 threaded."
+1,-,Taco,Pressure Sensor,NPS-030-10,2020C3_LC1,"Threaded stainless body, Made in Japan, analog output sensor."
+4,008-002-0135,SMC,Auto Switch Mount,BA70404,2020C3_LC1,"- Mounting bracket for auto switch
+- Includes mounting hardware
+- SMC compatible"
+1,008-012-0010,IFM,Angle Bracket,E20461,2020C3_LC1,"- DT photo sensor angle bracket
+- Includes bolts and washers
+- Metal, black coated"
+1,217-001-0277,-,Knife Fly Set,406.13290.04-REPAIR,2020C3,"- Knife fly (3 pcs one set)
+- Labeled as repaired part
+- Industrial application use"
+1,-,Atlas Copco,Re Assembly Qualifier,-,2020C3,"- Operator panel for process qualification
+- Includes RUN/SETUP/ACCEPT/REJECT functions
+- Includes cabling"

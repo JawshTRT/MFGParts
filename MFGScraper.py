@@ -211,16 +211,11 @@ if __name__ == "__main__":
         # Initializing scrapers with their respective terms
         Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
 
-        Partscraper = PartsRus(term, headless=False)
+        #Partscraper = PartsRus(term, headless=False)
 
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
         results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
-
-        if len(results) == 0:
-            print("No results found searching on industrial parts R us")
-            results = Partscraper.scrape(item, 6)
-
         for result in results:
             result['SKU'] = str(number)
             # result['Id'] = str(Id)

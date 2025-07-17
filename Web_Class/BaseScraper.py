@@ -137,12 +137,14 @@ class BaseScraper(ABC):
         #items = self.get_items(3)
         # First check if there are any results
         if not self.check_Results():
+            self.driver.quit()
             return []
         else:
             #Then check if any of the results are fetched
             items = self.get_items(3)
             # If items == 0 it means that there were no exact matches
             if not items:
+                self.driver.quit()
                 return []
             else:
                 # Lastly, check if the results are a match, they first must be parsed into pieces and into list of dictionary

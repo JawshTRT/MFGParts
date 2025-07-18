@@ -254,7 +254,7 @@ class PartsRus(BaseScraper):
     def WaitResults(self):
 
         # 1) Wait for the results container to appear
-        wait = WebDriverWait(self.driver, 20)
+        wait = WebDriverWait(self.driver, 30)
         container = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.dfd-content[id^='df-hook-results']")))
 
         # 2) now wait until at least one product card is inside it

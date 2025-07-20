@@ -72,7 +72,8 @@ class BaseScraper(ABC):
             for attempt in range(0, n+1):
                 print(f"Couldn't find results for {attempt}/{n} retrying")
                 self.driver.quit()
-                self.driver = self.Driver_Init(headless=True)
+                self.driver = self.Driver_Init(headless=False)
+                self.driver.get(self.get_search_url(f"{self.Brand} {self.Part} {self.PartNum}"))
                 link = self.select_result_items()
 
                 #Checking if zero exact matches were found
@@ -137,6 +138,7 @@ class BaseScraper(ABC):
         #items = self.get_items(3)
         # First check if there are any results
         if not self.check_Results():
+            print(f"for: {search_query}")
             self.driver.quit()
             return []
         else:

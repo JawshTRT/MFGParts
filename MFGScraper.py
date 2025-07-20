@@ -62,6 +62,8 @@ def ImportCSv(filename):
     search_terms = []
     terms = []
     for x, y, z in zip(Brand, Part, PartNum):
+
+        # Skip parts that have a hyphenated model number
         if z == '-':
             print(f"No model number found for {x} {y} skipping this part for search")
             continue
@@ -207,12 +209,12 @@ def get_top_3_ebay(item_query, terms):
 if __name__ == "__main__":
     products, terms, SKU, Ids = ImportCSv('PartsList/2015 w_Josh - Work Here.csv')
     spread = []
-
+    toSpread = []
     # Iterating through each product from the imported list
     for item, term, number, Id  in zip(products, terms, SKU, Ids):
 
         # Initializing scrapers with their respective terms
-        Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
+        Escraper = EbayScraper(term, headless=False) # <----Initialize with the terms in the list
 
 
 
@@ -239,11 +241,16 @@ if __name__ == "__main__":
             Append_Results_CSV(df)  # < ------- Updating the CSV file
         else:
             #Append listings with no average anyway so that way they are easier to align with
-            spread.append((number, item, term, f"No price listings for average"))
+            toSpread.append((number, item, term, f"No price listings for average"))
+            df1 = pd.DataFrame(toSpread)
+            Append_Results_CSV(df1)
 
 
     # Converting to dataframe
     df = pd.DataFrame(spread)
     df.to_csv("ResultsList/ebay_results.csv", index=False)
+
+    df1 = pd.DataFrame(toSpread)
+    df1.to_csv("ResultsList/ebay_resultsToDo.csv", index=False)
 
     print("Saved", len(df), "rows to ResultsList/ebay_results.csv")

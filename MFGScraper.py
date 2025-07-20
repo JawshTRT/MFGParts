@@ -62,6 +62,9 @@ def ImportCSv(filename):
     search_terms = []
     terms = []
     for x, y, z in zip(Brand, Part, PartNum):
+        if z == '-':
+            print(f"No model number found for {x} {y} skipping this part for search")
+            continue
         if x in y:  # <--- If Brand name is in the part string exclude it from the search term string to avoid search mismatching
             y = y.replace(x, '')[1:]
         if '-' in x:
@@ -202,7 +205,7 @@ def get_top_3_ebay(item_query, terms):
     driver.quit()
     return listings
 if __name__ == "__main__":
-    products, terms, SKU, Ids = ImportCSv('PartsList/Remaining 2020 Crate WIP2.csv')
+    products, terms, SKU, Ids = ImportCSv('PartsList/2015 w_Josh - Work Here.csv')
     spread = []
 
     # Iterating through each product from the imported list

@@ -55,7 +55,7 @@ def ImportCSv(filename):
     Part = df['Product Type'].dropna().astype(str).tolist()
     Brand = df['Brand'].dropna().astype(str).tolist()
     SKU = df['SKU'].dropna().astype(str).tolist()
-    #ID = df['Id'].dropna().astype(str).tolist()
+    IDs = df['ID'].dropna().astype(str).tolist()
     p = inflect.engine()
 
     # Creating ebay search entries
@@ -73,7 +73,7 @@ def ImportCSv(filename):
             print(f"Error printing {x, y, z}")
         search_terms.append(f"{x} {y} {z}")
         terms.append((x, y, z))  # Each entry contains a 'set' containing the brand part and part number
-    return search_terms, terms, SKU
+    return search_terms, terms, SKU, IDs
 def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
     """Checks the item based purely off of the name of the search result
     to see if it contains the correct part number
@@ -202,24 +202,21 @@ def get_top_3_ebay(item_query, terms):
     driver.quit()
     return listings
 if __name__ == "__main__":
-    products, terms, SKU = ImportCSv('PartsList/Remaining 2020 Crate WIP2.csv')
+    products, terms, SKU, Ids = ImportCSv('PartsList/Remaining 2020 Crate WIP2.csv')
     spread = []
 
     # Iterating through each product from the imported list
-    for item, term, number  in zip(products, terms, SKU):
+    for item, term, number, Id  in zip(products, terms, SKU, Ids):
 
         # Initializing scrapers with their respective terms
         Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
 
-        Partscraper = PartsRus(term, headless=False)
+
 
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
         results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
 
-        if len(results) == 0:
-            print("No results found searching on industrial parts R us")
-            results = Partscraper.scrape(item, 6)
 
         for result in results:
             result['SKU'] = str(number)
@@ -234,7 +231,7 @@ if __name__ == "__main__":
             count += 1
         if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
             print(f"Average: ${summation / count:.2f}")
-            spread.append((number, item, term, f"${summation / float(count):.2f}" if summation != 0 else ""))
+            spread.append((Id, number, item, f"${summation / float(count):.2f}" if summation != 0 else ""))
             df = pd.DataFrame(spread)
             Append_Results_CSV(df)  # < ------- Updating the CSV file
         else:

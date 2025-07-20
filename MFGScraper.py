@@ -10,9 +10,9 @@ import time
 import inflect
 
 
-def Append_Results_CSV(df: pd.DataFrame):
+def Append_Results_CSV(df: pd.DataFrame, path):
     #If the file does exist write with headers otherwise just append
-    df.to_csv("ResultsList/ebay_results.csv",
+    df.to_csv(path,
               mode='a',
               header=False,
               index=False)
@@ -214,7 +214,7 @@ if __name__ == "__main__":
     for item, term, number, Id  in zip(products, terms, SKU, Ids):
 
         # Initializing scrapers with their respective terms
-        Escraper = EbayScraper(term, headless=False) # <----Initialize with the terms in the list
+        Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
 
 
 
@@ -238,19 +238,20 @@ if __name__ == "__main__":
             print(f"Average: ${summation / count:.2f}")
             spread.append((Id, number, item, f"${summation / float(count):.2f}" if summation != 0 else ""))
             df = pd.DataFrame(spread)
-            Append_Results_CSV(df)  # < ------- Updating the CSV file
+            Append_Results_CSV(df, "ResultsList/ebay_results.csv")  # < ------- Updating the CSV file
         else:
             #Append listings with no average anyway so that way they are easier to align with
             toSpread.append((number, item, term, f"No price listings for average"))
             df1 = pd.DataFrame(toSpread)
-            Append_Results_CSV(df1)
+            Append_Results_CSV(df1, "ResultsList/ebay_resultsToDo.csv")
 
 
     # Converting to dataframe
-    df = pd.DataFrame(spread)
+    df = pd.DataFrame(spread, )
     df.to_csv("ResultsList/ebay_results.csv", index=False)
 
     df1 = pd.DataFrame(toSpread)
     df1.to_csv("ResultsList/ebay_resultsToDo.csv", index=False)
 
     print("Saved", len(df), "rows to ResultsList/ebay_results.csv")
+    print("Saved", len(df1), "rows to ebay_resultsToDo.csv")

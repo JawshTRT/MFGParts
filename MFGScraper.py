@@ -250,7 +250,7 @@ if __name__ == "__main__":
 
 
     # Converting to dataframe
-    df = pd.DataFrame(spread, )
+    df = pd.DataFrame(spread)
     df.to_csv("ResultsList/ebay_results.csv", index=False)
 
     df1 = pd.DataFrame(toSpread)

@@ -240,6 +240,9 @@ if __name__ == "__main__":
             df = pd.DataFrame(spread)
             Append_Results_CSV(df, "ResultsList/ebay_results.csv")  # < ------- Updating the CSV file
         else:
+            spread.append((Id, number, item, f"${summation / float(count):.2f}" if summation != 0 else ""))
+            df = pd.DataFrame(spread)
+            Append_Results_CSV(df, "ResultsList/ebay_results.csv")
             #Append listings with no average anyway so that way they are easier to align with
             toSpread.append((number, item, term, f"No price listings for average"))
             df1 = pd.DataFrame(toSpread)

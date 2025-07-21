@@ -157,9 +157,6 @@ class BaseScraper(ABC):
         for result in results:
             if self.Check_Matches(result['title'], self.Brand, self.Part, self.PartNum):
                 CleanResults.append(result)
-            else:
-                # Add to list to search on another site
-                noresults.append(result)
 
         #Finally quitting the driver
         self.driver.quit()

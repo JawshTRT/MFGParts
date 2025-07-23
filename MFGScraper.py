@@ -16,6 +16,7 @@ def Append_Results_CSV(df: pd.DataFrame, path):
               mode='a',
               header=False,
               index=False)
+    df.columns = ['Id', 'SKU', 'Seach Query', 'Brand', 'Product Type', 'Model', 'Price']
 def Driver_Init():
     """
     Initializes the selenium webdriver via chromedriver
@@ -234,11 +235,11 @@ if __name__ == "__main__":
             count += 1
         if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
             print(f"Average: ${summation / count:.2f}")
-            spread.append((Id, number, item, f"${summation / float(count):.2f}" if summation != 0 else ""))
-            df = pd.DataFrame((Id, number, item, f"${summation / float(count):.2f}" if summation != 0 else ""))
+            spread.append((Id, number, item[0], item[1], item[2], f"${summation / float(count):.2f}" if summation != 0 else ""))
+            df = pd.DataFrame((Id, number, item[0], item[1], item[2], f"${summation / float(count):.2f}" if summation != 0 else ""))
             Append_Results_CSV(df, "ResultsList/ebay_results.csv")  # < ------- Updating the CSV file
         else:
-            spread.append((Id, number, item, f"${summation / float(count):.2f}" if summation != 0 else ""))
+            spread.append((Id, number, item[0], item[1], item[2], f"${summation / float(count):.2f}" if summation != 0 else ""))
 
             df = pd.DataFrame((Id, number, item[0], item[1], item[2], f"${summation / float(count):.2f}" if summation != 0 else ""))
             Append_Results_CSV(df, "ResultsList/ebay_results.csv")

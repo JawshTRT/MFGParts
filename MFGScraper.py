@@ -216,8 +216,6 @@ if __name__ == "__main__":
         # Initializing scrapers with their respective terms
         Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
 
-
-
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
         results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
@@ -237,15 +235,17 @@ if __name__ == "__main__":
         if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
             print(f"Average: ${summation / count:.2f}")
             spread.append((Id, number, item, f"${summation / float(count):.2f}" if summation != 0 else ""))
-            df = pd.DataFrame(spread)
+            df = pd.DataFrame((Id, number, item, f"${summation / float(count):.2f}" if summation != 0 else ""))
             Append_Results_CSV(df, "ResultsList/ebay_results.csv")  # < ------- Updating the CSV file
         else:
             spread.append((Id, number, item, f"${summation / float(count):.2f}" if summation != 0 else ""))
-            df = pd.DataFrame(spread)
+
+            df = pd.DataFrame((Id, number, item[0], item[1], item[2], f"${summation / float(count):.2f}" if summation != 0 else ""))
             Append_Results_CSV(df, "ResultsList/ebay_results.csv")
             #Append listings with no average anyway so that way they are easier to align with
-            toSpread.append((number, item, f"No price listings for average"))
-            df1 = pd.DataFrame(toSpread)
+            toSpread.append((number, item[0], item[1], item[2], f"No price listings for average"))
+
+            df1 = pd.DataFrame((number, item[0], item[1], item[2], f"No price listings for average"))
             Append_Results_CSV(df1, "ResultsList/ebay_resultsToDo.csv")
 
 

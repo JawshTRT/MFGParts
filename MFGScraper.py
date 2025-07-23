@@ -12,11 +12,12 @@ import inflect
 
 def Append_Results_CSV(df: pd.DataFrame, path):
     #If the file does exist write with headers otherwise just append
+    df.columns = ['Id', 'SKU', 'Search Query', 'Brand', 'Product Type', 'Model', 'Price']
     df.to_csv(path,
               mode='a',
               header=False,
               index=False)
-    df.columns = ['Id', 'SKU', 'Seach Query', 'Brand', 'Product Type', 'Model', 'Price']
+
 def Driver_Init():
     """
     Initializes the selenium webdriver via chromedriver
@@ -233,22 +234,21 @@ if __name__ == "__main__":
                 print("Could not parse price properly taking lower portion of price")
                 summation += float(result['price'][1:].replace(',', '').split(' ')[0])
             count += 1
+
+        row = Id, number, item, term[0], term[1], term[2], f"${summation / float(count):.2f}" if summation != 0 else "No price listings for average"
         if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
-            print(f"Average: ${summation / count:.2f}")
-            spread.append((Id, number, item[0], item[1], item[2], f"${summation / float(count):.2f}" if summation != 0 else ""))
-            df = pd.DataFrame((Id, number, item[0], item[1], item[2], f"${summation / float(count):.2f}" if summation != 0 else ""))
-            Append_Results_CSV(df, "ResultsList/ebay_results.csv")  # < ------- Updating the CSV file
+            average = f"${summation / count:.2f}"
+            print(f"Average: {average}")
+
         else:
-            spread.append((Id, number, item[0], item[1], item[2], f"${summation / float(count):.2f}" if summation != 0 else ""))
-
-            df = pd.DataFrame((Id, number, item[0], item[1], item[2], f"${summation / float(count):.2f}" if summation != 0 else ""))
-            Append_Results_CSV(df, "ResultsList/ebay_results.csv")
             #Append listings with no average anyway so that way they are easier to align with
-            toSpread.append((number, item[0], item[1], item[2], f"No price listings for average"))
-
-            df1 = pd.DataFrame((number, item[0], item[1], item[2], f"No price listings for average"))
+            toSpread.append(row)
+            df1 = pd.DataFrame(row)
             Append_Results_CSV(df1, "ResultsList/ebay_resultsToDo.csv")
 
+        spread.append(row)
+        df = pd.DataFrame(row)
+        Append_Results_CSV(df, "ResultsList/ebay_results.csv")  # < ------- Updating the CSV file
 
     # Converting to dataframe
     df = pd.DataFrame(spread)

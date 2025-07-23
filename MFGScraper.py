@@ -12,7 +12,6 @@ import inflect
 
 def Append_Results_CSV(df: pd.DataFrame, path):
     #If the file does exist write with headers otherwise just append
-    df.columns = ['Id', 'SKU', 'Search Query', 'Brand', 'Product Type', 'Model', 'Price']
     df.to_csv(path,
               mode='a',
               header=False,
@@ -209,7 +208,15 @@ def get_top_3_ebay(item_query, terms):
     driver.quit()
     return listings
 if __name__ == "__main__":
+    #Importing the CSV file
     products, terms, SKU, Ids = ImportCSv('PartsList/2015 w_Josh - Pricing.csv')
+
+    #Creating the CSV output files
+    df = pd.DataFrame(columns = ['Id', 'SKU', 'Search Query', 'Brand', 'Product Type', 'Model', 'Price'])
+    df.to_csv("ResultsList/ebay_results.csv", header=True, index=False)
+    df.to_csv("ResultsList/ebay_resultsToDo.csv", header=True, index=False)
+
+
     spread = []
     toSpread = []
     # Iterating through each product from the imported list
@@ -235,7 +242,7 @@ if __name__ == "__main__":
                 summation += float(result['price'][1:].replace(',', '').split(' ')[0])
             count += 1
 
-        row = Id, number, item, term[0], term[1], term[2], f"${summation / float(count):.2f}" if summation != 0 else "No price listings for average"
+        row = [(Id, number, item, term[0], term[1], term[2], f"${summation / float(count):.2f}" if summation != 0 else "No price listings for average")]
         if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
             average = f"${summation / count:.2f}"
             print(f"Average: {average}")
@@ -248,6 +255,7 @@ if __name__ == "__main__":
 
         spread.append(row)
         df = pd.DataFrame(row)
+
         Append_Results_CSV(df, "ResultsList/ebay_results.csv")  # < ------- Updating the CSV file
 
     # Converting to dataframe

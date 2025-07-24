@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
 from selenium.webdriver.common.by import By
 import time
+import string
 class EbayScraper(BaseScraper):
     """
     Inherits from the BaseScraper abstract base class
@@ -22,6 +23,18 @@ class EbayScraper(BaseScraper):
     def parse_item(self, element):
         title = element.find_element(By.CSS_SELECTOR, ".s-item__title").text
         price = element.find_element(By.CSS_SELECTOR, ".s-item__price").text
+        try:
+            float(price[1:].replace(',', ''))
+        except ValueError:
+            newprice = ''
+            # Going through the price to see if it is a parsable number
+            for el in price:
+                if el.isnumeric():
+                    newprice += el
+            # If it is not parsable just return 0
+            if not newprice.isnumeric():
+                print("Price is not a parsable number")
+                price = 0
         url = element.find_element(By.CSS_SELECTOR, ".s-item__link").get_attribute("href")
         try:
             condition = element.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text

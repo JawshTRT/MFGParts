@@ -220,13 +220,19 @@ if __name__ == "__main__":
     spread = []
     toSpread = []
     # Initializing scrapers with their respective terms
-    Escraper = EbayScraper(headless=True)  # <----Initialize with the terms in the list
-
+    Escraper = EbayScraper(headless=False)
+    PartScraper = PartsRus(headless=False)
     # Iterating through each product from the imported list
     for item, term, number, Id  in zip(products, terms, SKU, Ids):
+
+        #Setting the terms to compare to inside the scraper
         Escraper.setBrand(term[0])
         Escraper.setPart(term[1])
         Escraper.setPartNum(term[2])
+
+        PartScraper.setBrand(term[0])
+        PartScraper.setPart(term[1])
+        PartScraper.setPartNum(term[2])
 
 
 

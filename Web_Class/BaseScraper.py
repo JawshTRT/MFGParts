@@ -22,7 +22,6 @@ class BaseScraper(ABC):
         self.Brand = ''
         self.Part = ''
         self.PartNum = ''
-
     def setBrand(self, Brand):
         self.Brand = Brand
     def setPart(self, Part):
@@ -108,6 +107,8 @@ class BaseScraper(ABC):
         :return driver: The selenium webdriver to search the internet with
         """
         options = webdriver.ChromeOptions()
+        #Some simple extra arguments to format window location
+
         # Extra arguments added to bypass bot-captchas
         options.add_argument('--disable-extensions')
         options.add_argument('--profile-directory=Default')

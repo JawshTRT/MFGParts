@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.devtools.v135.page import remove_script_to_evaluate_on_load
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -240,6 +241,9 @@ if __name__ == "__main__":
         summation, count = 0.0, 0
         results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
 
+        if len(results) == 0:
+            print("No results scraping on industrial parts R us")
+            results = PartScraper.scrape(item, 6)
 
         for result in results:
             result['SKU'] = str(number)

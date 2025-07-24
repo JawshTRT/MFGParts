@@ -4,7 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
 from selenium.webdriver.common.by import By
 import time
-import string
 class EbayScraper(BaseScraper):
     """
     Inherits from the BaseScraper abstract base class
@@ -243,7 +242,7 @@ class GoogleScraper(BaseScraper):
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.sh-dgr__grid-result, div.sh-dlr__list-result")))
 class PartsRus(BaseScraper):
     def get_search_url(self, query):
-        return f"https://industrialpartsrus.com/?srsltid=AfmBOopRCnIgBVR3jZdsmfy76VRLdIJ-6f7FAfAwmQhGonEKU1DA1RMR#fa57/fullscreen/m=or&q={query.replace(' ', '+')}"
+        return f"https://industrialpartsrus.com/?srsltid=AfmBOoq_-k_U460E_UWtf7jdQpyCNMFA4c-HnMJ94uAB2u8oOM_1Q4du#fa57/fullscreen/m=or&q={query.replace(' ', '+').replace('/', '%2F')}"
 
     def select_result_items(self):
         return self.driver.find_elements(By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product ")

@@ -221,8 +221,8 @@ if __name__ == "__main__":
     spread = []
     toSpread = []
     # Initializing scrapers with their respective terms
-    Escraper = EbayScraper(headless=False)
-    PartScraper = PartsRus(headless=False)
+    Escraper = EbayScraper(headless=False, monitor_index=1, half="right")
+    PartScraper = PartsRus(headless=False, monitor_index=1, half ="left")
     # Iterating through each product from the imported list
     for item, term, number, Id  in zip(products, terms, SKU, Ids):
 

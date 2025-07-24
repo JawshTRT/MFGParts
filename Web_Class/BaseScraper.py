@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from selenium import webdriver
 from selenium_stealth import stealth
-
+from screeninfo import get_monitors
 
 # Inheriting from abstract class
 class BaseScraper(ABC):
@@ -9,19 +9,22 @@ class BaseScraper(ABC):
     This is an abstract base class that defines the interface or template to create other website classes
     :var driver: webdriver instance
     """
-    def __init__(self, headless: bool = False):
+    def __init__(self, headless: bool = False, monitor_index:int = 1, half:str = None):
         """
         Default Constructor for BaseScraper abstract class
         :param headless:
             True by default, it determines
              whether the driver will run headless (without a window)
         """
-        self.driver = self.Driver_Init(headless) # <--- Initializing the driver
+        self.monitor_index = monitor_index
+        self.half = half
+        self.driver = self.Driver_Init(headless, monitor_index, half) # <--- Initializing the driver
 
         # Initializing object variables
         self.Brand = ''
         self.Part = ''
         self.PartNum = ''
+
     def setBrand(self, Brand):
         self.Brand = Brand
     def setPart(self, Part):
@@ -78,7 +81,7 @@ class BaseScraper(ABC):
             for attempt in range(0, n+1):
                 print(f"Couldn't find results for {attempt}/{n} retrying")
                 self.driver.quit()
-                self.driver = self.Driver_Init(headless=False)
+                self.driver = self.Driver_Init(headless=False, monitor_index=self.monitor_index, half=self.half)
                 self.driver.get(self.get_search_url(f"{self.Brand} {self.Part} {self.PartNum}"))
                 link = self.select_result_items()
 
@@ -101,13 +104,39 @@ class BaseScraper(ABC):
     def WaitResults(self):
         """Waits for the web page to finish loading the results based on the selector tag
         """
-    def Driver_Init(self, headless: bool = False):
+    def Driver_Init(self, headless: bool = False, monitor_index: int = 0, half: str | None = None):
         """
         Initializes the selenium webdriver
+        :param monitor_index: the index of the monitor to use
+        :param half: Which half of the monitor to position the window
+        :param headless: run headless (without a window)
         :return driver: The selenium webdriver to search the internet with
         """
+        # Grabbing the monitors
+        monitors = get_monitors()
+        if monitor_index >= len(monitors):
+            raise IndexError(f"Only found {len(monitors)} monitors, can't use index {monitor_index}")
+        m = monitors[monitor_index]
         options = webdriver.ChromeOptions()
-        #Some simple extra arguments to format window location
+
+        # Determining the size and position
+        if half is None:
+            # full-screen on that monitor
+            win_x, win_y = m.x, m.y
+            win_w, win_h = m.width, m.height
+        else:
+            # half the width
+            win_w = (m.width // 2) - 180
+            print("win_w = ", win_w)
+            win_h = m.height
+            if half.lower() == "left":
+                win_x = m.x - 5
+            elif half.lower() == "right":
+                win_x = m.x + win_w - 18
+            else:
+                raise ValueError("Half must be left or right")
+            win_y = m.y
+
 
         # Extra arguments added to bypass bot-captchas
         options.add_argument('--disable-extensions')
@@ -119,6 +148,10 @@ class BaseScraper(ABC):
         options.add_argument("--proxy-bypass-list=*")
         prefs = {"profile.managed_default_content_settings.images": 2, 'disk-cache-size': 4096}
         options.add_experimental_option('prefs', prefs)
+
+        # Addins size and position arguments
+        options.add_argument(f"--window-position={win_x},{win_y}")
+        options.add_argument(f"--window-size={win_w},{win_h}")
         if headless:
             options.add_argument("--headless") # <-- Running without browser window
         driver = webdriver.Chrome(options=options)

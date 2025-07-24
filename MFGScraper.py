@@ -219,11 +219,16 @@ if __name__ == "__main__":
 
     spread = []
     toSpread = []
+    # Initializing scrapers with their respective terms
+    Escraper = EbayScraper(headless=True)  # <----Initialize with the terms in the list
+
     # Iterating through each product from the imported list
     for item, term, number, Id  in zip(products, terms, SKU, Ids):
+        Escraper.setBrand(term[0])
+        Escraper.setPart(term[1])
+        Escraper.setPartNum(term[2])
 
-        # Initializing scrapers with their respective terms
-        Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
+
 
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0

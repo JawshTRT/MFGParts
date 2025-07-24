@@ -9,19 +9,26 @@ class BaseScraper(ABC):
     This is an abstract base class that defines the interface or template to create other website classes
     :var driver: webdriver instance
     """
-    def __init__(self, terms: list[str], headless: bool = False):
+    def __init__(self, headless: bool = False):
         """
         Default Constructor for BaseScraper abstract class
         :param headless:
             True by default, it determines
              whether the driver will run headless (without a window)
-        :param terms:
-            The Brand, Part, and Part number of the item being searched for
         """
         self.driver = self.Driver_Init(headless) # <--- Initializing the driver
-        self.Brand = terms[0]
-        self.Part = terms[1]
-        self.PartNum = terms[2]
+
+        # Initializing object variables
+        self.Brand = ''
+        self.Part = ''
+        self.PartNum = ''
+
+    def setBrand(self, Brand):
+        self.Brand = Brand
+    def setPart(self, Part):
+        self.Part = Part
+    def setPartNum(self, PartNum):
+        self.PartNum = PartNum
     @abstractmethod
     def get_search_url(self, query: str) -> str:
         """Build the URL to load for a given search query
@@ -138,15 +145,15 @@ class BaseScraper(ABC):
         #items = self.get_items(3)
         # First check if there are any results
         if not self.check_Results():
-            print(f"for: {search_query}")
-            self.driver.quit()
+            print(f"No results for: {search_query}")
+            #self.driver.quit()
             return []
         else:
             #Then check if any of the results are fetched
             items = self.get_items(3)
             # If items == 0 it means that there were no exact matches
             if not items:
-                self.driver.quit()
+                #self.driver.quit()
                 return []
             else:
                 # Lastly, check if the results are a match, they first must be parsed into pieces and into list of dictionary
@@ -159,10 +166,9 @@ class BaseScraper(ABC):
                 CleanResults.append(result)
 
         #Finally quitting the driver
-        self.driver.quit()
+        #self.driver.quit()
         # If there were no results appended to clean results then we need to skip the part and scrape on a different site
         if len(CleanResults) == 0:
-
             return []
         else:
             return CleanResults[:n] # < -- returning the first 'n' clean results

@@ -1,4 +1,4 @@
-from selenium.common import NoSuchElementException
+from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
@@ -284,24 +284,10 @@ class PartsRus(BaseScraper):
     def ApplyFilter(self, brand: str):
         try:
             # Trying to look for the checkbox or label that contains the brand text:
-            facet = self.driver.find_element(By.CSS_SELECTOR, "div.dfd-facet-content.dfd-facet-type-term.dfd-facet-layout-list")
-
-            options = facet.find_elements(By.CSS_SELECTOR, "label, li, button")
-
-            for opt in options:
-                # Search for the option whose text contains the brand
-                text = opt.text.strip().lower()
-
-                #If the brand name is found inside the text
-                if brand.lower() in text:
-                    # scroll into view & click
-                    self.driver.execute_script("arguments[0].scrollIntoView()", opt)
-                    opt.click()
-                    #waiting for the page to reload with filtered results
-                    WebDriverWait(self.driver, 10).until(EC.staleness_of(opt))
-                    WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.dfd-content[id^='df-hook-results']")))
-                    return
-        except NoSuchElementException:
+            btn = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, f'[dfd-value-term="{brand}"]')))
+            btn.click()
+            WebDriverWait(self.driver, 10).until(EC.staleness_of(btn))
+        except (NoSuchElementException, TimeoutException):
             # Either the facet container was there or there were no options
             print("No filter for brand located")
             pass

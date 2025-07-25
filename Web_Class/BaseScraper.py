@@ -175,12 +175,13 @@ class BaseScraper(ABC):
         url = self.get_search_url(search_query)
         self.driver.get(url)
         print("Waiting for results...")
+        if brand:
+            self.ApplyFilter(brand)
+
         self.WaitResults()
         # self.driver.implicitly_wait(2) <-- A different method to wait for results to load
         #items = self.get_items(3)
 
-        if brand:
-            self.ApplyFilter(brand)
 
         # First check if there are any results
         if not self.check_Results():

@@ -238,7 +238,7 @@ if __name__ == "__main__":
 
         # if len(results) == 0:
         #     print("No results scraping on industrial parts R us")
-        results = PartScraper.scrape(item, 6)
+        results = PartScraper.scrape(item, 6, brand = term[0])
 
         for result in results:
             result['SKU'] = str(number)

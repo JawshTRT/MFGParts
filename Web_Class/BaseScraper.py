@@ -24,7 +24,6 @@ class BaseScraper(ABC):
         self.Brand = ''
         self.Part = ''
         self.PartNum = ''
-
     def setBrand(self, Brand):
         self.Brand = Brand
     def setPart(self, Part):
@@ -104,6 +103,8 @@ class BaseScraper(ABC):
     def WaitResults(self):
         """Waits for the web page to finish loading the results based on the selector tag
         """
+    def ApplyFilter(self, brand:str):
+        pass
     def Driver_Init(self, headless: bool = False, monitor_index: int = 0, half: str | None = None):
         """
         Initializes the selenium webdriver
@@ -121,7 +122,7 @@ class BaseScraper(ABC):
 
         # Determining the size and position
         if half is None:
-            # full-screen on that monitor
+            # full-screen on that monitor if no half parameter is given
             win_x, win_y = m.x, m.y
             win_w, win_h = m.width, m.height
         else:
@@ -130,7 +131,7 @@ class BaseScraper(ABC):
             print("win_w = ", win_w)
             win_h = m.height
             if half.lower() == "left":
-                win_x = m.x - 5
+                win_x = m.x - 5 #<-- accounting for apparent offset?
             elif half.lower() == "right":
                 win_x = m.x + win_w - 18
             else:
@@ -160,9 +161,10 @@ class BaseScraper(ABC):
                 fix_hairline=True)
         driver.delete_all_cookies() # <--- Deleting the cookie monsters
         return driver
-    def scrape(self, search_query: str, n: int = 3) -> list[dict]:
+    def scrape(self, search_query: str, n: int = 3, brand: str = None) -> list[dict]:
         """
         This is where most of the magic happens, where the actual scraping is done
+        :param brand: Brand of the item to checked through a filter if given
         :param search_query:
             The search query represents the item to search for
         :param n:
@@ -172,22 +174,23 @@ class BaseScraper(ABC):
         """
         url = self.get_search_url(search_query)
         self.driver.get(url)
-        noresults = []
         print("Waiting for results...")
         self.WaitResults()
         # self.driver.implicitly_wait(2) <-- A different method to wait for results to load
         #items = self.get_items(3)
+
+        if brand:
+            self.ApplyFilter(brand)
+
         # First check if there are any results
         if not self.check_Results():
             print(f"No results for: {search_query}")
-            #self.driver.quit()
             return []
         else:
             #Then check if any of the results are fetched
             items = self.get_items(3)
             # If items == 0 it means that there were no exact matches
             if not items:
-                #self.driver.quit()
                 return []
             else:
                 # Lastly, check if the results are a match, they first must be parsed into pieces and into list of dictionary
@@ -199,8 +202,6 @@ class BaseScraper(ABC):
             if self.Check_Matches(result['title'], self.Brand, self.Part, self.PartNum):
                 CleanResults.append(result)
 
-        #Finally quitting the driver
-        #self.driver.quit()
         # If there were no results appended to clean results then we need to skip the part and scrape on a different site
         if len(CleanResults) == 0:
             return []

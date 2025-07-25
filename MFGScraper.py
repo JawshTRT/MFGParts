@@ -66,9 +66,6 @@ def ImportCSv(filename):
     for x, y, z in zip(Brand, Part, PartNum):
 
         # Skip parts that have a hyphenated model number
-        if z == '-':
-            print(f"No model number found for {x} {y} skipping this part for search")
-            continue
         if x in y:  # <--- If Brand name is in the part string exclude it from the search term string to avoid search mismatching
             y = y.replace(x, '')[1:]
         if '-' in x:
@@ -210,7 +207,7 @@ def get_top_3_ebay(item_query, terms):
     return listings
 if __name__ == "__main__":
     #Importing the CSV file
-    products, terms, SKU, Ids = ImportCSv('PartsList/2015 w_Josh - Pricing.csv')
+    products, terms, SKU, Ids = ImportCSv('PartsList/2015 w_Josh - Josh Prices pls.csv')
 
     #Creating the CSV output files
     df = pd.DataFrame(columns = ['Id', 'SKU', 'Search Query', 'Brand', 'Product Type', 'Model', 'Price'])
@@ -218,8 +215,6 @@ if __name__ == "__main__":
     df.to_csv("ResultsList/ebay_resultsToDo.csv", header=True, index=False)
 
 
-    spread = []
-    toSpread = []
     # Initializing scrapers with their respective terms
     Escraper = EbayScraper(headless=False, monitor_index=1, half="right")
     PartScraper = PartsRus(headless=False, monitor_index=1, half ="left")
@@ -239,11 +234,11 @@ if __name__ == "__main__":
 
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
-        results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
+        #results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
 
-        if len(results) == 0:
-            print("No results scraping on industrial parts R us")
-            results = PartScraper.scrape(item, 6)
+        # if len(results) == 0:
+        #     print("No results scraping on industrial parts R us")
+        results = PartScraper.scrape(item, 6)
 
         for result in results:
             result['SKU'] = str(number)
@@ -261,24 +256,14 @@ if __name__ == "__main__":
         if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
             average = f"${summation / count:.2f}"
             print(f"Average: {average}")
-
         else:
             #Append listings with no average anyway so that way they are easier to align with
-            toSpread.append(row)
             df1 = pd.DataFrame(row)
             Append_Results_CSV(df1, "ResultsList/ebay_resultsToDo.csv")
 
-        spread.append(row)
         df = pd.DataFrame(row)
 
         Append_Results_CSV(df, "ResultsList/ebay_results.csv")  # < ------- Updating the CSV file
-
-    # Converting to dataframe
-    df = pd.DataFrame(spread)
-    df.to_csv("ResultsList/ebay_results.csv", index=False)
-
-    df1 = pd.DataFrame(toSpread)
-    df1.to_csv("ResultsList/ebay_resultsToDo.csv", index=False)
 
     print("Saved", len(df), "rows to ResultsList/ebay_results.csv")
     print("Saved", len(df1), "rows to ebay_resultsToDo.csv")

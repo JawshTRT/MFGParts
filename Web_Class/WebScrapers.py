@@ -13,7 +13,6 @@ class EbayScraper(BaseScraper):
     def get_search_url(self, query: str):
         return f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}"
     def select_result_items(self):
-
         try:
             return self.driver.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
         except NoSuchElementException:
@@ -33,7 +32,7 @@ class EbayScraper(BaseScraper):
             # If it is not parsable just return 0
             if not newprice.isnumeric():
                 print("Price is not a parsable number")
-                price = 0
+                price = '$0'
         url = element.find_element(By.CSS_SELECTOR, ".s-item__link").get_attribute("href")
         try:
             condition = element.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
@@ -243,10 +242,8 @@ class GoogleScraper(BaseScraper):
 class PartsRus(BaseScraper):
     def get_search_url(self, query):
         return f"https://industrialpartsrus.com/?srsltid=AfmBOoq_-k_U460E_UWtf7jdQpyCNMFA4c-HnMJ94uAB2u8oOM_1Q4du#fa57/fullscreen/m=or&q={query.replace(' ', '+').replace('/', '%2F')}"
-
     def select_result_items(self):
         return self.driver.find_elements(By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product ")
-
     def parse_item(self, element) -> dict:
         price = element.find_element(By.CSS_SELECTOR, "span.dfd-card-price").text
         title = element.find_element(By.CSS_SELECTOR, "div.dfd-card-title").text
@@ -255,7 +252,6 @@ class PartsRus(BaseScraper):
         condition = "Used"
 
         return {"price": price, "title": title, "condition": condition, "brand": brand, "url": url}
-
     def check_Results(self):
         no_match = self.driver.find_elements(By.XPATH, '//*[@id="dfd-tabs-j7uqz"]/div[2]/div/div[1]')
 
@@ -285,6 +281,30 @@ class PartsRus(BaseScraper):
                 # Break out if the new scroll height is the same of the last meaning we couldn't scroll any further
                 break
             last_height = new_height
+    def ApplyFilter(self, brand: str):
+        try:
+            # Trying to look for the checkbox or label that contains the brand text:
+            facet = self.driver.find_element(By.CSS_SELECTOR, "div.dfd-facet-content.dfd-facet-type-term.dfd-facet-layout-list")
+
+            options = facet.find_elements(By.CSS_SELECTOR, "label, li, button")
+
+            for opt in options:
+                # Search for the option whose text contains the brand
+                text = opt.text.strip().lower()
+
+                #If the brand name is found inside the text
+                if brand.lower() in text:
+                    # scroll into view & click
+                    self.driver.execute_script("arguments[0].scrollIntoView()", opt)
+                    opt.click()
+                    #waiting for the page to reload with filtered results
+                    WebDriverWait(self.driver, 10).until(EC.staleness_of(opt))
+                    WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.dfd-content[id^='df-hook-results']")))
+                    return
+        except NoSuchElementException:
+            # Either the facet container was there or there were no options
+            print("No filter for brand located")
+            pass
 
 
 

@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.devtools.v135.page import remove_script_to_evaluate_on_load
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -10,12 +11,13 @@ import time
 import inflect
 
 
-def Append_Results_CSV(df: pd.DataFrame):
+def Append_Results_CSV(df: pd.DataFrame, path):
     #If the file does exist write with headers otherwise just append
-    df.to_csv("ResultsList/ebay_results.csv",
+    df.to_csv(path,
               mode='a',
               header=False,
               index=False)
+
 def Driver_Init():
     """
     Initializes the selenium webdriver via chromedriver
@@ -55,13 +57,15 @@ def ImportCSv(filename):
     Part = df['Product Type'].dropna().astype(str).tolist()
     Brand = df['Brand'].dropna().astype(str).tolist()
     SKU = df['SKU'].dropna().astype(str).tolist()
-    #ID = df['Id'].dropna().astype(str).tolist()
+    IDs = df['ID'].dropna().astype(str).tolist()
     p = inflect.engine()
 
     # Creating ebay search entries
     search_terms = []
     terms = []
     for x, y, z in zip(Brand, Part, PartNum):
+
+        # Skip parts that have a hyphenated model number
         if x in y:  # <--- If Brand name is in the part string exclude it from the search term string to avoid search mismatching
             y = y.replace(x, '')[1:]
         if '-' in x:
@@ -73,7 +77,7 @@ def ImportCSv(filename):
             print(f"Error printing {x, y, z}")
         search_terms.append(f"{x} {y} {z}")
         terms.append((x, y, z))  # Each entry contains a 'set' containing the brand part and part number
-    return search_terms, terms, SKU
+    return search_terms, terms, SKU, IDs
 def Check_Item(Brand: str, Part: str, Num: str, Name: str) -> bool:
     """Checks the item based purely off of the name of the search result
     to see if it contains the correct part number
@@ -202,20 +206,40 @@ def get_top_3_ebay(item_query, terms):
     driver.quit()
     return listings
 if __name__ == "__main__":
-    products, terms, SKU = ImportCSv('PartsList/Remaining 2020 Crate WIP2.csv')
-    spread = []
+    #Importing the CSV file
+    products, terms, SKU, Ids = ImportCSv('PartsList/2015 w_Josh - Josh Prices pls.csv')
 
+    #Creating the CSV output files
+    df = pd.DataFrame(columns = ['Id', 'SKU', 'Search Query', 'Brand', 'Product Type', 'Model', 'Price'])
+    df.to_csv("ResultsList/ebay_results.csv", header=True, index=False)
+    df.to_csv("ResultsList/ebay_resultsToDo.csv", header=True, index=False)
+
+
+    # Initializing scrapers with their respective terms
+    Escraper = EbayScraper(headless=False, monitor_index=1, half="right")
+    PartScraper = PartsRus(headless=False, monitor_index=1, half ="left")
     # Iterating through each product from the imported list
-    for item, term, number  in zip(products, terms, SKU):
+    for item, term, number, Id  in zip(products, terms, SKU, Ids):
 
-        # Initializing scrapers with their respective terms
-        Escraper = EbayScraper(term, headless=True) # <----Initialize with the terms in the list
+        #Setting the terms to compare to inside the scraper
+        Escraper.setBrand(term[0])
+        Escraper.setPart(term[1])
+        Escraper.setPartNum(term[2])
 
-        #Partscraper = PartsRus(term, headless=False)
+        PartScraper.setBrand(term[0])
+        PartScraper.setPart(term[1])
+        PartScraper.setPartNum(term[2])
+
+
 
         #Initializing counter variables for finding price averages
         summation, count = 0.0, 0
-        results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
+        #results = Escraper.scrape(item, 6) # <----Scrape with the parsed string
+
+        # if len(results) == 0:
+        #     print("No results scraping on industrial parts R us")
+        results = PartScraper.scrape(item, 6, brand = term[0])
+
         for result in results:
             result['SKU'] = str(number)
             # result['Id'] = str(Id)
@@ -227,18 +251,19 @@ if __name__ == "__main__":
                 print("Could not parse price properly taking lower portion of price")
                 summation += float(result['price'][1:].replace(',', '').split(' ')[0])
             count += 1
+
+        row = [(Id, number, item, term[0], term[1], term[2], f"${summation / float(count):.2f}" if summation != 0 else "No price listings for average")]
         if summation != 0: # <--- if the summation is equal to zero it means that there were no accurate listings found
-            print(f"Average: ${summation / count:.2f}")
-            spread.append((number, item, term, f"${summation / float(count):.2f}" if summation != 0 else ""))
-            df = pd.DataFrame(spread)
-            Append_Results_CSV(df)  # < ------- Updating the CSV file
+            average = f"${summation / count:.2f}"
+            print(f"Average: {average}")
         else:
             #Append listings with no average anyway so that way they are easier to align with
-            spread.append((number, item, term, f"No price listings for average"))
+            df1 = pd.DataFrame(row)
+            Append_Results_CSV(df1, "ResultsList/ebay_resultsToDo.csv")
 
+        df = pd.DataFrame(row)
 
-    # Converting to dataframe
-    df = pd.DataFrame(spread)
-    df.to_csv("ResultsList/ebay_results.csv", index=False)
+        Append_Results_CSV(df, "ResultsList/ebay_results.csv")  # < ------- Updating the CSV file
 
     print("Saved", len(df), "rows to ResultsList/ebay_results.csv")
+    print("Saved", len(df1), "rows to ebay_resultsToDo.csv")

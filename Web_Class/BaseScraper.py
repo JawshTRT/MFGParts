@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from selenium import webdriver
 from selenium_stealth import stealth
-
+from screeninfo import get_monitors
 
 # Inheriting from abstract class
 class BaseScraper(ABC):
@@ -9,19 +9,27 @@ class BaseScraper(ABC):
     This is an abstract base class that defines the interface or template to create other website classes
     :var driver: webdriver instance
     """
-    def __init__(self, terms: list[str], headless: bool = False):
+    def __init__(self, headless: bool = False, monitor_index:int = 1, half:str = None):
         """
         Default Constructor for BaseScraper abstract class
         :param headless:
             True by default, it determines
              whether the driver will run headless (without a window)
-        :param terms:
-            The Brand, Part, and Part number of the item being searched for
         """
-        self.driver = self.Driver_Init(headless) # <--- Initializing the driver
-        self.Brand = terms[0]
-        self.Part = terms[1]
-        self.PartNum = terms[2]
+        self.monitor_index = monitor_index
+        self.half = half
+        self.driver = self.Driver_Init(headless, monitor_index, half) # <--- Initializing the driver
+
+        # Initializing object variables
+        self.Brand = ''
+        self.Part = ''
+        self.PartNum = ''
+    def setBrand(self, Brand):
+        self.Brand = Brand
+    def setPart(self, Part):
+        self.Part = Part
+    def setPartNum(self, PartNum):
+        self.PartNum = PartNum
     @abstractmethod
     def get_search_url(self, query: str) -> str:
         """Build the URL to load for a given search query
@@ -72,7 +80,8 @@ class BaseScraper(ABC):
             for attempt in range(0, n+1):
                 print(f"Couldn't find results for {attempt}/{n} retrying")
                 self.driver.quit()
-                self.driver = self.Driver_Init(headless=True)
+                self.driver = self.Driver_Init(headless=False, monitor_index=self.monitor_index, half=self.half)
+                self.driver.get(self.get_search_url(f"{self.Brand} {self.Part} {self.PartNum}"))
                 link = self.select_result_items()
 
                 #Checking if zero exact matches were found
@@ -94,12 +103,42 @@ class BaseScraper(ABC):
     def WaitResults(self):
         """Waits for the web page to finish loading the results based on the selector tag
         """
-    def Driver_Init(self, headless: bool = False):
+    def ApplyFilter(self, brand:str):
+        pass
+    def Driver_Init(self, headless: bool = False, monitor_index: int = 0, half: str | None = None):
         """
         Initializes the selenium webdriver
+        :param monitor_index: the index of the monitor to use
+        :param half: Which half of the monitor to position the window
+        :param headless: run headless (without a window)
         :return driver: The selenium webdriver to search the internet with
         """
+        # Grabbing the monitors
+        monitors = get_monitors()
+        if monitor_index >= len(monitors):
+            raise IndexError(f"Only found {len(monitors)} monitors, can't use index {monitor_index}")
+        m = monitors[monitor_index]
         options = webdriver.ChromeOptions()
+
+        # Determining the size and position
+        if half is None:
+            # full-screen on that monitor if no half parameter is given
+            win_x, win_y = m.x, m.y
+            win_w, win_h = m.width, m.height
+        else:
+            # half the width
+            win_w = (m.width // 2) - 180
+            print("win_w = ", win_w)
+            win_h = m.height
+            if half.lower() == "left":
+                win_x = m.x - 5 #<-- accounting for apparent offset?
+            elif half.lower() == "right":
+                win_x = m.x + win_w - 18
+            else:
+                raise ValueError("Half must be left or right")
+            win_y = m.y
+
+
         # Extra arguments added to bypass bot-captchas
         options.add_argument('--disable-extensions')
         options.add_argument('--profile-directory=Default')
@@ -110,6 +149,10 @@ class BaseScraper(ABC):
         options.add_argument("--proxy-bypass-list=*")
         prefs = {"profile.managed_default_content_settings.images": 2, 'disk-cache-size': 4096}
         options.add_experimental_option('prefs', prefs)
+
+        # Addins size and position arguments
+        options.add_argument(f"--window-position={win_x},{win_y}")
+        options.add_argument(f"--window-size={win_w},{win_h}")
         if headless:
             options.add_argument("--headless") # <-- Running without browser window
         driver = webdriver.Chrome(options=options)
@@ -118,9 +161,10 @@ class BaseScraper(ABC):
                 fix_hairline=True)
         driver.delete_all_cookies() # <--- Deleting the cookie monsters
         return driver
-    def scrape(self, search_query: str, n: int = 3) -> list[dict]:
+    def scrape(self, search_query: str, n: int = 3, brand: str = None) -> list[dict]:
         """
         This is where most of the magic happens, where the actual scraping is done
+        :param brand: Brand of the item to checked through a filter if given
         :param search_query:
             The search query represents the item to search for
         :param n:
@@ -130,21 +174,24 @@ class BaseScraper(ABC):
         """
         url = self.get_search_url(search_query)
         self.driver.get(url)
-        noresults = []
         print("Waiting for results...")
+        if brand:
+            self.ApplyFilter(brand)
+
         self.WaitResults()
         # self.driver.implicitly_wait(2) <-- A different method to wait for results to load
         #items = self.get_items(3)
+
+
         # First check if there are any results
         if not self.check_Results():
-            self.driver.quit()
+            print(f"No results for: {search_query}")
             return []
         else:
             #Then check if any of the results are fetched
             items = self.get_items(3)
             # If items == 0 it means that there were no exact matches
             if not items:
-                self.driver.quit()
                 return []
             else:
                 # Lastly, check if the results are a match, they first must be parsed into pieces and into list of dictionary
@@ -155,15 +202,9 @@ class BaseScraper(ABC):
         for result in results:
             if self.Check_Matches(result['title'], self.Brand, self.Part, self.PartNum):
                 CleanResults.append(result)
-            else:
-                # Add to list to search on another site
-                noresults.append(result)
 
-        #Finally quitting the driver
-        self.driver.quit()
         # If there were no results appended to clean results then we need to skip the part and scrape on a different site
         if len(CleanResults) == 0:
-
             return []
         else:
             return CleanResults[:n] # < -- returning the first 'n' clean results

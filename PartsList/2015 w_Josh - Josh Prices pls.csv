@@ -1,0 +1,256 @@
+ID,SKU,Name before fix,Name via Formula,Short description,Weight (lbs),Regular price,Attribute 1 name,Attribute 1 value(s),Attribute 2 name,Brand,Attribute 3 name,Product Type,Attribute 4 name,Model,Attribute 5 name,Attribute 5 value(s)
+37692,031-001-0656,Allen-Bradley 1394C-SJT10-D Controller,Allen-Bradley Controller 1394C-SJT10-D,-,,,Location,2015c3,Brand,Allen-Bradley,Product Type,Controller,Model,1394C-SJT10-D,eBay ID,-
+18087,005-005-0428,Allen-Bradley 1756-N2/B,Allen-Bradley Processor 1756-N2/B,-,1,,Location,2015c1_LC1,Brand,Allen-Bradley,Product Type,Processor,Model,1756-N2/B,eBay ID,-
+16913,022-011-0382,Allen-Bradley 871C-DH4M12-A2 Switch,Allen-Bradley Switch 871C-DH4M12-A2,-,2,,Location,2015c5_LC4,Brand,Allen-Bradley,Product Type,Switch,Model,871C-DH4M12-A2,eBay ID,-
+16871,205-005-0413,Allen-Bradley Module 1394C-AM07,Allen-Bradley Module 1394C-AM07,-,10,,Location,2015c5_LC1,Brand,Allen-Bradley,Product Type,Module,Model,1394C-AM07,eBay ID,-
+39326,056-001-0253,Ametric Pulley M-2011593-350,Ametric Pulley M-2011593-350,-,1,,Location,2015C6_LC3,Brand,Ametric,Product Type,Pulley,Model,M-2011593-350,eBay ID,-
+18160,002-012-0012,Apollo 80PM419 Valve,Apollo Valve 80PM419,-,3,,Location,2015c1_LC5,Brand,Apollo,Product Type,Valve,Model,80PM419,eBay ID,-
+18225,002-018-0024,Armstrong 1822LV Steam Trap,Armstrong Steam Trap 1822LV,-,9,,Location,2015c1_LC8,Brand,Armstrong,Product Type,Steam Trap,Model,1822LV,eBay ID,-
+16578,MFG-000-1461,ASCO 200262 Valve,ASCO Valve 200262,-,2,,Location,2015C5_LC6,Brand,ASCO,Product Type,Valve,Model,200262,eBay ID,-
+16574,MFG-000-1458,ASCO 238210-032D Valve,ASCO Valve 238210-032D,-,2,,Location,2015C5_LC6,Brand,ASCO,Product Type,Valve,Model,238210-032D,eBay ID,-
+16571,MFG-000-1455,ASCO 302141 Valve,ASCO Valve 302141,-,2,,Location,2015C5_LC6,Brand,ASCO,Product Type,Valve,Model,302141,eBay ID,-
+18163,002-039-0061,ASCO 302335 Rebuild Kit,ASCO Rebuild Kit 302335,-,2,,Location,2015c1_LC5,Brand,ASCO,Product Type,Rebuild Kit,Model,302335,eBay ID,-
+18162,002-039-0064,ASCO 302373 Rebuild Kit,ASCO Rebuild Kit 302373,-,2,,Location,2015c1_LC4,Brand,ASCO,Product Type,Rebuild Kit,Model,302373,eBay ID,-
+16581,MFG-000-1464,ASCO 302699 Valve,ASCO Valve 302699,-,2,,Location,2015C5_LC6,Brand,ASCO,Product Type,Valve,Model,302699,eBay ID,-
+18090,003-001-0062,ASCO 34203057 Regulator,ASCO Regulator 34203057,-,3,,Location,2015c1_LC6,Brand,ASCO,Product Type,Regulator,Model,34203057,eBay ID,-
+16576,MFG-000-1460,ASCO 826278 Valve,ASCO Valve 826278,-,2,,Location,2015C5_LC6,Brand,ASCO,Product Type,Valve,Model,826278,eBay ID,-
+16573,MFG-000-1457,ASCO 8262G130T Valve,ASCO Valve 8262G130T,-,2,,Location,2015C5_LC6,Brand,ASCO,Product Type,Valve,Model,8262G130T,eBay ID,-
+16580,MFG-000-1463,ASCO 8345E11 Valve,ASCO Valve 8345E11,-,2,,Location,2015C5_LC6,Brand,ASCO,Product Type,Valve,Model,8345E11,eBay ID,-
+16575,MFG-000-1459,ASCO EF8262G2 Valve,ASCO Valve EF8262G2,-,2,,Location,2015C5_LC6,Brand,ASCO,Product Type,Valve,Model,EF8262G2,eBay ID,-
+16584,MFG-000-1466,ASCO EF8345G1 Valve,ASCO Valve EF8345G1,-,2,,Location,2015C5_LC6,Brand,ASCO,Product Type,Valve,Model,EF8345G1,eBay ID,-
+16572,MFG-000-1456,ASCO Redhat Kit V6379,ASCO Rebuild Kit V6379,-,2,,Location,2015c5_LC2,Brand,ASCO,Product Type,Rebuild Kit,Model,V6379,eBay ID,-
+18721,MFG-000-1484,ASCO Redhat Kit Valve 302697,ASCO Valve 302697,-,3,,Location,"2015C5_LC6, EEEE_LC9",Brand,ASCO,Product Type,Valve,Model,302697,eBay ID,-
+16579,MFG-000-1462,ASCO Redhat Rebuild Kit 100424,ASCO Rebuild Kit 100424,-,2,,Location,2015c5_LC3,Brand,ASCO,Product Type,Rebuild Kit,Model,100424,eBay ID,-
+22851,002-007-0225,ASCO Redhat Solenoid Valve 8210G34,ASCO Valve 8210G34,-,4,,Location,"2013c3_LC3, 2015c5_LC2",Brand,ASCO,Product Type,Valve,Model,8210G34,eBay ID,-
+16585,MFG-000-1467,ASCO Redhat Solenoid Valve 8263G210W,ASCO Solenoid Valve 8263G210W,-,2,,Location,2015c5_LC3,Brand,ASCO,Product Type,Solenoid Valve,Model,8263G210W,eBay ID,-
+16583,MFG-000-1465,ASCO Redhat Valve 8262G78,ASCO Valve 8262G78,-,3,,Location,"2015C5_LC6, BBBB_LC2",Brand,ASCO,Product Type,Valve,Model,8262G78,eBay ID,-
+13782,014-004-0634,ASK LCF20AVUU Bushing,ASK Bushing LCF20AVUU,-,3,,Location,2015c2_LC2,Brand,ASK,Product Type,Bushing,Model,LCF20AVUU,eBay ID,-
+17411,022-011-0297,Automatic Timing & Controls Proximity Sensor 301-3-5110-26,Automatic Timing & Controls Proximity Sensor 301-3-5110-26,-,2,,Location,2015c3_LC1,Brand,Automatic Timing & Controls,Product Type,Proximity Sensor,Model,301-3-5110-26,eBay ID,-
+22658,022-012-0308,Azbil AUD300C1000 Flame Detector,Azbil Flame Detector AUD300C1000,-,5,,Location,2015c6_LC1,Brand,Azbil,Product Type,Flame Detector,Model,AUD300C1000,eBay ID,-
+39312,013-002-0084,ContTech B47 Belt,ContTech Belt B47,-,1,,Location,2015c6,Brand,ContTech,Product Type,Belt,Model,B47,eBay ID,-
+39213,019-001-0402,Baldor M2513T Motor,Baldor Motor M2513T,-,156,,Location,2015s3,Brand,Baldor,Product Type,Motor,Model,M2513T,eBay ID,-
+39211,019-001-0882,Baldor EM3313T Motor,Baldor Motor EM3313T,-,120,,Location,2015s3,Brand,Baldor,Product Type,Motor,Model,EM3313T,eBay ID,-
+16894,013-001-0047,Bando Belt 600-S14M-1806,Bando Belt 600-S14M-1806,-,3,,Location,2015c5_LC1,Brand,Bando,Product Type,Belt,Model,600-S14M-1806,eBay ID,-
+16873,022-012-0325,Banner MSE3224,Banner Screen Light MSE3224,-,4,,Location,2015c5,Brand,Banner,Product Type,Screen Light,Model,MSE3224,eBay ID,-
+16907,022-012-0306,Banner Light Sensor LX12RSRQ,Banner Light Sensor LX12RSRQ,-,4,,Location,2015c5,Brand,Banner,Product Type,Light Sensor,Model,LX12RSRQ,eBay ID,-
+39314,013-007-0030,Bestorq BX47 Belt,Bestorq Belt BX47,-,1,,Location,2015c6,Brand,Bestorq,Product Type,Belt,Model,BX47,eBay ID,-
+39311,013-002-0188,BX49 Belt,Torque Flex Belt BX49,-,1,,Location,2015c6,Brand,Torque Flex,Product Type,Belt,Model,BX49,eBay ID,-
+39334,022-038-0740,Cable Cool -100C,Keyence Cable 022-038-0740,-,1,,Location,2015C6_LC3,Brand,Keyence,Product Type,Cable,Model,022-038-0740,eBay ID,-
+16905,051-001-0093,CEC MA-459 Shock Absorber,CEC Shock Absorber MA-459,-,2,,Location,2015c5_LC4,Brand,CEC,Product Type,Shock Absorber,Model,MA-459,eBay ID,-
+18094,003-001-0057,Coilhose Pneumatics FRL1400,Coilhose Pneumatics Lubricator FRL1400,-,6,,Location,2015c1,Brand,Coilhose Pneumatics,Product Type,Lubricator,Model,FRL1400,eBay ID,-
+39319,013-003-0268,Conv. Belt HAT8P 30MMX2065MM,PRAXAIR Belt 30MMX2065,-,1,,Location,2015C6_LC3,Brand,PRAXAIR,Product Type,Belt,Model,30MMX2065,eBay ID,-
+39318,013-003-0267,Conv. Belt HAT8P 30MMX3485MM,- Belt 30MMX3485MM,-,1,,Location,2015C6_LC3,Brand,-,Product Type,Belt,Model,30MMX3485MM,eBay ID,-
+39317,013-003-0266,Conv. Belt HAT8P 30MMX4475MM,- Belt 30MMX4475MM,-,1,,Location,2015C6_LC3,Brand,-,Product Type,Belt,Model,30MMX4475MM,eBay ID,-
+39309,045-003-0005,Conveyor 1.88 OD 7777ROLLER,- Roller 045-033-0005,-,1,,Location,2015c6,Brand,-,Product Type,Roller,Model,045-033-0005,eBay ID,-
+18095,005-004-0263,Cosel LCA10S-24,Cosel Power Supply LCA10S-24,-,2,,Location,2015c1_LC6,Brand,Cosel,Product Type,Power Supply,Model,LCA10S-24,eBay ID,-
+22652,MFG-000-1842,D4GS-N4R-3 Switch,Omron Switch D4GS-N4R-3,-,3,,Location,2015c6_LC2,Brand,Omron,Product Type,Switch,Model,D4GS-N4R-3,eBay ID,-
+13799,068-731-0002,Daishin D-300 Torch,Daishin Torch D-300,-,4,,Location,2015c5_LC2,Brand,Daishin,Product Type,Torch,Model,D-300,eBay ID,-
+39335,013-001-0510,Denso Belt 363-3GT-25,Denso Belt 410642-0480,-,1,,Location,2015C6_LC3,Brand,Denso,Product Type,Belt,Model,410642-0480,eBay ID,-
+39212,216-001-0090,Dodge Gear Reducer LP90M0215111,Dodge Gear Reducer LP90M0215111,-,1,,Location,2015s3,Brand,Dodge,Product Type,Gear Reducer,Model,LP90M0215111,eBay ID,-
+43964,068-514-0008,Drive Shaft 95M03M4A-03,WORKSMAN Shaft 95M03M4A-03,-,,,Location,2015C5_LC6,Brand,WORKSMAN,Product Type,Shaft,Model,95M03M4A-03,eBay ID,-
+13815,022-011-0179,E2E-X3T1-1 Switch,Omron Switch E2E-X3T1-1,-,2,,Location,2015c2_LC1,Brand,Omron,Product Type,Switch,Model,E2E-X3T1-1,eBay ID,-
+16916,022-011-0240,E2J-JC4A Switch,Omron Switch E2J-JC4A,-,2,,Location,2015c5_LC4,Brand,Omron,Product Type,Switch,Model,E2J-JC4A,eBay ID,-
+16596,031-001-0803,Estic ENRZ-AU40-10 Control Unit,Estic Control Unit ENRZ-AU40-10,-,12,,Location,2015c5,Brand,Estic,Product Type,Control Unit,Model,ENRZ-AU40-10,eBay ID,-
+18167,005-004-0281,Etek Dias EP182,Etek Dias Power Supply EP182,-,2,,Location,2015c1_LC6,Brand,Etek Dias,Product Type,Power Supply,Model,EP182,eBay ID,-
+18168,003-004-0090,Festo 7558KSV8,Festo Plug 7558KSV8*,-,3,,Location,2015c1_LC5,Brand,Festo,Product Type,Plug,Model,7558KSV8*,eBay ID,-
+37676,003-001-0282,Filter ESD-60-5-10M,Allen-Bradley Filter ESD-60-5-10M*,-,,,Location,2015c1_LC8,Brand,Allen-Bradley,Product Type,Filter,Model,ESD-60-5-10M*,eBay ID,-
+39275,027-002-0325,Filter Screen 20-8,Sanki Filter Screen 20-8,-,,,Location,2015C5_B2,Brand,Sanki,Product Type,Filter Screen,Model,20-8,eBay ID,-
+45232,031-001-0658,Fuji Electric Digital ES Controller RYE.20D,Fuji Electric Controllers RYE.20D,-,4,,Location,2015C6_LC3,Brand,Fuji Electric,Product Type,Controllers,Model,RYE.20D,eBay ID,-
+22732,022-011-0250,Fuji Electric PEW-34L/N Proximity Switch,Fuji Electric Proximity Switch PEW-34L/N,-,3,,Location,2015c6_LC2,Brand,Fuji Electric,Product Type,Proximity Switch,Model,PEW-34L/N,eBay ID,-
+39320,231-001-0588,Fuji Electric RYE.40D Control,Fuji Electric Controller RYE.40D,-,3,,Location,2015C6_LC3,Brand,Fuji Electric,Product Type,Controller,Model,RYE.40D,eBay ID,-
+22638,031-001-0588,Fuji Electric RYE.40D Control,Fuji Electric Controller RYE.40D,-,7,,Location,2015c6_LC2,Brand,Fuji Electric,Product Type,Controller,Model,RYE.40D,eBay ID,-
+16914,022-001-0751,Fuji Electric SA53C/15,Fuji Electric Breaker SA53C/15,-,3,,Location,2015c5_LC4,Brand,Fuji Electric,Product Type,Breaker,Model,SA53C/15,eBay ID,-
+18101,008-006-0021,Fuji Electric Selector Switch AR30PR-322B,Fuji Electric Switch AR30PR-322B,-,1,,Location,2015c1_LC4,Brand,Fuji Electric,Product Type,Switch,Model,AR30PR-322B,eBay ID,-
+22639,031-001-0659,Fuji Electric Servo Control RYE.10S,Fuji Electric Controllers RYE.10S,-,6,,Location,2015c6_LC2,Brand,Fuji Electric,Product Type,Controllers,Model,RYE.10S,eBay ID,-
+13802,014-013-0003,FYH UC213 Bearing,FYH Bearing UC213AMI,-,6,,Location,2015c5_LC1,Brand,FYH,Product Type,Bearing,Model,UC213AMI,eBay ID,-
+18102,014-003-0008,FYH UCF-209-E,FYH Bearing UCF-209-E,-,5,,Location,2015c1_LC7,Brand,FYH,Product Type,Bearing,Model,UCF-209-E,eBay ID,-
+39354,061-001-0306,Gear M-1122887-061,KHK Gear M-1122887-061,-,1,,Location,2015C6_LC4,Brand,KHK,Product Type,Gear,Model,M-1122887-061,eBay ID,-
+39346,061-001-0304,Gear M-11228887-011,KHK Gear M-11228887-011,-,1,,Location,2015C6_LC4,Brand,KHK,Product Type,Gear,Model,M-11228887-011,eBay ID,-
+18103,008-015-0009,GEMS Level Switch 19735,GEMS Level Switch LS-19735,-,1,,Location,2015c1_LC1,Brand,GEMS,Product Type,Level Switch,Model,LS-19735,eBay ID,-
+16922,019-001-0454,Grundfos VM3613T-P Motor,Grundfos Motor VM3613T-P,-,65,,Location,2015c5,Brand,Grundfos,Product Type,Motor,Model,VM3613T-P,eBay ID,-
+13800,014-013-0023,GVFTD1 Bearing,Fafnir Bearing GVFTD1,-,3,,Location,2015c2_LC1,Brand,Fafnir,Product Type,Bearing,Model,GVFTD1,eBay ID,-
+37685,236-505-0018,Harmonic Drive CSF-25-50-2UH,Harmonic Drive - CSF-25-50-2UH,-,4,,Location,2015c3,Brand,Harmonic Drive,Product Type,-,Model,CSF-25-50-2UH,eBay ID,-
+16884,013-003-0269,HAT8P Conveyor Belt,Habasit Conveyor Belt HATP-8P 30MMx370MM,-,2,,Location,2015c5,Brand,Habasit,Product Type,Conveyor Belt,Model,HATP-8P 30MMx370MM,eBay ID,-
+16885,013-003-0829,HATP8P Conveyor Belt,Habasit Conveyor Belt HATP-8P 30MMx370MM,-,2,,Location,2015c5,Brand,Habasit,Product Type,Conveyor Belt,Model,HATP-8P 30MMx370MM,eBay ID,-
+16909,022-012-0001,Honeywell C7027A Sensor,Honeywell Minipeeper Ultraviolet Flame Detector C7027A,-,3,,Location,2015c5_LC4,Brand,Honeywell,Product Type,Minipeeper Ultraviolet Flame Detector,Model,C7027A,eBay ID,-
+16569,MFG-000-1453,Honeywell FE-MLS5RB Control,Honeywell Photoelectric Sensor FE-MLS5RB,-,2,,Location,2015c5_LC2,Brand,Honeywell,Product Type,Photoelectric Sensor,Model,FE-MLS5RB,eBay ID,-
+22764,005-001-0271,Honeywell ST7800 Timer,Honeywell Purge Timer ST7800 A 1104,-,1,,Location,2015c6_LC2,Brand,Honeywell,Product Type,Purge Timer,Model,ST7800 A 1104,eBay ID,-
+18107,002-034-0004,Honeywell V5055C-1059,Honeywell Gas Valve V5055C1059,-,6,,Location,2015c1_LC3,Brand,Honeywell,Product Type,Gas Valve,Model,V5055C1059,eBay ID,-
+18171,005-003-0012,IDEC GT5Y4SN,IDEC Electronic Timer GT5Y-4SN,-,2,,Location,2015c1_LC7,Brand,IDEC,Product Type,Electronic Timer,Model,GT5Y-4SN,eBay ID,-
+16598,019-002-0114,IDEC VRSF-5E-4000,IDEC - VRSF-5E-4000,-,28,,Location,2015c5,Brand,IDEC,Product Type,-,Model,VRSF-5E-4000,eBay ID,-
+16892,022-012-0371,IFM Efector SD6101,IFM Flow Monitor SD6101,-,2,,Location,2015c5,Brand,IFM,Product Type,Flow Monitor,Model,SD6101,eBay ID,-
+17410,022-011-0276,IFM IF5863,IFM Inductive Sensor IF5863,-,2,,Location,2015c3_LC1,Brand,IFM,Product Type,Inductive Sensor,Model,IF5863,eBay ID,-
+17409,022-011-0259,IFM IW5058,IFM Proximity Switch IW5058,-,2,,Location,2015c3_LC1,Brand,IFM,Product Type,Proximity Switch,Model,IW5058,eBay ID,-
+18172,002-001-0499,IHI U12R,IHI Valve U-12R,-,4,,Location,2015c1_LC7,Brand,IHI,Product Type,Valve,Model,U-12R,eBay ID,-
+16889,014-004-0699,IKO LRXDG20C1-T1HS2 Linear BRG,IKO Linear Bearing LRXDG20C1-T1HS2,-,2,,Location,2015c5_LC5,Brand,IKO,Product Type,Linear Bearing,Model,LRXDG20C1-T1HS2,eBay ID,-
+16890,014-004-0574,IKO LRXDG20C1R200+T1HE Linear BRG,IKO Linear Bearing LRXDG20C1R200+T1HE,-,2,,Location,2015c5_LC5,Brand,IKO,Product Type,Linear Bearing,Model,LRXDG20C1R200+T1HE,eBay ID,-
+1325,002-004-0079,Jamesbury 21-1136TTC061 Ball Valve,Jamesbury Ball Valve 21-1136TTC061,-,4,,Location,2015c1_LC4,Brand,Jamesbury,Product Type,Ball Valve,Model,21-1136TTC061,eBay ID,-
+16912,022-012-0296,Keyence EX-205,Keyence Inductive Guaging Sensor EX-200,-,2,,Location,"2013c7_LC1, 2015c5",Brand,Keyence,Product Type,Inductive Guaging Sensor,Model,EX-200,eBay ID,-
+22845,022-012-0490,Keyence IV-500CA Sensor,Keyence Vision Sensor IV-500CA,-,3,,Location,2015c6_LC1,Brand,Keyence,Product Type,Vision Sensor,Model,IV-500CA,eBay ID,-
+1391,005-004-0282,Keyence MS-H50 Switch,Keyence Power Supply MS-H50,-,2,,Location,2015c1_LC3,Brand,Keyence,Product Type,Power Supply,Model,MS-H50,eBay ID,-
+16915,022-012-0230,Keyence PJ-V22,Keyence Safety Light Curtain PJ-V22R | PJ-V22T,-,5,,Location,2015c5_LC4,Brand,Keyence,Product Type,Safety Light Curtain,Model,PJ-V22R | PJ-V22T,eBay ID,-
+22660,061-001-0305,KHK M-1122887-021 Gear,KHK Gear M-1122887-021,-,7,,Location,2015c6_LC1,Brand,KHK,Product Type,Gear,Model,M-1122887-021,eBay ID,-
+22661,061-001-0307,KHK N Gear,KHK Gear -,-,7,,Location,2015c6_LC1,Brand,KHK,Product Type,Gear,Model,No Model Number,eBay ID,-
+18109,008-002-0122,Koganei CS9HA,Koganei Auto Switch CS9HA,-,1,,Location,2015c1_LC4,Brand,Koganei,Product Type,Auto Switch,Model,CS9HA,eBay ID,-
+18174,008-003-0072,Kosmek JB2800-M0,Kosmek Pressure Switch JB2800-M0,-,3,,Location,2015c1_LC4,Brand,Kosmek,Product Type,Pressure Switch,Model,JB2800-M0,eBay ID,-
+13805,014-024-0001,Koyo 6410 Bearing,Koyo Bearing 6410,-,6,,Location,2015c2_LC3,Brand,Koyo,Product Type,Bearing,Model,6410,eBay ID,-
+39217,019-001-0355,Leeson C42P17FZ1B Motor,Leeson Motor C42P17FZ1B,-,29,,Location,2015s3,Brand,Leeson,Product Type,Motor,Model,C42P17FZ1B,eBay ID,-
+16899,004-002-0060,Level Gauge 81021-9,- Level Gauge 81021-9,-,1,,Location,2015c5,Brand,-,Product Type,Level Gauge,Model,81021-9,eBay ID,-
+16906,022-012-0307,LX12ESRQ Light Sensor,Banner Light Sensor LX12ESRQ,-,4,,Location,2015c5,Brand,Banner,Product Type,Light Sensor,Model,LX12ESRQ,eBay ID,-
+18176,002-038-0030,Mac 35ASACRA11,MAC Valve 35A-SAC-RA11,-,1,,Location,2015c1_LC6,Brand,MAC,Product Type,Valve,Model,35A-SAC-RA11,eBay ID,-
+18110,004-001-0126,Marsh Bellofram J6218,"Marsh Bellofram Gauge J6218 30""",-,2,,Location,2015c1_LC5,Brand,Marsh Bellofram,Product Type,Gauge,Model,"J6218 30""",eBay ID,-
+18111,005-026-0019,Matsushita ANB845NL,Pentax Lens ANB845NL,-,1,,Location,2015c1_LC4,Brand,Pentax,Product Type,Lens,Model,ANB845NL,eBay ID,-
+1378,005-026-0018,Matsushita ANM830CE Camera,NAiS Camera ANM830CE,-,3,,Location,2015c1_LC4,Brand,NAiS,Product Type,Camera,Model,ANM830CE,eBay ID,-
+18112,013-001-0428,Megadyne 250S8M880,Super Torque Belt 250-S8M-880,-,2,,Location,2015c1_LC3,Brand,Super Torque,Product Type,Belt,Model,250-S8M-880,eBay ID,-
+18113,013-001-0429,Megadyne 250S8M960,Super Torque Belt -,-,2,,Location,2015c1_LC3,Brand,Super Torque,Product Type,Belt,Model,No Model Number,eBay ID,-
+1353,005-005-0189,Mitsubishi A1SD70,Mitsubishi Module MELSEC A1SD70,-,4,,Location,2015c1_LC9,Brand,Mitsubishi,Product Type,Module,Model,MELSEC A1SD70,eBay ID,-
+1374,005-005-0187,Mitsubishi A1SX42-S2 Module,Mitsubishi Module MELSEC A1SX42-S2,-,4,,Location,2015c1_LC6,Brand,Mitsubishi,Product Type,Module,Model,MELSEC A1SX42-S2,eBay ID,-
+10432,019-004-0225,Mitsubishi AC Servo Motor SGMGH-06A2B2E,Yaskawa Motor SGMGH-06A2B2E,-,27,,Location,"2012c2, 2015c5, 2015c6",Brand,Yaskawa,Product Type,Motor,Model,SGMGH-06A2B2E,eBay ID,-
+1329,005-005-0144,Mitsubishi AY51C Module,Mitsubishi Module MELSEC AY51C,-,3,,Location,2015c1_LC3,Brand,Mitsubishi,Product Type,Module,Model,MELSEC AY51C,eBay ID,-
+39216,019-004-0155,Mitsubishi HA-FF43B Motor,Mitsubishi Motor HA-FF43B,-,8,,Location,2015s3,Brand,Mitsubishi,Product Type,Motor,Model,HA-FF43B,eBay ID,-
+39214,019-001-0563,Mitsubishi HA-SA52 Motor,Mitsubishi Motor HA-SA52,-,10,,Location,2015s3,Brand,Mitsubishi,Product Type,Motor,Model,HA-SA52,eBay ID,-
+39345,076-910-0035,MJC-57-19X24-TB Coupling,- Coupling MJC-57-19X24-TB,-,1,,Location,2015C6_LC4,Brand,-,Product Type,Coupling,Model,MJC-57-19X24-TB,eBay ID,-
+18179,013-003-0241,Mol Belting Co. 2A,"Mol Belting Co. Belt 2AR2-0G-U-27""W-37'-11""L",-,35,,Location,2015c1,Brand,Mol Belting Co.,Product Type,Belt,Model,"2AR2-0G-U-27""W-37'-11""L",eBay ID,-
+18183,013-003-0831,Mol Belting Co. 2AR10OGU,Mol Belting Co. Belt 2AR10OGU,-,3,,Location,2015c1,Brand,Mol Belting Co.,Product Type,Belt,Model,2AR10OGU,eBay ID,-
+17399,013-003-0883,Mol Belting Co. 2AR210BG-U-5P,Mol Belting Co. Belt 2AR210BG-U-5P,-,8,,Location,2015c3,Brand,Mol Belting Co.,Product Type,Belt,Model,2AR210BG-U-5P,eBay ID,-
+18180,013-003-0256,Mol Belting Co. 2AR2OGULACED1712X248,Mol Belting Co. Belt 2AR2OGULACED1712X248,-,13,,Location,2015c1,Brand,Mol Belting Co.,Product Type,Belt,Model,2AR2OGULACED1712X248,eBay ID,-
+18181,013-003-0245,Mol Belting Co. 2AR2OWUX19WX157,"Mol Belting Co. Belt 2AR2-0W-UX19""WX-15""-7""L",-,10,,Location,2015c1,Brand,Mol Belting Co.,Product Type,Belt,Model,"2AR2-0W-UX19""WX-15""-7""L",eBay ID,-
+18182,013-003-0834,Mol Belting Co. 2ROO390WX1880L,Mol Belting Co. Belt 2ROO390WX1880L,-,3,,Location,2015c1,Brand,Mol Belting Co.,Product Type,Belt,Model,2ROO390WX1880L,eBay ID,-
+1347,014-001-0529,Nachi Bearing 6216-2NSL,Nachi Bearing 6216-2NSL,-,5,,Location,2015c1_LC1,Brand,Nachi,Product Type,Bearing,Model,6216-2NSL,eBay ID,-
+22669,022-063-0017,Nemicon MR-HDP01 Generator,Nemicon Generator OVM-0025-2AZ1-34E,-,3,,Location,2015c6_LC1,Brand,Nemicon,Product Type,Generator,Model,OVM-0025-2AZ1-34E,eBay ID,-
+1307,005-012-0030,Nikon RD2048 Rotary Encoder,Nikon Rotary Encoder EJA03204/RD2048,-,4,,Location,2015c1_LC2,Brand,Nikon,Product Type,Rotary Encoder,Model,EJA03204/RD2048,eBay ID,-
+13813,014-005-0106,Nippon GS3052,Nippon Washer GS3052,-,1,,Location,2015c2_LC1,Brand,Nippon,Product Type,Washer,Model,GS3052,eBay ID,-
+13812,014-012-0022,Nippon TA252OZ,Nippon Bearing TA252OZ,-,1,,Location,2015c2_LC1,Brand,Nippon,Product Type,Bearing,Model,TA252OZ,eBay ID,-
+13811,014-012-0141,Nippon TAFI61612 Bearing,Nippon Bearing TAFI61612,-,1,,Location,2015c5_LC2,Brand,Nippon,Product Type,Bearing,Model,TAFI61612,eBay ID,-
+18187,004-001-0120,Nisshin 7911389,Nisshin - 7911389,-,2,,Location,2015c1_LC5,Brand,Nisshin,Product Type,-,Model,7911389,eBay ID,-
+22766,MFG-000-1864,NSJ5-SQ00-M3D Control,Omron Control NSJ5-SQ00-M3D,-,5,,Location,2015c6_LC2,Brand,Omron,Product Type,Control,Model,NSJ5-SQ00-M3D,eBay ID,-
+18116,014-001-0106,NSK 6008VV,Koyo Bearing 6008 2RSC3 SKF,-,1,,Location,2015c1_LC8,Brand,Koyo,Product Type,Bearing,Model,6008 2RSC3 SKF,eBay ID,-
+16903,014-001-0431,NTN 7302CDF-GNP4 Bearing,NTN Bearing 7302C-DF-GNP4,-,2,,Location,2015c5,Brand,NTN,Product Type,Bearing,Model,7302C-DF-GNP4,eBay ID,-
+13814,014-007-0030,NTN ASPFL206 Pillow Block,NTN Pillow Block ASPFL206,-,3,,Location,2015c2_LC3,Brand,NTN,Product Type,Pillow Block,Model,ASPFL206,eBay ID,-
+18188,008-005-0028,Omron Photoelectric Switch E3E23L,Omron Photoelectric Switch E3E2-3L,-,2,,Location,2015c1_LC4,Brand,Omron,Product Type,Photoelectric Switch,Model,E3E2-3L,eBay ID,-
+18117,008-005-0075,Omron Photoelectric Switch E3S-2E41,Omron Photoelectric Switch E3S-2E41,-,1,,Location,2015c1_LC2,Brand,Omron,Product Type,Photoelectric Switch,Model,E3S-2E41,eBay ID,-
+18118,008-005-0011,Omron Photoelectric Switch E3S-5DE4,Omron Photoelectric Switch E3S-5E4,-,2,,Location,2015c1_LC4,Brand,Omron,Product Type,Photoelectric Switch,Model,E3S-5E4,eBay ID,-
+18119,005-003-0027,Omron Timer H3CR-H8L,Omron Timer H3CR-H8L,-,1,,Location,2015c1_LC8,Brand,Omron,Product Type,Timer,Model,H3CR-H8L,eBay ID,-
+22854,MFG-000-1910,Oriental Motor 51K40GN-SWT2S Motor,Oriental Motor Motor 51K40GN-SWT2S,-,7,,Location,2015c6_LC2,Brand,Oriental Motor,Product Type,Motor,Model,51K40GN-SWT2S,eBay ID,-
+37679,005-001-0007,P1DA Board,- Board P1DA,-,,,Location,2015c1_b1,Brand,-,Product Type,Board,Model,P1DA,eBay ID,-
+18124,003-001-0103,Parker Schrader Bellows 14L10GA,Schrader Bellows Lubricator Filter 14L10GASB,-,2,,Location,2015c1_LC1,Brand,Schrader Bellows,Product Type,Lubricator Filter,Model,14L10GASB,eBay ID,-
+37680,005-001-0091,Raytron AC2 Board,Raytron Tension Control Board 236,-,,,Location,2015c1_b1,Brand,Raytron,Product Type,Tension Control Board,Model,236,eBay ID,-
+39336,039-004-0026,Repair Kit HYP505H Assembly B,- Repair Kit HYP505H,-,1,,Location,2015c6,Brand,-,Product Type,Repair Kit,Model,HYP505H,eBay ID,-
+13823,014-007-0060,Rexnord P3-U215N Bearing,Rexnord Link-Belt Bearing P3-U215N,-,4,,Location,2015c2_LC1,Brand,Rexnord,Product Type,Link-Belt Bearing,Model,P3-U215N,eBay ID,-
+22640,031-001-0840,RTA NWRE Control,RTA Interface Converter NWRE,-,2,,Location,2015c6_LC1,Brand,RTA,Product Type,Interface Converter,Model,NWRE,eBay ID,-
+17398,008-028-0045,Safety Plug 22806,Molex Safety Plug 22806,-,2,,Location,2015c3_LC2,Brand,Molex,Product Type,Safety Plug,Model,22806,eBay ID,-
+37690,231-001-0717,Schmersal SLB400-C10-1R Control,Schmersal Safety Controller SLB400-C10-1R,-,3,,Location,2015c3,Brand,Schmersal,Product Type,Safety Controller,Model,SLB400-C10-1R,eBay ID,-
+39218,219-004-0011,Servo Motor GRK2200K-T,Fuji Electric ES Motor GRK2200K-T,-,,,Location,2015s3,Brand,Fuji Electric,Product Type,ES Motor,Model,GRK2200K-T,eBay ID,-
+39215,019-001-0562,Servo Motor HA-SA152LY,Tamagawa Seiki Servo Motor HA-SA152LY,-,,,Location,2015s3,Brand,Tamagawa Seiki,Product Type,Servo Motor,Model,HA-SA152LY,eBay ID,-
+37681,019-004-0248,Servo Motor SGMAH-08A1AJ12C,Yaskawa Servo Motor SGMAH-08A1AJ12C,-,,,Location,2015c3,Brand,Yaskawa,Product Type,Servo Motor,Model,SGMAH-08A1AJ12C,eBay ID,-
+37683,219-004-0248,Servo Motor SGMAH-08A1AJ12C,Yaskawa Servo Motor SGMAH-08A1AJ12C,-,,,Location,2015c3,Brand,Yaskawa,Product Type,Servo Motor,Model,SGMAH-08A1AJ12C,eBay ID,-
+16908,022-007-0244,SH04.22A Relay,EEC Controls Relay/Socket SH04.22A,-,2,,Location,2015c5_LC4,Brand,EEC Controls,Product Type,Relay/Socket,Model,SH04.22A,eBay ID,-
+18191,002-011-0114,Sharpe 293025010,Sharpe Check Valve 293025010,-,6,,Location,2015c1_LC1,Brand,Sharpe,Product Type,Check Valve,Model,293025010,eBay ID,-
+22647,039-003-1783,SMC ACNL-X2-63X90-FA-M Cylinder,SMC Cylinder ACNL-X2-63X90-FA-M,-,12,,Location,2015c6_LC2,Brand,SMC,Product Type,Cylinder,Model,ACNL-X2-63X90-FA-M,eBay ID,-
+13830,003-001-0076,SMC AR925-20,SMC Regulator AR925-20,-,12,,Location,2015c2_LC2,Brand,SMC,Product Type,Regulator,Model,AR925-20,eBay ID,-
+18127,003-006-0006,SMC AS2201F-02-04S,SMC Speed Control Valve AS2201F-02-04S,-,1,,Location,2015c1_LC8,Brand,SMC,Product Type,Speed Control Valve,Model,AS2201F-02-04S,eBay ID,-
+18130,003-028-0008,SMC C1A63-02-46683AS,SMC Rod Cover C1A63-02-46683AS,-,2,,Location,2015c1_LC3,Brand,SMC,Product Type,Rod Cover,Model,C1A63-02-46683AS,eBay ID,-
+1313,002-008-0006,SMC CC100-200L12-5D,SMC Air-Hydro Unit CC100-200L12-5D,-,9,,Location,2015c1,Brand,SMC,Product Type,Air-Hydro Unit,Model,CC100-200L12-5D,eBay ID,-
+18131,039-003-0900,SMC CDA2L63-380-K59L,SMC Cylinder CDA2L63-380-K59L,-,12,,Location,2015c1,Brand,SMC,Product Type,Cylinder,Model,CDA2L63-380-K59L,eBay ID,-
+17413,039-003-0340,SMC CDJP2B16-20D,SMC Air Cylinder CDJP2B16-20D,-,4,,Location,2015c3_LC1,Brand,SMC,Product Type,Air Cylinder,Model,CDJP2B16-20D,eBay ID,-
+39240,039-003-1334,SMC CDM2B25-350-X142US Cylinder,SMC Cylinder CDM2B25-350-X142US,-,1,,Location,2015C5_B2,Brand,SMC,Product Type,Cylinder,Model,CDM2B25-350-X142US,eBay ID,-
+17414,039-003-0828,SMC CDQ2B25-10DCZ,SMC Compact Cylinder CDQ2B25-10DCZ,-,3,,Location,2015c3_LC1,Brand,SMC,Product Type,Compact Cylinder,Model,CDQ2B25-10DCZ,eBay ID,-
+17417,039-003-3515,SMC CDQ2B32-60DCMZ-XB10,SMC Compact Cylinder CDQ2B32-60DCMZ-XB,-,4,,Location,2015c3_LC1,Brand,SMC,Product Type,Compact Cylinder,Model,CDQ2B32-60DCMZ-XB,eBay ID,-
+39332,039-093-0338,SMC CDQ2B63-10DMZ Cylinder,SMC Cylinder CDQ2B63-10DMZ-M9BL,-,1,,Location,2015C6_LC3,Brand,SMC,Product Type,Cylinder,Model,CDQ2B63-10DMZ-M9BL,eBay ID,-
+39241,039-003-0020,SMC CDQ2B80-20DZ Cylinder,SMC CQ2 Compact Cylinder CDQ2B80-20DZ,-,1,,Location,2015C5_B2,Brand,SMC,Product Type,CQ2 Compact Cylinder,Model,CDQ2B80-20DZ,eBay ID,-
+39239,039-003-1544,SMC CDQ2B80-50DMZ Cylinder,SMC Cylinder CDQ2B80-50DMZ,-,1,,Location,2015C5_B2,Brand,SMC,Product Type,Cylinder,Model,CDQ2B80-50DMZ,eBay ID,-
+17396,003-030-0038,SMC CDRB1BW30-1000-T79,SMC Actuator CDRB1BW30-1000-T79L,-,2,,Location,2015c3_LC1,Brand,SMC,Product Type,Actuator,Model,CDRB1BW30-1000-T79L,eBay ID,-
+18193,003-030-0058,SMC CDRQB40,SMC Rotary Actuator CDRQB40,-,6,,Location,"2012c2_LC2, 2015c1_LC6",Brand,SMC,Product Type,Rotary Actuator,Model,CDRQB40,eBay ID,-
+39247,039-003-0005,SMC CDU25-15D Cylinder,SMC CU Compact Cylinder CDU25-15D,-,1,,Location,2015C5_B2,Brand,SMC,Product Type,CU Compact Cylinder,Model,CDU25-15D,eBay ID,-
+19509,039-003-1693,SMC CEIF40-400-M9BVLS Cylinder,SMC Cylinder CEIF40-400-M9BVLS,-,10,,Location,2015c5,Brand,SMC,Product Type,Cylinder,Model,CEIF40-400-M9BVLS,eBay ID,-
+18208,003-001-0184,SMC Combo Modular AC30-NO3DG-3Z,SMC Combo Modular AC30-NO3DG-3Z,-,3,,Location,2015c1_LC2,Brand,SMC,Product Type,Combo Modular,Model,AC30-NO3DG-3Z,eBay ID,-
+22645,039-003-1243,SMC CXSL25-80-Y59BL Cylinder,SMC Dual Rod Cylinder CXSL25-80-Y59BL,-,4,,Location,2015c6_LC2,Brand,SMC,Product Type,Dual Rod Cylinder,Model,CXSL25-80-Y59BL,eBay ID,-
+13827,039-003-1607,SMC CXSM20-40-Y59BL Cylinder,SMC Guided Cylinder CXSM20-40,-,3,,Location,2015c5_LC2,Brand,SMC,Product Type,Guided Cylinder,Model,CXSM20-40,eBay ID,-
+22759,008-025-0001,SMC EZM121HF-K5LZ-E15 Vacuum Generator,SMC Vacuum Pressure Switch ZSE1-00-15L,-,3,,Location,2015c6_LC2,Brand,SMC,Product Type,Vacuum Pressure Switch,Model,ZSE1-00-15L,eBay ID,-
+18192,008-003-0145,SMC IS3000-N02L5,SMC Pressure Switch IS3000-N02L5,-,3,,Location,2015c1_LC5,Brand,SMC,Product Type,Pressure Switch,Model,IS3000-N02L5,eBay ID,-
+16904,008-003-0209,SMC ISE30A-01-P-MLA1 Switch,SMC Digital Pressure Switch ISE30A-01-P-MLA1,-,2,,Location,2015c5_LC4,Brand,SMC,Product Type,Digital Pressure Switch,Model,ISE30A-01-P-MLA1,eBay ID,-
+18132,003-003-0224,SMC JAF63-18-150,SMC Floating Joint JAF63-18-150,-,3,,Location,2015c1_LC8,Brand,SMC,Product Type,Floating Joint,Model,JAF63-18-150,eBay ID,-
+17395,003-003-0028,SMC JB63-10-150,SMC Floating Joint JB63-10-150,-,2,,Location,2015c3_LC1,Brand,SMC,Product Type,Floating Joint,Model,JB63-10-150,eBay ID,-
+18135,002-039-0118,SMC KT-PA3-32,SMC Repair Kit KT-PA3-32,-,1,,Location,2015c1_LC8,Brand,SMC,Product Type,Repair Kit,Model,KT-PA3-32,eBay ID,-
+18136,002-039-0117,SMC KT-PA3-36,SMC Repair Kit KT-PA3-36,-,1,,Location,2015c1_LC5,Brand,SMC,Product Type,Repair Kit,Model,KT-PA3-36,eBay ID,-
+18138,003-007-0048,SMC KTAR6000,SMC Diaphragm Assy KTAR6000,-,1,,Location,2015c1_LC8,Brand,SMC,Product Type,Diaphragm Assy,Model,KTAR6000,eBay ID,-
+18139,039-003-0461,SMC MCN2-40X100-FA,SMC Cylinder MCN2-40X100-FA,-,5,,Location,2015c1_LC7,Brand,SMC,Product Type,Cylinder,Model,MCN2-40X100-FA,eBay ID,-
+22644,039-003-1076,SMC MGPM25R-60Z Cylinder,SMC Compact Guide Cylinder MGPM25R-60Z,-,6,,Location,2015c6_LC2,Brand,SMC,Product Type,Compact Guide Cylinder,Model,MGPM25R-60Z,eBay ID,-
+39245,039-003-1029,SMC MHKL2-25D Gripper,SMC Gripper MHKL2-25D-M9BVLS,-,1,,Location,2015C5_B2,Brand,SMC,Product Type,Gripper,Model,MHKL2-25D-M9BVLS,eBay ID,-
+39238,039-003-1009,SMC MHKL2-25D Gripper,SMC Gripper MHKL2-25D-M9BVLS,-,1,,Location,2015C5_B2,Brand,SMC,Product Type,Gripper,Model,MHKL2-25D-M9BVLS,eBay ID,-
+17416,039-003-1609,SMC MXS12L-20-M9BL,SMC Guided Cylinder MXS12L-20-M9BL,-,5,,Location,2015c3_LC1,Brand,SMC,Product Type,Guided Cylinder,Model,MXS12L-20-M9BL,eBay ID,-
+17394,003-001-0259,SMC NARB250-N0-P-1,SMC Interface Regulator NARB250-N0-P-1,-,5,,Location,2015c3_LC2,Brand,SMC,Product Type,Interface Regulator,Model,NARB250-N0-P-1,eBay ID,-
+13828,039-003-3511,SMC NCMB075-0300,SMC Stainless Steel Cylinder NCMB075-0300,-,2,,Location,2015c2_LC2,Brand,SMC,Product Type,Stainless Steel Cylinder,Model,NCMB075-0300,eBay ID,-
+13825,039-003-1532,SMC NCQ2D63-35DM,SMC Cylinder NCQ2D63-35DM,-,5,,Location,2015c2_LC2,Brand,SMC,Product Type,Cylinder,Model,NCQ2D63-35DM,eBay ID,-
+39249,036-615-0003,SMC Robot Chuck MDHR-30R-MSBVL,SMC Gripper MDHR2-30R,-,1,,Location,2015C5_B2,Brand,SMC,Product Type,Gripper,Model,MDHR2-30R,eBay ID,-
+17415,039-003-1054,SMC RSDQA40-20TK,SMC Cylinder RSDQA40-20TK,-,5,,Location,2015c3_LC1,Brand,SMC,Product Type,Cylinder,Model,RSDQA40-20TK,eBay ID,-
+13826,039-003-1528,SMC RSDQA50-30T-XC18,SMC Cylinder RSDQA50-30T-XC18,-,5,,Location,2015c2_LC2,Brand,SMC,Product Type,Cylinder,Model,RSDQA50-30T-XC18,eBay ID,-
+19510,039-003-3034,SMC SKB83X160-DB-M,PHD Cylinder SKB83x160-DB-M,-,18,,Location,2015c5_LC1,Brand,PHD,Product Type,Cylinder,Model,SKB83x160-DB-M,eBay ID,-
+13829,068-526-0010,SMC US13228,- Piston Rod US13228,-,1,,Location,2015c5_LC2,Brand,-,Product Type,Piston Rod,Model,US13228,eBay ID,-
+18141,002-001-0446,SMC VFS3600-5FZ,SMC Solenoid Valve VFS3600-5FZ,-,4,,Location,2015c1_LC8,Brand,SMC,Product Type,Solenoid Valve,Model,VFS3600-5FZ,eBay ID,-
+18142,002-038-0062,SMC VV2102-C6-02DS3Z-FD3,SMC MFLD ASSY VV2102-C6-02DS3Z-FD3,-,5,,Location,2015c1_LC1,Brand,SMC,Product Type,MFLD ASSY,Model,VV2102-C6-02DS3Z-FD3,eBay ID,-
+18143,002-038-0063,SMC VV2105-C6-02DS3Z-FD3,SMC MFLD ASSY VV2105-C6-02DS3Z-FD3,-,7,,Location,2015c1_LC4,Brand,SMC,Product Type,MFLD ASSY,Model,VV2105-C6-02DS3Z-FD3,eBay ID,-
+18144,002-016-0003,SMC VVFS2000-R-01-1,SMC Individual Exhaust Spacer VVFS2000-R-01-1,-,2,,Location,2015c1_LC5,Brand,SMC,Product Type,Individual Exhaust Spacer,Model,VVFS2000-R-01-1,eBay ID,-
+17393,002-007-0382,SMC VVQ4000-R-1-03,SMC Exhaust Relocation Block VVQ4000-R-1-03,-,3,,Location,2015c3_LC1,Brand,SMC,Product Type,Exhaust Relocation Block,Model,VVQ4000-R-1-03,eBay ID,-
+18195,002-038-0073,SMC VVQ4105C8MP04DS5Z,SMC - VVQ4105C8MP04DS5Z,-,16,,Location,2015c1,Brand,SMC,Product Type,-,Model,VVQ4105C8MP04DS5Z,eBay ID,-
+18194,002-001-0464,SMC VX3244,SMC Solenoid Valve VX3244,-,3,,Location,2015c1_LC7,Brand,SMC,Product Type,Solenoid Valve,Model,VX3244,eBay ID,-
+18145,002-007-0194,SMC VZ51405DZ02,SMC Solenoid Base VZ5140-5DZ-02,-,2,,Location,2015c1_LC6,Brand,SMC,Product Type,Solenoid Base,Model,VZ5140-5DZ-02,eBay ID,-
+18147,003-025-0022,SMC ZPT10DU-A5,SMC Vacuum Pad ZPT10DU-A5,-,1,,Location,2015c1_LC6,Brand,SMC,Product Type,Vacuum Pad,Model,ZPT10DU-A5,eBay ID,-
+16887,003-002-0034,SMC ZZM-SA,SMC Silencer Assembly ZZM-SA,-,1,,Location,2015c5,Brand,SMC,Product Type,Silencer Assembly,Model,ZZM-SA,eBay ID,-
+13831,005-026-0041,Sony DC-700 Camera Adapter,Sony Camera Adapter DC-700,-,4,,Location,2015c2_LC2,Brand,Sony,Product Type,Camera Adapter,Model,DC-700,eBay ID,-
+22659,054-001-0040,Sony DG10BS Digital Gauge,Sony Magnescale Probe DG10BS,-,4,,Location,2015c6,Brand,Sony,Product Type,Magnescale Probe,Model,DG10BS,eBay ID,-
+18196,005-003-0042,Sunao ET100PC,Sunao Calendar-Timer ET100PC,-,5,,Location,2015c1_LC4,Brand,Sunao,Product Type,Calendar-Timer,Model,ET100PC,eBay ID,-
+16876,022-012-0302,SunX SF4-AH12-N Light Sensor,SUNX Light Curtain SF4-AH12-N D | SF4-AH12-N P,-,4,,Location,2015c5,Brand,SUNX,Product Type,Light Curtain,Model,SF4-AH12-N D | SF4-AH12-N P,eBay ID,-
+16920,022-012-0289,SunX SF4-AH24-N Light Sensor,SUNX Light Curtain SF4-AH24-N D | SF4-AH24-N P,-,4,,Location,2015c5,Brand,SUNX,Product Type,Light Curtain,Model,SF4-AH24-N D | SF4-AH24-N P,eBay ID,-
+16872,022-012-0166,SunX SF4-AH32 Light Sensor,SUNX Light Sensor SF4-AH32 D,-,4,,Location,2015c5,Brand,SUNX,Product Type,Light Sensor,Model,SF4-AH32 D,eBay ID,-
+18149,003-015-0108,Swagelok B-810-3TMT,Swagelok Brass Male Run Tee B-810-3TMT,-,2,,Location,2015c1_LC4,Brand,Swagelok,Product Type,Brass Male Run Tee,Model,B-810-3TMT,eBay ID,-
+22604,022-046-0003,Sylvania QTP2X32T8/UNVISNSCB,Sylvania Fluorescent Lamp Ballast QTP2x32T8/UNV ISN-SC,-,3,,Location,2015c6_LC1,Brand,Sylvania,Product Type,Fluorescent Lamp Ballast,Model,QTP2x32T8/UNV ISN-SC,eBay ID,-
+1234,005-004-0292,Teli CA130D-01 Camera Adapter,Teli Camera Adapter CA130D-01,-,4,,Location,2015c1,Brand,Teli,Product Type,Camera Adapter,Model,CA130D-01,eBay ID,-
+16888,014-011-0460,THK BNK1402-3RRG0+166LC3Y Ball Screw,THK Ball Screw BNK1402-3RRG0+166LC3Y,-,4,,Location,2015c5_LC5,Brand,THK,Product Type,Ball Screw,Model,BNK1402-3RRG0+166LC3Y,eBay ID,-
+18151,014-004-0268,THK HSR15B1SS,THK - HSR15B1SS,-,2,,Location,2015c1_LC7,Brand,THK,Product Type,-,Model,HSR15B1SS,eBay ID,-
+18197,014-004-0376,THK HSR15B2SS+210L,THK Linear Bearing HSR15B2SS+210L,-,3,,Location,2015c1_LC7,Brand,THK,Product Type,Linear Bearing,Model,HSR15B2SS+210L,eBay ID,-
+39232,014-004-744,THK HSR25LR1SS Linear Guide Block,THK Linear Guide Block HSR25LR1SS(GK),-,2,,Location,2015C2_LC7,Brand,THK,Product Type,Linear Guide Block,Model,HSR25LR1SS(GK),eBay ID,-
+16877,003-030-0062,THK KR45H10AE840LH3E11,THK LM Guide Actuator KR45H,-,35,,Location,2015c5,Brand,THK,Product Type,LM Guide Actuator,Model,KR45H,eBay ID,-
+39221,014-018-0012,THK LBS30UU+975,THK Ball Spline LBS30UU+975 845LE,-,6,,Location,2015c2_LC4,Brand,THK,Product Type,Ball Spline,Model,LBS30UU+975 845LE,eBay ID,-
+39357,014-004-0482,THK Linear Brg SRS15WGMSSC1+750LM,THK Linear Bearing SRS15WGMSSC1+750LM,-,1,,Location,2015c2_LC4,Brand,THK,Product Type,Linear Bearing,Model,SRS15WGMSSC1+750LM,eBay ID,-
+39356,014-004-0531,THK Linear Brg SRS15WGMSSC1+790LM,THK Linear Bearing SRS15WGMSSC1+790LM,-,1,,Location,2015c2_LC4,Brand,THK,Product Type,Linear Bearing,Model,SRS15WGMSSC1+790LM,eBay ID,-
+16927,014-004-0577,THK M-2045473-292 Linear BRG,THK Linear Bearing SHW14CA1QZUUC1M+356LMS,-,4,,Location,2015c5_LC5,Brand,THK,Product Type,Linear Bearing,Model,SHW14CA1QZUUC1M+356LMS,eBay ID,-
+13834,014-004-0494,THK SSSR15XV1SSME+400 Bearing,THK Linear Bearing SSSR15XV1SSME+400LYMS,-,3,,Location,2015c2_LC3,Brand,THK,Product Type,Linear Bearing,Model,SSSR15XV1SSME+400LYMS,eBay ID,-
+39331,013-001-0458,Timing Belt MRA1 YOU,- Belt MRA1 YOU,-,1,,Location,2015C6_LC3,Brand,-,Product Type,Belt,Model,MRA1 YOU,eBay ID,-
+18152,002-042-0006,Tokyo Keiki DGMFN-3-X-A2W-B2W-41J,Tokyo Keiki Restrictor Valve TGMFN-3-X-A2W-B2W-50,-,4,,Location,2015c1_LC2,Brand,Tokyo Keiki,Product Type,Restrictor Valve,Model,TGMFN-3-X-A2W-B2W-50,eBay ID,-
+18198,002-013-0076,Tokyo Keiki EPFRGH0235011S23,Tokyo Keiki Flow Control Valve EPFRG-H02-350-11-S23,-,35,,Location,2015c1,Brand,Tokyo Keiki,Product Type,Flow Control Valve,Model,EPFRG-H02-350-11-S23,eBay ID,-
+13837,005-026-0046,Toshiba AC-M412W Camera Adapter,Toshiba AC Adapter AC-M412W,-,4,,Location,2015c2_LC2,Brand,Toshiba,Product Type,AC Adapter,Model,AC-M412W,eBay ID,-
+13838,005-026-0015,Toshiba Camera CS8310B,Toshiba CCD Camera CS8310Bi,-,3,,Location,2015c5_LC1,Brand,Toshiba,Product Type,CCD Camera,Model,CS8310Bi,eBay ID,-
+18201,002-007-0236,Toyo-oki AK02002,Toyooki Solenoid Valve AK-02002,-,3,,Location,2015c1_LC5,Brand,Toyooki,Product Type,Solenoid Valve,Model,AK-02002,eBay ID,-
+18154,002-014-0010,Toyo-oki HD3-2WD-BCA-025A-LYD2,Toyooki Solenoid Valve HD3-2WD-BCA-025A-LYD,-,6,,Location,2015c1_LC2,Brand,Toyooki,Product Type,Solenoid Valve,Model,HD3-2WD-BCA-025A-LYD,eBay ID,-
+18202,002-014-0021,Toyo-oki HD32WDBCA03ALYD2,Toyooki Solenoid Valve HD3-2WD-BcA-03A-LYD,-,10,,Location,2015c1_LC1,Brand,Toyooki,Product Type,Solenoid Valve,Model,HD3-2WD-BcA-03A-LYD,eBay ID,-
+13839,002-014-0008,Toyo-oki HDE-3W-BGA-025B-WYD2 Valve,Toyooki Valve HD3-3W-BGA-025B-WYD2,-,8,,Location,2015c2_LC3,Brand,Toyooki,Product Type,Valve,Model,HD3-3W-BGA-025B-WYD2,eBay ID,-
+13840,002-014-0128,Toyo-oki Valve Switch HW3H-B11S-025B-DC,Toyooki Valve HW3H-B11S-025B-DC,-,5,,Location,2015c5_LC1,Brand,Toyooki,Product Type,Valve,Model,HW3H-B11S-025B-DC,eBay ID,-
+13792,008-030-0045,Tri-Tronics 17301,Tri-Tronics Fiber Optic Kit SER D-036649-000,-,5,,Location,2015c2_LC3,Brand,Tri-Tronics,Product Type,Fiber Optic Kit,Model,SER D-036649-000,eBay ID,-
+13816,014-011-0501,TSB0608N1494AP Ballscrew,Parker Ballscrew TSB0608N1494AP,-,1,,Location,2015c5_LC2,Brand,Parker,Product Type,Ballscrew,Model,TSB0608N1494AP,eBay ID,-
+17402,015-001-0276,Tsubaki RF2050VRP-A-148,Tsubaki Chain RF2050VRP-A-148,-,25,,Location,2015c3,Brand,Tsubaki,Product Type,Chain,Model,RF2050VRP-A-148,eBay ID,-
+17412,022-038-1061,Turck R5C12T-5,Turck Cable/Cord R5C12T-5,-,2,,Location,2015c3_LC1,Brand,Turck,Product Type,Cable/Cord,Model,R5C12T-5,eBay ID,-
+39223,463-532-0024,Tz3 Ext Harness H-532-TZ3,- Harness H-532-TZ3,-,1,,Location,2015c2_LC4,Brand,-,Product Type,Harness,Model,H-532-TZ3,eBay ID,-
+13836,068-731-0001,UJD-046 Torch,- Torch UJD-046,-,2,,Location,2015c5_LC2,Brand,-,Product Type,Torch,Model,UJD-046,eBay ID,-
+1606,MFG-000-0129,VAC Switch,GEMS Level Switch LS-19735,-,1,,Location,2015c1_LC1,Brand,GEMS,Product Type,Level Switch,Model,LS-19735,eBay ID,-
+22712,005-026-0060,VS Technology SV-GA305 Photographic Accessories,VS Technology Lens Protector SV-GA305,-,1,,Location,2015c6_LC2,Brand,VS Technology,Product Type,Lens Protector,Model,SV-GA305,eBay ID,-
+7707,002-001-0427,VX2340V-03N-5DZ1-B,SMC Solenoid Valve VX2340V-03N-5DZ1,-,2,,Location,2015C5_LC6,Brand,SMC,Product Type,Solenoid Valve,Model,VX2340V-03N-5DZ1,eBay ID,-
+39230,MFG-000-2010,X272 Rear Blower Harness H-532,- Harness H-532 X272,-,1,,Location,2015C2_LC6,Brand,-,Product Type,Harness,Model,H-532 X272,eBay ID,-
+39229,MFG-000-2009,X272/X222 Auto Harness H-532,- Harness H-532 X272/X222,-,1,,Location,2015C2_LC5,Brand,-,Product Type,Harness,Model,H-532 X272/X222,eBay ID,-
+16595,039-003-1684,Yaskawa CDPXWL32-50,SMC Cylinder CDPXWL32-50,-,8,,Location,2015c5_LC1,Brand,SMC,Product Type,Cylinder,Model,CDPXWL32-50,eBay ID,-
+18155,005-005-0483,Yaskawa JEPMC-MB210,Yaskawa Power Supply Mount JEPMC-MB210,-,3,,Location,2015c1_LC2,Brand,Yaskawa,Product Type,Power Supply Mount,Model,JEPMC-MB210,eBay ID,-
+1551,MFG-000-0112,Yaskawa JRMSP-120XCP96000,Yaskawa PLC Module JRMSP-120XCP96000,-,6,,Location,2015c1,Brand,Yaskawa,Product Type,PLC Module,Model,JRMSP-120XCP96000,eBay ID,-
+37678,205-005-0491,Yaskawa JUSP-NS600,Yaskawa Servopack JUSP-NS600,-,1,,Location,2015c1_LC8,Brand,Yaskawa,Product Type,Servopack,Model,JUSP-NS600,eBay ID,-
+16589,031-004-0042,Yaskawa SGDB-10AN,Yaskawa Servopack SGDB-10AN,-,12,,Location,2015c5,Brand,Yaskawa,Product Type,Servopack,Model,SGDB-10AN,eBay ID,-
+16587,031-004-0044,Yaskawa SGDB-30ANY8 Servopack,Yaskawa Servopack SGDB-30ANY8,-,18,,Location,2015c5,Brand,Yaskawa,Product Type,Servopack,Model,SGDB-30ANY8,eBay ID,-
+16943,019-004-0250,Yaskawa SGMAH-02A1A2S,Yaskawa AC Servo Motor SGMAH-02A1A2S,-,35,,Location,2015c5,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMAH-02A1A2S,eBay ID,-
+16592,019-004-0290,Yaskawa SGMAH-08A1A2S Motor,Yaskawa AC Servo Motor SGMGH-08A1A2S,-,12,,Location,2015c5,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMGH-08A1A2S,eBay ID,-
+16590,019-004-0214,Yaskawa SGMGH-05A2A21,Yaskawa AC Servo Motor SGMGH-05A2A21,-,17,,Location,2015c5,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMGH-05A2A21,eBay ID,-
+16591,019-004-0221,Yaskawa SGMGH-09A2B2S,Yaskawa AC Servo Motor SGMGH-09A2B2S,-,25,,Location,2015c5,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMGH-09A2B2S,eBay ID,-
+17407,019-004-0187,Yaskawa SGMGH-55A2A21,Yaskawa AC Servo Motor SGMGH-55A2A21,-,80,,Location,2015c3,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMGH-55A2A21,eBay ID,-
+16586,019-004-0213,Yaskawa SGMPH-04A1A2C0,Yaskawa AC Servo Motor SGMPH-04A1A2C,-,9,,Location,2015c5,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMPH-04A1A2C,eBay ID,-
+16588,019-004-0226,Yaskawa SGMPH-15A1A2E,Yaskawa AC Servo Motor SGMPH-15A1A2E,-,22,,Location,2015c5,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMPH-15A1A2E,eBay ID,-
+16593,019-004-0293,Yaskawa SGMSH-20A2A2E,Yaskawa AC Servo Motor SGMSH-20A2A2E,-,25,,Location,2015c5,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMSH-20A2A2E,eBay ID,-
+16930,219-004-0264,Yaskawa SGMSH-40A2A21 Motor,Yaskawa AC Servo Motor SGMSH-40A2A21,-,40,,Location,2015c5,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMSH-40A2A21,eBay ID,-
+16594,019-004-0264,Yaskawa SGMSH-40A2A21 Motor,Yaskawa AC Servo Motor SGMSH-40A2A21,-,40,,Location,2015c5,Brand,Yaskawa,Product Type,AC Servo Motor,Model,SGMSH-40A2A21,eBay ID,-
+22672,041-001-0114,Youngblood 1340866 Heater Band,- Heater Band 1340866,-,3,,Location,2015c6_LC2,Brand,-,Product Type,Heater Band,Model,1340866,eBay ID,-

@@ -1,4 +1,4 @@
-from selenium.common import NoSuchElementException
+from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Web_Class.BaseScraper import BaseScraper
@@ -13,7 +13,6 @@ class EbayScraper(BaseScraper):
     def get_search_url(self, query: str):
         return f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}"
     def select_result_items(self):
-
         try:
             return self.driver.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
         except NoSuchElementException:
@@ -22,6 +21,18 @@ class EbayScraper(BaseScraper):
     def parse_item(self, element):
         title = element.find_element(By.CSS_SELECTOR, ".s-item__title").text
         price = element.find_element(By.CSS_SELECTOR, ".s-item__price").text
+        try:
+            float(price[1:].replace(',', ''))
+        except ValueError:
+            newprice = ''
+            # Going through the price to see if it is a parsable number
+            for el in price:
+                if el.isnumeric():
+                    newprice += el
+            # If it is not parsable just return 0
+            if not newprice.isnumeric():
+                print("Price is not a parsable number")
+                price = '$0'
         url = element.find_element(By.CSS_SELECTOR, ".s-item__link").get_attribute("href")
         try:
             condition = element.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
@@ -230,11 +241,9 @@ class GoogleScraper(BaseScraper):
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.sh-dgr__grid-result, div.sh-dlr__list-result")))
 class PartsRus(BaseScraper):
     def get_search_url(self, query):
-        return f"https://industrialpartsrus.com/?srsltid=AfmBOopRCnIgBVR3jZdsmfy76VRLdIJ-6f7FAfAwmQhGonEKU1DA1RMR#fa57/fullscreen/m=or&q={query.replace(' ', '+')}"
-
+        return f"https://industrialpartsrus.com/?srsltid=AfmBOoq_-k_U460E_UWtf7jdQpyCNMFA4c-HnMJ94uAB2u8oOM_1Q4du#fa57/fullscreen/m=or&q={query.replace(' ', '+').replace('/', '%2F')}"
     def select_result_items(self):
         return self.driver.find_elements(By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product ")
-
     def parse_item(self, element) -> dict:
         price = element.find_element(By.CSS_SELECTOR, "span.dfd-card-price").text
         title = element.find_element(By.CSS_SELECTOR, "div.dfd-card-title").text
@@ -243,7 +252,6 @@ class PartsRus(BaseScraper):
         condition = "Used"
 
         return {"price": price, "title": title, "condition": condition, "brand": brand, "url": url}
-
     def check_Results(self):
         no_match = self.driver.find_elements(By.XPATH, '//*[@id="dfd-tabs-j7uqz"]/div[2]/div/div[1]')
 
@@ -254,7 +262,7 @@ class PartsRus(BaseScraper):
     def WaitResults(self):
 
         # 1) Wait for the results container to appear
-        wait = WebDriverWait(self.driver, 20)
+        wait = WebDriverWait(self.driver, 30)
         container = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.dfd-content[id^='df-hook-results']")))
 
         # 2) now wait until at least one product card is inside it
@@ -273,6 +281,16 @@ class PartsRus(BaseScraper):
                 # Break out if the new scroll height is the same of the last meaning we couldn't scroll any further
                 break
             last_height = new_height
+    def ApplyFilter(self, brand: str):
+        try:
+            # Trying to look for the checkbox or label that contains the brand text:
+            btn = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, f'[dfd-value-term="{brand}"]')))
+            btn.click()
+            WebDriverWait(self.driver, 10).until(EC.staleness_of(btn))
+        except (NoSuchElementException, TimeoutException):
+            # Either the facet container was there or there were no options
+            print("No filter for brand located")
+            pass
 
 
 

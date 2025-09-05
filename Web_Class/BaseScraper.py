@@ -123,17 +123,17 @@ class BaseScraper(ABC):
         # Determining the size and position
         if half is None:
             # full-screen on that monitor if no half parameter is given
-            win_x, win_y = m.x, m.y
-            win_w, win_h = m.width, m.height
+            win_x, win_y = m.x-8, m.y-1
+            win_w, win_h = m.width - 365, m.height
         else:
             # half the width
-            win_w = (m.width // 2) - 180
+            win_w = (m.width // 2)
             print("win_w = ", win_w)
             win_h = m.height
             if half.lower() == "left":
-                win_x = m.x - 5 #<-- accounting for apparent offset?
+                win_x = m.x #<-- accounting for apparent offset?
             elif half.lower() == "right":
-                win_x = m.x + win_w - 18
+                win_x = m.x + win_w
             else:
                 raise ValueError("Half must be left or right")
             win_y = m.y

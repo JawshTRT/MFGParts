@@ -1,11 +1,10 @@
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.devtools.v135.page import remove_script_to_evaluate_on_load
 from selenium_stealth import stealth
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Web_Class.WebScrapers import (EbayScraper, GoogleScraper, PartsRus)
+from Web_Class.WebScrapers import (EbayScraper, PartsRus)
 import pandas as pd
 import time
 import inflect
@@ -70,6 +69,8 @@ def ImportCSv(filename):
             y = y.replace(x, '')[1:]
         if '-' in x:
             x = x.replace('-', ' ')
+        elif x is None:
+            x = '-'
         try:
             if y[-1] == 's':
                 y = p.singular_noun(y)
@@ -207,7 +208,7 @@ def get_top_3_ebay(item_query, terms):
     return listings
 if __name__ == "__main__":
     #Importing the CSV file
-    products, terms, SKU, Ids = ImportCSv('PartsList/2015 w_Josh - Josh Prices pls.csv')
+    products, terms, SKU, Ids = ImportCSv('PartsList/2020 Crates WIP - WIP.csv')
 
     #Creating the CSV output files
     df = pd.DataFrame(columns = ['Id', 'SKU', 'Search Query', 'Brand', 'Product Type', 'Model', 'Price'])
@@ -216,15 +217,15 @@ if __name__ == "__main__":
 
 
     # Initializing scrapers with their respective terms
-    Escraper = EbayScraper(headless=False, monitor_index=1, half="right")
-    PartScraper = PartsRus(headless=False, monitor_index=1, half ="left")
+    #Escraper = EbayScraper(headless=False, monitor_index=1, half="right")
+    PartScraper = EbayScraper(headless=False, monitor_index=1)
     # Iterating through each product from the imported list
     for item, term, number, Id  in zip(products, terms, SKU, Ids):
 
         #Setting the terms to compare to inside the scraper
-        Escraper.setBrand(term[0])
-        Escraper.setPart(term[1])
-        Escraper.setPartNum(term[2])
+        # Escraper.setBrand(term[0])
+        # Escraper.setPart(term[1])
+        # Escraper.setPartNum(term[2])
 
         PartScraper.setBrand(term[0])
         PartScraper.setPart(term[1])

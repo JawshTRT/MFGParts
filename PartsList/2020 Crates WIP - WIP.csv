@@ -1,0 +1,58 @@
+Number,Type,SKU,Name,Column1,Attribute 1 name,Brand,Attribute 2 name,Product Type,Attribute 3 name,Model,Attribute 4 name,Location,Stock,Attribute 5 name,ID,Weight,Regular Price,Images,Attribute 1 visible,Attribute 1 global,Attribute 2 visible,Attribute 2 global,Attribute 3 visible,Attribute 3 global,Attribute 2 visible2,Attribute 4 global,Published,Visibility in catalog,In stock?
+1,simple,231-005-0004,Denso Robot Controller RC3-S4A,"http://mfgpartsplus.com/wp-content/uploads/2025/09/C2020-25-0205.jpeg, http://mfgpartsplus.com/wp-content/uploads/2025/09/C2020-25-0206.jpeg",Brand,Denso,Product Type,Robot Controller,Model,RC3-S4A,Location,2020_C2,7,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+2,simple,205-020-0026,Yaskawa Teach Pendant 410109-0020,"C2020-25-0208.jpeg, C2020-25-0209.jpeg",Brand,Yaskawa,Product Type,Teach Pendant,Model,410109-0020,Location,2020_C2,9,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+3,simple,205-020-0016,FANUC Teach Pendant JZNC-XPP02B,"C2020-25-0211, C2020-25-0212",Brand,FANUC,Product Type,Teach Pendant,Model,JZNC-XPP02B,Location,2020_C2,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+4,simple,205-012-0129, Servo Encoder E321-45-2002,"C2020-25-0214, C2020-25-0215",Brand,-,Product Type,Servo Encoder,Model,E321-45-2002,Location,2020_C2,4,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+5,simple,005-005-0646,Allen-Bradley ControlLogix 10-Slot Chassis 1756-A10 B,"C2020-25-0217, C2020-25-0218, C2020-25-0219",Brand,Allen-Bradley,Product Type,ControlLogix 10-Slot Chassis,Model,1756-A10 B,Location,2020_C2,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+6,simple,-,Camco Ferguson Variable Frequency Drive (VFD) / Inverter Drive 92C85797020000,C2020-25-0221,Brand,Camco Ferguson,Product Type,Variable Frequency Drive (VFD) / Inverter Drive,Model,92C85797020000,Location,2020_C2,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+7,simple,-,Belden Cable 8761 060 (CHR) 100 FT 305 MTR,,Brand,Belden,Product Type,Cable,Model,8761 060 (CHR) 100 FT 305 MTR,Location,2020_C2,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+8,simple,-,J.O. Galloup Company Silicone Cord Stock 3767716,,Brand,J.O. Galloup Company,Product Type,Silicone Cord Stock,Model,3767716,Location,2020_C2,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+9,simple,005-012-0838,NSD Rotary Encoder (Absocoder) MRE-G320S80ZFA-L,,Brand,NSD,Product Type,Rotary Encoder (Absocoder),Model,MRE-G320S80ZFA-L,Location,2020_C2_lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+10,simple,805-012-0131,NSD Rotary Encoder (Absocoder) MRE-G2560SS062FAL,,Brand,NSD,Product Type,Rotary Encoder (Absocoder),Model,MRE-G2560SS062FAL,Location,2020_C2_lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+11,simple,005-012-0131,NSD Rotary Encoder (Absocoder) VRE-16TS062FAL,,Brand,NSD,Product Type,Rotary Encoder (Absocoder),Model,VRE-16TS062FAL,Location,2020_C2_lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+12,simple,007-002-0018,Fujikin 316 Stainless Steel Elbow Fitting ,,Brand,Fujikin,Product Type,316 Stainless Steel Elbow Fitting,Model,-,Location,2020_C2_lc1,4,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+13,simple,007-019-0017, Nut Fitting ,,Brand,-,Product Type,Nut Fitting,Model,-,Location,2020_C2_lc1,10,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+14,simple,007-016-0060, Elbow Fitting ,,Brand,-,Product Type,Elbow Fitting,Model,-,Location,2020_C2_lc1,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+15,simple,007-003-0054, Hydraulic Adapter C5205X24,,Brand,-,Product Type,Hydraulic Adapter,Model,C5205X24,Location,2020_C2_lc1,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+16,simple,005-014-0211,Allen-Bradley Relay Socket / Terminal Block 700-HN224,,Brand,Allen-Bradley,Product Type,Relay Socket / Terminal Block,Model,700-HN224,Location,2020_C2_lc1,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+17,simple,007-013-0014, Nut Fitting ,,Brand,-,Product Type,Nut Fitting,Model,-,Location,2020_C2_lc1,12,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+18,simple,007-013-0020, Nut Fitting ,,Brand,-,Product Type,Nut Fitting,Model,-,Location,2020_C2_lc1,10,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+19,simple,007-012-0021, Hex Bushings / Hydraulic Reducer Adapters ,,Brand,-,Product Type,Hex Bushings / Hydraulic Reducer Adapters,Model,-,Location,2020_C2_lc1,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+20,simple,007-010-0096, Hydraulic Adapter Female Swivel 085-610,,Brand,-,Product Type,Hydraulic Adapter Female Swivel,Model,085-610,Location,2020_C2_lc1,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+21,simple,007-010-0045," Hydraulic Hose Fitting (45° Elbow, Female Swivel) ",,Brand,-,Product Type,"Hydraulic Hose Fitting (45° Elbow, Female Swivel)",Model,-,Location,2020_C2_lc1,5,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+22,simple,007-010-0071, Hydraulic Fitting ,,Brand,-,Product Type,Hydraulic Fitting,Model,-,Location,2020_C2_lc1,6,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+23,simple,-,Mitsubishi PLC Base Unit / Backplane Q312B,,Brand,Mitsubishi,Product Type,PLC Base Unit / Backplane,Model,Q312B,Location,2020_C4,8,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+24,simple,-,Atlas Copco Advanced Controller 8433 4850 33 D313 - DL- ADVANCED,,Brand,Atlas Copco,Product Type,Advanced Controller,Model,8433 4850 33 D313 - DL- ADVANCED,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+25,simple,005-005-0570,Yaskawa Analogue Output Module MP920 JEPMC-AN210,,Brand,Yaskawa,Product Type,Analogue Output Module,Model,MP920 JEPMC-AN210,Location,2020_C4,3,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+26,simple,005-005-0572,Yaskawa Digital Input / Output Module LIO-01 JEPMC-10220,,Brand,Yaskawa,Product Type,Digital Input / Output Module,Model,LIO-01 JEPMC-10220,Location,2020_C4,6,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+27,simple,005-005-0581,Yaskawa Module MP920 JEPMC-10210,,Brand,Yaskawa,Product Type,Module,Model,MP920 JEPMC-10210,Location,2020_C4,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+28,simple,005-005-0574,Yaskawa Module MP920 JEPMC-10200,,Brand,Yaskawa,Product Type,Module,Model,MP920 JEPMC-10200,Location,2020_C4,4,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+29,simple,005-005-0562,Allen-Bradley Input Module SLC500 1746-IA16,,Brand,Allen-Bradley,Product Type,Input Module,Model,SLC500 1746-IA16,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+30,simple,205-005-0572,Yaskawa Module JEPMC-10220,,Brand,Yaskawa,Product Type,Module,Model,JEPMC-10220,Location,2020_C4,3,eBay ID,,,,,1,1,1,1,1,1,1,1,1,visible,1
+31,simple,205-005-0571,Yaskawa Module MP920 JEPMC-CM230,,Brand,Yaskawa,Product Type,Module,Model,MP920 JEPMC-CM230,Location,2020_C4,4,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+32,simple,-,Baumuller AC Servo Drive / Motor Controller BUM60-08/16-54-8-001,,Brand,Baumuller,Product Type,AC Servo Drive / Motor Controller,Model,BUM60-08/16-54-8-001,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+33,simple,-,"Quantum Fireball CR 3.5"" HDD 2.1GB CR2121A",,Brand,Quantum,Product Type,"Fireball CR 3.5"" HDD 2.1GB",Model,CR2121A,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+34,simple,013-001-0747,Continental Belt 4Y-T C97,,Brand,Continental,Product Type,Belt,Model,4Y-T C97,Location,2020_C4,3,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+35,simple,002-006-0061,Numatics Manual Lockout Valve VT32N04Y,,Brand,Numatics,Product Type,Manual Lockout Valve,Model,VT32N04Y,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+36,simple,449-001-0656,SMC Compressed Air Line Filter / Mist Separator AFF22B-10BD-X6,,Brand,SMC,Product Type,Compressed Air Line Filter / Mist Separator,Model,AFF22B-10BD-X6,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+37,simple,001-001-0009,Appleton Electric Explosion-Proof Lighting Fixture Body / Conduit Fitting VPA1075,,Brand,Appleton Electric,Product Type,Explosion-Proof Lighting Fixture Body / Conduit Fitting,Model,VPA1075,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+38,simple,-,Toyo-oki Hydraulic Cylinder HC1-XD-40X50,,Brand,Toyo-oki,Product Type,Hydraulic Cylinder,Model,HC1-XD-40X50,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+39,simple,002-011-0031,Tokimec Pilot Operated Check Valve TGMPC-5-ABK-BAK-50,,Brand,Tokimec,Product Type,Pilot Operated Check Valve,Model,TGMPC-5-ABK-BAK-50,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+40,simple,002-011-0030,Uchida-Rexroth Pilot Operated Check Valve Z2S16B1-50,,Brand,Uchida-Rexroth,Product Type,Pilot Operated Check Valve,Model,Z2S16B1-50,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+41,simple,222-056-0066,Mitsubishi Inverter FR-E520-2. 2K,,Brand,Mitsubishi,Product Type,Inverter,Model,FR-E520-2. 2K,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+42,simple,005-005-0558,Mitsubishi PLC Analog Input Module A1S64AD,,Brand,Mitsubishi,Product Type,PLC Analog Input Module,Model,A1S64AD,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+43,simple,022-006-0002, Tubing ,,Brand,-,Product Type,Tubing,Model,-,Location,2020_C4,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+44,simple,028-001-0115,Browning Sprocket H60P-24,,Brand,Browning,Product Type,Sprocket,Model,H60P-24,Location,2020_C4_Lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+45,simple,001-027-0003, Pipe Tee ,,Brand,-,Product Type,Pipe Tee,Model,-,Location,2020_C4_Lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+46,simple,602-021-0004, Water Valve 231WB-12P06,,Brand,-,Product Type,Water Valve,Model,231WB-12P06,Location,2020_C4_Lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+47,simple,-,Phoenix Contact Industrial Ethernet Switch FL SWITCH SFN 8TX,,Brand,Phoenix Contact,Product Type,Industrial Ethernet Switch,Model,FL SWITCH SFN 8TX,Location,2020_C4_Lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+48,simple,231-001-0073,Keyence PLC Base Unit KV-24AR,,Brand,Keyence,Product Type,PLC Base Unit,Model,KV-24AR,Location,2020_C4_Lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+49,simple,-,  RS80-SS,,Brand,-,Product Type,-,Model,RS80-SS,Location,2020_C4_Lc1,16,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+50,simple,-, Pneumatic Silencer / Muffler ,,Brand,-,Product Type,Pneumatic Silencer / Muffler,Model,-,Location,2020_C4_Lc1,40,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+51,simple,-, Hydraulic Cartridge Valve ,,Brand,-,Product Type,Hydraulic Cartridge Valve,Model,-,Location,2020_C4_Lc1,4,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+52,simple,002-005-0016, Solenoid Coil AB41-COIL-480V,,Brand,-,Product Type,Solenoid Coil,Model,AB41-COIL-480V,Location,2020_C4_Lc1,4,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+53,simple,013-001-0557,  BRE 20 T5/1040 BFX BRE 20 T5/1,,Brand,-,Product Type,-,Model,BRE 20 T5/1040 BFX BRE 20 T5/1,Location,2020_C4_Lc1,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+54,simple,002-005-0017,CKD Pneumatic Flow Control Valve / Speed Controller AS-O5-N,,Brand,CKD,Product Type,Pneumatic Flow Control Valve / Speed Controller,Model,AS-O5-N,Location,2020_C4_Lc1,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+55,simple,001-027-0001, Reducer 1x3/4 SS T316L,,Brand,-,Product Type,Reducer,Model,1x3/4 SS T316L,Location,2020_C4_Lc1,2,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+56,simple,002-007-0331,Pascal Pressure Switch SAA40E-F,,Brand,Pascal,Product Type,Pressure Switch,Model,SAA40E-F,Location,2020_C4_Lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1
+57,simple,002-021-0004,Alco Controls Water Service Solenoid Valve 231WB-12P06,,Brand,Alco Controls,Product Type,Water Service Solenoid Valve,Model,231WB-12P06,Location,2020_C4_Lc1,1,eBay ID,-,,,,1,1,1,1,1,1,1,1,1,visible,1

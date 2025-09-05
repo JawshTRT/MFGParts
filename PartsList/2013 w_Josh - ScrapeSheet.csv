@@ -1,0 +1,198 @@
+ID,SKU,OLD NAME,NEW NAME,Short description,Weight (lbs),Regular price,Brands,Attribute 1 name,Brand,Attribute 1 visible,Attribute 1 global,Attribute 2 name,Product Type,Attribute 2 visible,Attribute 2 global,Attribute 3 name,Model,Attribute 3 visible,Attribute 3 global,Attribute 4 name,Attribute 4 value(s)
+45124,022-057-0014,110,Yokogawa - Analogue Panel Meter,-,,,Yokogawa,Brand,Yokogawa,1,1,Product Type,Analogue Panel Meter,1,1,Model,-,1,1,Location,2013C8_LC6
+3780,002-001-0511,002-001-0511,SMC VX2111-00-9DZ-X472 Solenoid Valve,-,1.5,,SMC,Brand,SMC,1,1,Product Type,Solenoid Valve,1,1,Model,VX2111-00-9DZ-X472,1,1,Location,2013C2_LC1
+5036,002-001-0517,002-001-0517,SMC NVFS4300-5FZ Valve,-,3,,SMC,Brand,SMC,1,1,Product Type,Valve,1,1,Model,NVFS4300-5FZ,1,1,Location,2013C6_LC4
+22773,002-001-0608,002-001-0608,SMC VFS2410-1DZ Valve,-,2,,SMC,Brand,SMC,1,1,Product Type,Valve,1,1,Model,VFS2410-1DZ,1,1,Location,2013C6_LC1
+5057,002-002-0070,002-002-0070,SMC VHS400-03-X1 Hand Valve,-,1,,SMC,Brand,SMC,1,1,Product Type,Hand Valve,1,1,Model,VHS400-03-X1,1,1,Location,2013c6_LC3
+5053,002-003-0044,002-003-0044,SMC AS4000-04 Flow Control,-,1,,SMC,Brand,SMC,1,1,Product Type,Flow Control,1,1,Model,AS4000-04,1,1,Location,2013C6_LC1
+1463,002-007-0109,002-007-0109,ASCO 8210G33VH Solenoid Valve,-,3,,ASCO,Brand,ASCO,1,1,Product Type,Solenoid Valve,1,1,Model,8210G33VH,1,1,Location,2013c4_lc2
+3761,002-007-0155,002-007-0155,ASCO SC8210G101 Solenoid Valve,-,14,,ASCO,Brand,ASCO,1,1,Product Type,Solenoid Valve,1,1,Model,SC8210G101,1,1,Location,2013c2_LC2
+3778,002-007-0215,002-007-0215,Bürkert 457568 Solenoid Valve,-,1,,Bürkert,Brand,Bürkert,1,1,Product Type,Solenoid Valve,1,1,Model,457568,1,1,Location,2013C2_LC1
+4676,002-007-0231,002-007-0231,Line Seiki Co. RFP-14B(I)FS Counter,-,2,,Line Seiki Co.,Brand,Line Seiki Co.,1,1,Product Type,Counter,1,1,Model,RFP-14B(I)FS,1,1,Location,2013C4_LC1
+5038,002-007-0272,002-007-0272,SMC VQ2100-5 Solenoid Valve,-,1,,SMC,Brand,SMC,1,1,Product Type,Solenoid Valve,1,1,Model,VQ2100-5,1,1,Location,2013C6_LC1
+18161,002-007-0286,002-007-0286,ASCO 8040H7 Solenoid Valve,-,3,,ASCO,Brand,ASCO,1,1,Product Type,Solenoid Valve,1,1,Model,8040H7,1,1,Location,2013C2_LC1
+3749,002-007-0304,002-007-0304,SMC VS4430 Solenoid Valve,-,5,,SMC,Brand,SMC,1,1,Product Type,Solenoid Valve,1,1,Model,VS4430,1,1,Location,2013c2_LC2
+3779,002-011-0099,002-011-0099,SMC AV2000-02-5DZ Solenoid Valve,-,2,,SMC,Brand,SMC,1,1,Product Type,Solenoid Valve,1,1,Model,AV2000-02-5DZ,1,1,Location,2013C2_LC1
+3833,002-011-0112,002-011-0112,NTS SSG-02-9C-R-A2-31 Solenoid Valve,-,3,,NTS,Brand,NTS,1,1,Product Type,Solenoid Valve,1,1,Model,SSG-02-9C-R-A2-31,1,1,Location,2013C2_LC1
+5047,002-038-0026,002-038-0026,SMC VV71-R-AB Manifold Base,-,1,,SMC,Brand,SMC,1,1,Product Type,Manifold Base,1,1,Model,VV71-R-AB,1,1,Location,2013C6_LC4
+4693,002-038-0029,002-038-0029,Norgren 33D Electronic Pressure Sensor,-,7,,Norgren,Brand,Norgren,1,1,Product Type,Electronic Pressure Sensor,1,1,Model,33D,1,1,Location,2013C4_LC1
+1312,002-038-0060,002-038-0060,SMC NVV5FS3-01T-071 Manifold Assembly,-,6,,SMC,Brand,SMC,1,1,Product Type,Manifold Assembly,1,1,Model,NVV5FS3-01T-071,1,1,Location,2013c4_LC4
+22683,002-038-0061,002-038-0061,SMC NVV553-OIT-071-03T Manifold,-,15,,SMC,Brand,SMC,1,1,Product Type,Manifold,1,1,Model,NVV553-OIT-071-03T,1,1,Location,2013C2_LC1
+4687,002-038-0071,002-038-0071,SMC VX2321V-00-4D1 Vacuum Solenoid Valve,-,1,,SMC,Brand,SMC,1,1,Product Type,Vacuum Solenoid Valve,1,1,Model,VX2321V-00-4D1,1,1,Location,2013C4_LC1
+22828,002-039-0050,002-039-0050,ASCO 904001608 Valve Rebuild Kit,-,2,,ASCO,Brand,ASCO,1,1,Product Type,Valve Rebuild Kit,1,1,Model,904001608,1,1,Location,2013c2_LC3
+3811,002-039-0070,002-039-0070,ASCO 302383 Valve Rebuild Kit,-,2,,ASCO,Brand,ASCO,1,1,Product Type,Valve Rebuild Kit,1,1,Model,302383,1,1,Location,2013C2_LC1
+3809,002-039-0123,002-039-0123,ASCO 302072 Valve Rebuild Kit,-,2,,ASCO,Brand,ASCO,1,1,Product Type,Valve Rebuild Kit,1,1,Model,302072,1,1,Location,2013C2_LC1
+3768,002-048-0001,002-048-0001,SMC VQ7-6-FG-D-3 Solenoid Valve,-,3,,SMC,Brand,SMC,1,1,Product Type,Solenoid Valve,1,1,Model,VQ7-6-FG-D-3,1,1,Location,2013c2_LC3
+3745,003-001-0021,003-001-0021,Norgren B74G-4AK-QD3-RMN Air Filter Regulator,-,4,,Norgren,Brand,Norgren,1,1,Product Type,Air Filter Regulator,1,1,Model,B74G-4AK-QD3-RMN,1,1,Location,2013c2_LC2
+3751,003-001-0025,003-001-0025,SMC AR435-03 Air Regulator,-,3,,SMC,Brand,SMC,1,1,Product Type,Air Regulator,1,1,Model,AR435-03,1,1,Location,2013c2_LC2
+5064,003-001-0059,003-001-0059,SMC NAL2000-N02-3C Air Line Lubricator,-,1,,SMC,Brand,SMC,1,1,Product Type,Air Line Lubricator,1,1,Model,NAL2000-N02-3C,1,1,Location,2013C6_LC4
+3750,003-001-0066,003-001-0066,TACO R22-301-2020 Air Pressure Regulator,-,3,,TACO,Brand,TACO,1,1,Product Type,Air Pressure Regulator,1,1,Model,R22-301-2020,1,1,Location,2013c2_LC2
+5043,003-001-0092,003-001-0092,SMC AR40-04 Air Pressure Regulator,-,2,,SMC,Brand,SMC,1,1,Product Type,Air Pressure Regulator,1,1,Model,AR40-04,1,1,Location,2013C6_LC4
+8135,003-001-0165,003-001-0165,SMC AM550-10BD-X6 Mist Separator,-,6,,SMC,Brand,SMC,1,1,Product Type,Mist Separator,1,1,Model,AM550-10BD-X6,1,1,Location,2013c8_LC1
+5060,003-001-0188,003-001-0188,SMC VEX1133-02-BGN Precision Air Regulator,-,1,,SMC,Brand,SMC,1,1,Product Type,Precision Air Regulator,1,1,Model,VEX1133-02-BGN,1,1,Location,2013C6_LC4
+3810,003-001-0206,003-001-0206,SMC ARBF3000-00-A-1 Modular Air Pressure Regulator,-,3,,SMC,Brand,SMC,1,1,Product Type,Modular Air Pressure Regulator,1,1,Model,ARBF3000-00-A-1,1,1,Location,2013c2_LC2
+4678,003-001-0256,003-001-0256,Master Pneumatic A64041SPL Lubricator,-,4,,Master Pneumatic,Brand,Master Pneumatic,1,1,Product Type,Lubricator,1,1,Model,A64041SPL,1,1,Location,2013C4_LC1
+3747,003-001-0278,003-001-0278,SMC AF40-04B-JR Air Filter,-,3,,SMC,Brand,SMC,1,1,Product Type,Air Filter,1,1,Model,AF40-04B-JR,1,1,Location,2013c2_LC3
+11913,003-030-0059,003-030-0059,SMC CDRA1BW63-100C Rotary Actuator,-,8,,SMC,Brand,SMC,1,1,Product Type,Rotary Actuator,1,1,Model,CDRA1BW63-100C,1,1,Location,2013C5_LC6
+1254,003-030-0071,003-030-0071,SMC MSQB30H3 Rotary Table Actuator,-,6,,SMC,Brand,SMC,1,1,Product Type,Rotary Table Actuator,1,1,Model,MSQB30H3,1,1,Location,2013c3_LC1
+1462,004-001-0149,004-001-0149,Ashcroft 451279AS02B30PSI Gauge,-,4,,Ashcroft,Brand,Ashcroft,1,1,Product Type,Gauge,1,1,Model,451279AS02B30PSI,1,1,Location,2013c3_LC1
+1442,004-003-0014,004-003-0014,Dwyer 605-6 Magnehelic Pressure Gauge,-,3,,Dwyer,Brand,Dwyer,1,1,Product Type,Magnehelic Pressure Gauge,1,1,Model,605-6,1,1,Location,2013c3_LC1
+22622,005-001-0404,005-001-0404,Star Automation 350075 Circuit Board,-,1,,Star Automation,Brand,Star Automation,1,1,Product Type,Circuit Board,1,1,Model,350075,1,1,Location,2013c3_BOX
+1327,005-003-0039,005-003-0039,Cramer 636WAA Hour Meter Counter,-,2,,Cramer,Brand,Cramer,1,1,Product Type,Hour Meter Counter,1,1,Model,636WAA,1,1,Location,2013C4_LC3
+22721,005-004-0196,005-004-0196,KEB 04.92.010-9757 Power Supply,-,10,,KEB,Brand,KEB,1,1,Product Type,Power Supply,1,1,Model,04.92.010-9757,1,1,Location,2013c4_LC4
+22722,005-004-0197,005-004-0197,KEB 02.92.010-9357 Power Supply,-,6,,KEB,Brand,KEB,1,1,Product Type,Power Supply,1,1,Model,02.92.010-9357,1,1,Location,2013C4_LC3
+11975,005-004-0203,005-004-0203,Panasonic WV-MF200 Camera,-,,,Panasonic,Brand,Panasonic,1,1,Product Type,Camera,1,1,Model,WV-MF200,1,1,Location,2013c3_LC2
+11197,005-004-0229,005-004-0229,Cosel P100E-24 Power Supply,-,3,,Cosel,Brand,Cosel,1,1,Product Type,Power Supply,1,1,Model,P100E-24,1,1,Location,2013c9_LC1
+18156,005-004-0252,005-004-0252,Yaskawa JEPMC-PS210 PLC Power Supply Module,-,3,,Yaskawa,Brand,Yaskawa,1,1,Product Type,PLC Power Supply Module,1,1,Model,JEPMC-PS210,1,1,Location,2013C2_LC4
+1382,005-004-0260,005-004-0260,TDK JWS150-12/A Power Supply,-,4,,TKD,Brand,TDK,1,1,Product Type,Power Supply,1,1,Model,JWS150-12/A,1,1,Location,2013c4_lc2
+3819,005-004-0262,005-004-0262,Okaya SUP-J15H-ER-4 Noise Filter,-,3,,Okaya,Brand,Okaya,1,1,Product Type,Noise Filter,1,1,Model,SUP-J15H-ER-4,1,1,Location,2013C2_LC1
+1342,005-004-0296,005-004-0296,TDK RWS15A-12/A Power Supply,-,4,,TDK,Brand,TDK,1,1,Product Type,Power Supply,1,1,Model,RWS15A-12/A,1,1,Location,2013c3_LC2
+22724,005-004-0299,005-004-0299,CE Electronics SK75-2T 66517 TS-III BL QUALIFIER H298 Power Supply,-,10,,CE Electronics,Brand,CE Electronics,1,1,Product Type,Power Supply,1,1,Model,SK75-2T 66517 TS-III BL QUALIFIER H298,1,1,Location,2013c3_LC2
+1454,005-004-0301,005-004-0301,Cosel PAA50F-24-N Power Supply,-,3,,Cosel,Brand,Cosel,1,1,Product Type,Power Supply,1,1,Model,PAA50F-24-N,1,1,Location,2013c3
+1355,005-004-0429,005-004-0429,Mitsubishi MR-SC60 AC Servo Drive,-,6,,Mitsubishi,Brand,Mitsubishi,1,1,Product Type,AC Servo Drive,1,1,Model,MR-SC60,1,1,Location,2013c3_LC1
+22686,005-005-0029,005-005-0029,Allen-Bradley 1771-OBN DC Output Module,-,2,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,DC Output Module,1,1,Model,1771-OBN,1,1,Location,2013c4_LC4
+1358,005-005-0143,005-005-0143,Mitsubishi AX41C PLC Module,-,4,,Mitsubishi,Brand,Mitsubishi,1,1,Product Type,PLC Module,1,1,Model,AX41C,1,1,Location,2013C4_LC3
+19505,005-005-0148,005-005-0148,Yaskawa JAMSC-120DD035410 PLC Output Module,-,4,,Yaskawa,Brand,Yaskawa,1,1,Product Type,PLC Output Module,1,1,Model,JAMSC-120DD035410,1,1,Location,2013c4_lc2
+22685,005-005-0164,005-005-0164,Allen-Bradley 1791-32B0 I/O Module,-,2,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,I/O Module,1,1,Model,1791-32B0,1,1,Location,2013c4_LC4
+1541,005-005-0166,005-005-0166,Mitsubishi AX40Y50C PLC Module,-,4,,Mitsubishi,Brand,Mitsubishi,1,1,Product Type,PLC Module,1,1,Model,AX40Y50C,1,1,Location,2013c3_LC1
+11824,005-005-0315,005-005-0315,Mitsubishi A1SX40 PLC Input Module,-,2,,Mitsubishi,Brand,Mitsubishi,1,1,Product Type,PLC Input Module,1,1,Model,A1SX40,1,1,Location,2013c10_LC2
+4673,005-005-0470,005-005-0470,Omron K3FM-CA-52-R CT Transmitter,-,1,,Omron,Brand,Omron,1,1,Product Type,CT Transmitter,1,1,Model,K3FM-CA-52-R,1,1,Location,2013C4_LC1
+1373,005-005-0471,005-005-0471,Mitsubishi A273-UH-CPU Motion Controller,-,4,,Mitsubishi,Brand,Mitsubishi,1,1,Product Type,Motion Controller,1,1,Model,A273-UH-CPU,1,1,Location,2013C2_LC4
+11898,005-005-0523,005-005-0523,Trans-Coil KLC8B KLC Output Filter,-,9,,Trans-Coil,Brand,Trans-Coil,1,1,Product Type,KLC Output Filter,1,1,Model,KLC8B,1,1,Location,2013c5_LC4
+4692,005-016-0018,005-016-0018,Temposonics GPM006-OUD60 Linear Transducer,-,2,,Temposonics,Brand,Temposonics,1,1,Product Type,Linear Transducer,1,1,Model,GPM006-OUD60,1,1,Location,2013C4_LC1
+1371,005-025-0028,005-025-0028,Mitsubishi A956GOT-SBD-M3 Operator Interface,-,6,,Mitsubishi,Brand,Mitsubishi,1,1,Product Type,Operator Interface,1,1,Model,A956GOT-SBD-M3,1,1,Location,2013c3_LC1
+22617,005-026-0030,005-026-0030,Cognex 805-0006-1 Vision Sensor System Camera,-,5,,Cognex,Brand,Cognex,1,1,Product Type,Vision Sensor System Camera,1,1,Model,805-0006-1,1,1,Location,2013C2_LC1
+1574,005-032-0001,005-032-0001,Escort Memory Systems RS427-03 RFID Reader,-,1,,Escort Memory Systems,Brand,Escort Memory Systems,1,1,Product Type,RFID Reader,1,1,Model,RS427-03,1,1,Location,2013C4_LC3
+4688,005-032-0002,005-032-0002,Escort Memory Systems CM1746 Reader Module,-,1,,Escort Memory Systems,Brand,Escort Memory Systems,1,1,Product Type,Reader Module,1,1,Model,CM1746,1,1,Location,2013c4_LC4
+1444,006-004-0031,006-004-0031,Perkin Elmer N2920149 Deuterium Detector Lamp,-,3,,Perkin Elmer,Brand,Perkin Elmer,1,1,Product Type,Deuterium Detector Lamp,1,1,Model,N2920149,1,1,Location,2013C4_LC3
+1269,006-007-0031,006-007-0031,Patlite SZ-30T Mounting Pole with Base,-,4,,Patlite,Brand,Patlite,1,1,Product Type,Mounting Pole with Base,1,1,Model,SZ-30T,1,1,Location,2013c3_LC1
+1403,008-003-0101,008-003-0101,IFM SI1000 Flow Sensor,-,2,,IFM,Brand,IFM,1,1,Product Type,Flow Sensor,1,1,Model,SI1000,1,1,Location,2013c4_LC4
+22729,008-003-0126,008-003-0126,SMC ISE1-01-55L Pressure Switch,-,1,,SMC,Brand,SMC,1,1,Product Type,Pressure Switch,1,1,Model,ISE1-01-55L,1,1,Location,2013c4_LC4
+22856,008-003-0149,008-003-0149,SunX DP-2-22 Digital Pressure Sensor,-,1,,SunX,Brand,SunX,1,1,Product Type,Digital Pressure Sensor,1,1,Model,DP-2-22,1,1,Location,2013c4_lc2
+4668,008-003-0159,008-003-0159,Parker SCPSD-250-04-07 Pressure Controller,-,1,,Parker,Brand,Parker,1,1,Product Type,Pressure Controller,1,1,Model,SCPSD-250-04-07,1,1,Location,2013C4_LC3
+22707,008-005-0006,008-005-0006,Omron E3S-R2B4 Photoelectric Switch,-,1,,Omron,Brand,Omron,1,1,Product Type,Photoelectric Switch,1,1,Model,E3S-R2B4,1,1,Location,2013c4_lc2
+1440,008-005-0012,008-005-0012,Omron E3S5B4 Photoelectric Switch,-,2,,Omron,Brand,Omron,1,1,Product Type,Photoelectric Switch,1,1,Model,E3S5B4,1,1,Location,2013c4_lc2
+4674,008-005-0027,008-005-0027,Banner SM312CV2 Photoelectric Switch,-,1,,Banner,Brand,Banner,1,1,Product Type,Photoelectric Switch,1,1,Model,SM312CV2,1,1,Location,2013C4_LC1
+1587,008-005-0041,008-005-0041,Omron E3X-A41 Photoelectric Sensor,-,1,,Omron,Brand,Omron,1,1,Product Type,Photoelectric Sensor,1,1,Model,E3X-A41,1,1,Location,2013c4_lc2
+8568,008-005-0065,008-005-0065,Omron E3R-5E4 Photoelectric Sensor,-,2,,Omron,Brand,Omron,1,1,Product Type,Photoelectric Sensor,1,1,Model,E3R-5E4,1,1,Location,2013c4_lc2
+1565,008-005-0110,008-005-0110,IFM OU5001 OUF-HPKG Fiber-optic Amplifier,-,1,,IFM,Brand,IFM,1,1,Product Type,Fiber-optic Amplifier,1,1,Model,OU5001 OUF-HPKG,1,1,Location,2013C4_LC3
+1400,008-005-0127,008-005-0127,IFM OU5044 Fiber-optic Amplifier,-,2,,IFM,Brand,IFM,1,1,Product Type,Fiber-optic Amplifier,1,1,Model,OU5044,1,1,Location,2013c4_lc2
+22705,008-005-0163,008-005-0163,IFM OU5036 Retro-reflective sensor,-,1,,IFM,Brand,IFM,1,1,Product Type,Retro-reflective sensor,1,1,Model,OU5036,1,1,Location,2013c4_lc2
+1404,008-005-0272,008-005-0272,IFM OI0009 Retro-reflective sensor,-,2,,IFM,Brand,IFM,1,1,Product Type,Retro-reflective sensor,1,1,Model,OI0009,1,1,Location,2013c4_lc2
+1600,008-005-0315,008-005-0315,Keyence CZ-K1P Sensor Amplifier,-,1,,Keyence,Brand,Keyence,1,1,Product Type,Sensor Amplifier,1,1,Model,CZ-K1P,1,1,Location,2013C4_LC1
+3782,008-030-0065,008-030-0065,Keyence FU-77TG Fiber Thrubeam Cable,-,1,,Keyence,Brand,Keyence,1,1,Product Type,Fiber Thrubeam Cable,1,1,Model,FU-77TG,1,1,Location,2013C2_LC1
+11883,012-001-0015,012-001-0015,Omron H7AN-W4DMAC100240 Digital Preset Counter,-,4,,Omron,Brand,Omron,1,1,Product Type,Digital Preset Counter,1,1,Model,H7AN-W4DMAC100240,1,1,Location,2013c5_LC3
+4683,013-001-0491,013-001-0491,Paletti SL0680S Tooth Belt Guide,-,7,,Paletti,Brand,Paletti,1,1,Product Type,Tooth Belt Guide,1,1,Model,SL0680S,1,1,Location,2013c4_lc2
+11919,014-003-0021,014-003-0021,Browning VF2S-224 Mounted Bearing Unit,-,5,,Browning,Brand,Browning,1,1,Product Type,Mounted Bearing Unit,1,1,Model,VF2S-224,1,1,Location,2013c5_LC4
+11925,014-003-0115,014-003-0115,Link-Belt FU343 Flange-Mount Ball Bearing Unit,-,35,,Link-Belt,Brand,Link-Belt,1,1,Product Type,Flange-Mount Ball Bearing Unit,1,1,Model,FU343,1,1,Location,2013C5_LC6
+11941,014-004-0157,014-004-0157,THK HSR45B1SS Linear Motion Guide Block,-,9,,THK,Brand,THK,1,1,Product Type,Linear Motion Guide Block,1,1,Model,HSR45B1SS,1,1,Location,2013c5_LC5
+11900,014-004-0477,014-004-0477,THK SHS20V2SSC1+390L Caged-ball Linear Motion Guide Rail,-,3,,THK,Brand,THK,1,1,Product Type,Caged-ball Linear Motion Guide Rail,1,1,Model,SHS20V2SSC1+390L,1,1,Location,2013C4_LC1
+11844,014-011-0109,014-011-0109,THK BTK2005-2.6ZZ+550LTL Rolled Ball Screw Assembly,-,7,,THK,Brand,THK,1,1,Product Type,Rolled Ball Screw Assembly,1,1,Model,BTK2005-2.6ZZ+550LTL,1,1,Location,2013c5_LC2
+11846,014-011-0486,014-011-0486,THK BTK2806-5.3ZZ+361.5 Rolled Ball Screw Assembly,-,8,,THK,Brand,THK,1,1,Product Type,Rolled Ball Screw Assembly,1,1,Model,BTK2806-5.3ZZ+361.5,1,1,Location,2013c5_LC2
+11849,014-011-0491,014-011-0491,THK BTK2005-2.6ZZ+500LC7 Rolled Ball Screw Assembly,-,7,,THK,Brand,THK,1,1,Product Type,Rolled Ball Screw Assembly,1,1,Model,BTK2005-2.6ZZ+500LC7,1,1,Location,2013c5_LC2
+11893,015-001-0225,015-001-0225,Tsubaki C-2062H RF2060-R Industrial Roller Chain,-,17,,Tsubaki,Brand,Tsubaki,1,1,Product Type,Industrial Roller Chain,1,1,Model,C-2062H RF2060-R,1,1,Location,2013c5_LC4
+11926,018-001-0017,018-001-0017,Dodge MR96103KDD Tigear Reducer,-,18,,Dodge,Brand,Dodge,1,1,Product Type,Tigear Reducer,1,1,Model,MR96103KDD,1,1,Location,2013C5_LC6
+11915,018-001-0042,018-001-0042,Oriental Motor 4GN60K Parallel Shaft Gearhead,-,3,,Oriental Motor,Brand,Oriental Motor,1,1,Product Type,Parallel Shaft Gearhead,1,1,Model,4GN60K,1,1,Location,2013c5_LC1
+11912,018-001-0057,018-001-0057,Dodge MR94751L1 Tigear Right-Angle Worm Gear Reducer,-,28,,Dodge,Brand,Dodge,1,1,Product Type,Tigear Right-Angle Worm Gear Reducer,1,1,Model,MR94751L1,1,1,Location,2013c5
+11930,018-001-0082,018-001-0082,Motovari NMRV050 Right-Angle Worm Gear Reducer,-,10,,Motovari,Brand,Motovari,1,1,Product Type,Right-Angle Worm Gear Reducer,1,1,Model,NMRV050,1,1,Location,2013C5_LC6
+11927,018-002-0109,018-002-0109,Bosch Rexroth AG 3842519005 Gearbox (Speed Reducer),-,22,,Bosch Rexroth AG,Brand,Bosch Rexroth AG,1,1,Product Type,Gearbox (Speed Reducer),1,1,Model,3842519005,1,1,Location,2013C5_LC6
+5074,019-001-0147,019-001-0147,Baldor M3559T Electric Motor,-,45,,Baldor,Brand,Baldor,1,1,Product Type,Electric Motor,1,1,Model,M3559T,1,1,Location,2013c6
+22691,019-001-0516,019-001-0516,A.O. Smith HF3H078N Single-Phase AC Induction Blower Motor,-,20,,A.O. Smith,Brand,A.O. Smith,1,1,Product Type,Single-Phase AC Induction Blower Motor,1,1,Model,HF3H078N,1,1,Location,2013c6
+1287,019-001-0606,019-001-0606,Oriental Motor 4IK25GN-SM Brake Motor,-,8,,Oriental Motor,Brand,Oriental Motor,1,1,Product Type,Brake Motor,1,1,Model,4IK25GN-SM,1,1,Location,2013c6_LC2
+5018,019-001-0787,019-001-0787,Denso 4106260300 Motor,-,1,,Denso,Brand,Denso,1,1,Product Type,Motor,1,1,Model,4106260300,1,1,Location,2013C6_LC4
+22692,019-001-0835,019-001-0835,Oriental Motor 4I25GN-AUL Motor,-,5,,Oriental Motor,Brand,Oriental Motor,1,1,Product Type,Motor,1,1,Model,4I25GN-AUL,1,1,Location,2013C6_LC4
+5028,019-004-0022,019-004-0022,Denso MFA020LB2NSJ Motor,-,7,,Denso,Brand,Denso,1,1,Product Type,Motor,1,1,Model,MFA020LB2NSJ,1,1,Location,2013c6_LC2
+1448,019-004-0029,019-004-0029,Denso 4106220701 Servo Motor,-,6,,Denso,Brand,Denso,1,1,Product Type,Servo Motor,1,1,Model,4106220701,1,1,Location,2013c6_LC2
+5071,019-004-0033,019-004-0033,Sanyo Dennki R406011E Servo Motor,-,11,,Sanyo Denki,Brand,Sanyo Dennki,1,1,Product Type,Servo Motor,1,1,Model,R406011E,1,1,Location,2013C6_LC1
+5030,019-004-0045,019-004-0045,Sanyo Dennki R850012WLO Servo Motor,-,11,,Sanyo Denki,Brand,Sanyo Dennki,1,1,Product Type,Servo Motor,1,1,Model,R850012WLO,1,1,Location,2013c6_LC2
+1213,019-004-0048,019-004-0048,Yaskawa SGM02UW14E Servo Motor,-,10,,Yaskawa,Brand,Yaskawa,1,1,Product Type,Servo Motor,1,1,Model,SGM02UW14E,1,1,Location,2013c6_LC2
+1431,022-001-0007,022-001-0007,Fuji Electric BU3EHC015L Circuit Breaker,-,3,,Fuji Electric,Brand,Fuji Electric,1,1,Product Type,Circuit Breaker,1,1,Model,BU3EHC015L,1,1,Location,2013c7
+21317,022-001-0080,022-001-0080,Fuji Electric BU3FHC125L Circuit Breaker,-,12,,Fuji Electric,Brand,Fuji Electric,1,1,Product Type,Circuit Breaker,1,1,Model,BU3FHC125L,1,1,Location,2013c7
+21323,022-001-0115,022-001-0115,Fuji Electric BU3EHC030LF6 Circuit Breaker,-,6,,Fuji Electric,Brand,Fuji Electric,1,1,Product Type,Circuit Breaker,1,1,Model,BU3EHC030LF6,1,1,Location,2013c7
+5606,022-001-0137,022-001-0137,Fuji Electric SA33B Circuit Breaker,-,2,,Fuji Electric,Brand,Fuji Electric,1,1,Product Type,Circuit Breaker,1,1,Model,SA33B,1,1,Location,2013c7_LC1
+1474,022-001-0139,022-001-0139,Allen-Bradley G150 Motor Controller,-,4,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,Motor Controller,1,1,Model,G150,1,1,Location,2013c7_LC3
+21307,022-001-0192,022-001-0192,Idec NRAS2111F Circuit Breaker,-,2,,Idec,Brand,Idec,1,1,Product Type,Circuit Breaker,1,1,Model,NRAS2111F,1,1,Location,2013c7_LC3
+21301,022-001-0749,022-001-0749,Fuji Electric EA33BB3AEA020 Circuit Breaker,-,2,,Fuji Electric,Brand,Fuji Electric,1,1,Product Type,Circuit Breaker,1,1,Model,EA33BB3AEA020,1,1,Location,2013c7_LC3
+21322,022-001-0765,022-001-0765,Fuji Electric BU3EHC030Y1 Circuit Breaker,-,6,,Fuji Electric,Brand,Fuji Electric,1,1,Product Type,Circuit Breaker,1,1,Model,BU3EHC030Y1,1,1,Location,2013c7
+1422,022-007-0213,022-007-0213,Fuji Electric TKON4NK0AM Relay,-,1,,Fuji Electric,Brand,Fuji Electric,1,1,Product Type,Relay,1,1,Model,TKON4NK0AM,1,1,Location,2013c7_LC3
+5583,022-009-0003,022-009-0003,Telemecanique LC1D25FE7 Contactor,-,1,,Telemecanique,Brand,Telemecanique,1,1,Product Type,Contactor,1,1,Model,LC1D25FE7,1,1,Location,2013c7_LC3
+5591,022-011-0083,022-011-0083,Omron E2EX1R5E1M1N Sensor,-,2,,Omron,Brand,Omron,1,1,Product Type,Sensor,1,1,Model,E2EX1R5E1M1N,1,1,Location,2013c7_LC1
+1406,022-011-0084,022-011-0084,IFM IG5717 Sensor,-,2,,IFM,Brand,IFM,1,1,Product Type,Sensor,1,1,Model,IG5717,1,1,Location,2013c7_LC2
+1300,022-011-0109,022-011-0109,Omron - Sensor,-,2,,Omron,Brand,Omron,1,1,Product Type,Sensor,1,1,Model,-,1,1,Location,2013c4_lc2
+1605,022-011-0293,022-011-0293,IFM IE5082 Sensor,-,1,,IFM,Brand,IFM,1,1,Product Type,Sensor,1,1,Model,IE5082,1,1,Location,2013c7_LC1
+21319,022-012-0209,022-012-0209,Sunx SF1- NSP Sensor,-,2,,Sunx,Brand,Sunx,1,1,Product Type,Sensor,1,1,Model,SF1- NSP,1,1,Location,2013c7_LC2
+1392,022-012-0376,022-012-0376,Keyence GV-H130 Sensor,-,2,,Keyence,Brand,Keyence,1,1,Product Type,Sensor,1,1,Model,GV-H130,1,1,Location,2013c4_lc2
+1446,022-038-0216,022-038-0216,Denso 4101410310 Cable,-,3,,Denso,Brand,Denso,1,1,Product Type,Cable,1,1,Model,4101410310,1,1,Location,2013c7
+1291,022-038-0530,022-038-0530,Omron V600-HS63 Sensor,-,2,,Omron,Brand,Omron,1,1,Product Type,Sensor,1,1,Model,V600-HS63,1,1,Location,2013c7_LC1
+1398,022-066-0026,022-066-0026,IFM OU5043 Sensor,-,2,,IFM,Brand,IFM,1,1,Product Type,Sensor,1,1,Model,OU5043,1,1,Location,2013c8_LC1
+22761,024-001-0167,024-001-0167,RKC KPM9368200020 Thermo Couple,-,1,,RKC,Brand,RKC,1,1,Product Type,Thermo Couple,1,1,Model,KPM9368200020,1,1,Location,2013C6_LC1
+8137,031-002-0017,031-002-0017,Delta VFD007S43B Variable Frequency Drive,-,4,,Delta,Brand,Delta,1,1,Product Type,Variable Frequency Drive,1,1,Model,VFD007S43B,1,1,Location,2013C8_LC5
+8155,036-017-0129,036-017-0129,Nordson 629063 Multi-Tube,-,1,,Nordson,Brand,Nordson,1,1,Product Type,Multi-Tube,1,1,Model,629063,1,1,Location,2013c8_LC3
+11258,039-003-0536,039-003-0536,SMC MHC2-20D Gripper,-,3,,SMC,Brand,SMC,1,1,Product Type,Gripper,1,1,Model,MHC2-20D,1,1,Location,2013c9_LC4
+11215,039-003-0611,039-003-0611,SMC CDA240400 Cylinder,-,8,,SMC,Brand,SMC,1,1,Product Type,Cylinder,1,1,Model,CDA240400,1,1,Location,2013c9_LC2
+11252,039-003-0654,039-003-0654,SMC MCN232X300LAM Cylinder,-,4,,SMC,Brand,SMC,1,1,Product Type,Cylinder,1,1,Model,MCN232X300LAM,1,1,Location,2013c9_LC2
+11251,039-003-0656,039-003-0656,SMC MCN232X300LA Cylinder,-,3,,SMC,Brand,SMC,1,1,Product Type,Cylinder,1,1,Model,MCN232X300LA,1,1,Location,2013c9_LC3
+8129,039-003-0767,039-003-0767,CKD SCA2W0063B20R03DB20 Cylinder,-,11,,CKD,Brand,CKD,1,1,Product Type,Cylinder,1,1,Model,SCA2W0063B20R03DB20,1,1,Location,2013C8_LC4
+8160,039-003-0824,039-003-0824,SMC CHD2F40B50DCH255CH Cylinder,-,11,,SMC,Brand,SMC,1,1,Product Type,Cylinder,1,1,Model,CHD2F40B50DCH255CH,1,1,Location,2013c8_LC3
+11268,039-003-0872,039-003-0872,SMC MYX32245LE73AL Cylinder,-,13,,SMC,Brand,SMC,1,1,Product Type,Cylinder,1,1,Model,MYX32245LE73AL,1,1,Location,2013c9_LC3
+8112,039-003-0954,039-003-0954,SMC CDM2RA32170 Cylinder,-,3,,SMC,Brand,SMC,1,1,Product Type,Cylinder,1,1,Model,CDM2RA32170,1,1,Location,2013c9_LC6
+8143,039-003-0965,039-003-0965,SMC CQ2 Cylinder,-,3,,SMC,Brand,SMC,1,1,Product Type,Cylinder,1,1,Model,CQ2,1,1,Location,2013c9_LC6
+8120,039-003-1194,039-003-1194,CKD SSDL5050 Cylinder,-,3,,CKD,Brand,CKD,1,1,Product Type,Cylinder,1,1,Model,SSDL5050,1,1,Location,2013c9_LC6
+11194,039-003-1195,039-003-1195,CKD SCA2CA50B300 Cylinder,-,8,,CKD,Brand,CKD,1,1,Product Type,Cylinder,1,1,Model,SCA2CA50B300,1,1,Location,2013c9_LC2
+8118,039-003-1209,039-003-1209,SMC RSDQA4030D Cylinder,-,3,,SMC,Brand,SMC,1,1,Product Type,Cylinder,1,1,Model,RSDQA4030D,1,1,Location,2013c9_LC6
+11254,039-003-1596,039-003-1596,SMC MDBB80125J59L Cylinder,-,10,,SMC,Brand,SMC,1,1,Product Type,Cylinder,1,1,Model,MDBB80125J59L,1,1,Location,2013c9_LC1
+45120,027-002-0113,081.00034.00,- - -,-,,,,Brand,-,1,1,Product Type,-,1,1,Model,-,1,1,Location,2013C8_LC6
+45121,035-260-0015,165199 Feed Wheel,- 165199 Feed Wheel,-,,,,Brand,-,1,1,Product Type,Feed Wheel,1,1,Model,165199,1,1,Location,2013C8_LC6
+11190,205-005-0036,205-005-0036,#REF!,-,2,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,Module,1,1,Model,1746IB16,1,1,Location,2013c10_LC3
+4679,205-005-0319,205-005-0319,Mitsubishi A1SY40 PLC,-,2,,Mitsubishi,Brand,Mitsubishi,1,1,Product Type,PLC,1,1,Model,A1SY40,1,1,Location,2013C4_LC1
+11951,205-025-0029,205-025-0029,Allen-Bradley 2711B6C1 HMI,-,10,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,HMI,1,1,Model,2711B6C1,1,1,Location,2013c5_LC1
+8138,222-009-0073,222-009-0073,Allen-Bradley 500FLBOD93 Contactor,-,6,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,Contactor,1,1,Model,500FLBOD93,1,1,Location,2013c8_LC3
+45195,036-360-0009,35-27,- - Blade,-,,,,Brand,-,1,1,Product Type,Blade,1,1,Model,-,1,1,Location,2013C8_LC8
+1324,005-025-0022,A953GOT-LBD,Mitsubishi A950GOT HMI,-,7,,Mitsubishi,Brand,Mitsubishi,1,1,Product Type,HMI,1,1,Model,A950GOT,1,1,Location,2013C2_LC4
+11867,005-001-0398,Adlink Technologies DIN-100S,Adlink - -,-,5,,Adlink,Brand,Adlink,1,1,Product Type,-,1,1,Model,-,1,1,Location,2013c5_LC3
+8531,043-001-0026,Air Products E12-B-N145A CGA,Air Products and Chemicals - Pressure Regulator,-,7,,Air Products and Chemicals,Brand,Air Products and Chemicals,1,1,Product Type,Pressure Regulator,1,1,Model,-,1,1,Location,2013c10_LC3
+45223,MFG-000-0001,AK71-2529,- - Brass Torch,-,,,,Brand,-,1,1,Product Type,Brass Torch,1,1,Model,-,1,1,Location,2013C8_LC8
+1471,MFG-000-0070,Allen-Bradley 1771-AL I/O Adapter Module,Allen-Bradley 1771AL Module,-,4,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,Module,1,1,Model,1771AL,1,1,Location,2013c7
+8095,MFG-000-0556,Allen-Bradley 1794-0B16,Allen-Bradley 1794OB16 Module,-,2,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,Module,1,1,Model,1794OB16,1,1,Location,2013c8_LC1
+6737,MFG-000-0323,Allen-Bradley Input Module 1771-IAD/C,Allen-Bradley 1771IADC Module,-,2,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,Module,1,1,Model,1771IADC,1,1,Location,2013c7
+11192,MFG-000-0825,Allen-Bradley Input Module 1771-IFE series A (repaired),Allen-Bradley 1771IFE Module,-,3,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,Module,1,1,Model,1771IFE,1,1,Location,2013c10_LC3
+5614,MFG-000-0271,Appleton Unilet FDC-2-50,Appleton FDC250 UNILET,-,5,,Appleton,Brand,Appleton,1,1,Product Type,UNILET,1,1,Model,FDC250,1,1,Location,2013c7
+8506,MFG-000-0594,ASCO Redhat Repair kit 302334VH,ASCO 302334VH Rebuild Kit,-,2,,ASCO,Brand,ASCO,1,1,Product Type,Rebuild Kit,1,1,Model,302334VH,1,1,Location,2013c10_LC1
+11193,MFG-000-0826,ASCO Redhat Solenoid Valve 8210G095V,ASCO 8210G095V Valve,-,4,,ASCO,Brand,ASCO,1,1,Product Type,Valve,1,1,Model,8210G095V,1,1,Location,2013c9_LC1
+4670,MFG-000-0179,ASCO TriPoint Pressure And Temperature Switch PA20A,ASCO PA20A Switch,-,4,,ASCO,Brand,ASCO,1,1,Product Type,Switch,1,1,Model,PA20A,1,1,Location,2013c4_LC4
+22851,002-007-0225,ASCO Valve 8210G34,ASCO 8210G34 Valve,-,4,,ASCO,Brand,ASCO,1,1,Product Type,Valve,1,1,Model,8210G34,1,1,Location,"2013c3_LC3, 2015c5_LC2"
+11887,MFG-000-0899,ASK-STAR 0658-216-40,Ask-Star 65821640 Bearings,-,1,,Ask-Star,Brand,Ask-Star,1,1,Product Type,Bearings,1,1,Model,65821640,1,1,Location,2013c5_LC3
+8533,044-001-0023,Autogard Clutch 202-RR-3 3C/1,Autogard 202-RR-3 3C/1 Clutch,-,24,,Autogard,Brand,Autogard,1,1,Product Type,Clutch,1,1,Model,202-RR-3 3C/1,1,1,Location,2013c10
+5034,019-001-0429,Baldor 460 Volts KNM3454,Baldor KNM3454 Motor,-,18,,Baldor,Brand,Baldor,1,1,Product Type,Motor,1,1,Model,KNM3454,1,1,Location,2013c6
+5076,019-001-0540,Baldor Industrial Motor VM3556T,Baldor VM3556T Motor,-,38,,Baldor,Brand,Baldor,1,1,Product Type,Motor,1,1,Model,VM3556T,1,1,Location,2013c6
+44220,013-002-0011,"Bando Premium V-Belt 55"" A55X33 1397MM",Bando A55Q 1397MM Belt,-,1,,Bando,Brand,Bando,1,1,Product Type,Belt,1,1,Model,A55Q 1397MM,1,1,Location,2013c4
+44124,013-002-0079,Bando V-Belt 4L290,Bando 4L290 Belt,-,1,,Bando,Brand,Bando,1,1,Product Type,Belt,1,1,Model,4L290,1,1,Location,2013C4_LC10
+44141,013-002-0022,BANDO V-Belt A-27,Bando A-27 Belt,-,1,,Bando,Brand,Bando,1,1,Product Type,Belt,1,1,Model,A-27,1,1,Location,2013C4_LC10
+22700,008-005-0357,Banner Q12AB6FF15Q Photo Sensor,Banner Q12AB6FF15Q Sensor,-,1,,Banner,Brand,Banner,1,1,Product Type,Sensor,1,1,Model,Q12AB6FF15Q,1,1,Location,2013c3_LC2
+3806,MFG-000-0144,Barnant Vacuum Pressure Pump 420-1901,#REF!,-,7,,Barnant,Brand,Barnant,1,1,Product Type,Pump,1,1,Model,4201901,1,1,Location,2013c2_LC2
+45219,035-012-0110,Bit Holder 677135801,#REF!,-,,,,Brand,,1,1,Product Type,Bit Holder,1,1,Model,677135B01,1,1,Location,2013C8_LC8
+45209,036-315-0001,"Blade 6 "" 150Mm DIA X .040TH",- - -,-,,,,Brand,-,1,1,Product Type,-,1,1,Model,-,1,1,Location,2013C8_LC8
+44311,MFG-000-2056,Board DFO200281-A0,Yaskawa SVB-01 PCB,-,,,Yaskawa,Brand,Yaskawa,1,1,Product Type,PCB,1,1,Model,SVB-01,1,1,Location,2013C4_LC1
+5033,019-001-0839,Bodine Electric Company Motor 42A3PEPM-E4,Bodine Electric 42A3PEPM-E4 Motor,-,15,,Bodine Electric,Brand,Bodine Electric,1,1,Product Type,Motor,1,1,Model,42A3PEPM-E4,1,1,Location,2013c6
+11932,MFG-000-0915,Boston Gear Reducer F71515ZTB5,Boston F71515ZTB5 Gear,-,24,,Boston,Brand,Boston,1,1,Product Type,Gear,1,1,Model,F71515ZTB5,1,1,Location,2013C5_LC6
+5581,022-001-0085,Breaker IDEC Circuit Protector NRC110L-3AAD,IDEC - Circuit Breaker,-,1,,IDEC,Brand,IDEC,1,1,Product Type,Circuit Breaker,1,1,Model,-,1,1,Location,2013c7_LC1
+16910,022-001-0258,Breaker IDEC NRC110L-3AAA,IDEC NRC110L-3AAD Circuit Breaker,-,2,,IDEC,Brand,IDEC,1,1,Product Type,Circuit Breaker,1,1,Model,NRC110L-3AAD,1,1,Location,"2013c7_LC1, 2015c5"
+45214,028-001-0046,Browning Sprocket 120E,Browning 120E Sprocket,-,,,Browning,Brand,Browning,1,1,Product Type,Sprocket,1,1,Model,120E,1,1,Location,2013C8_LC8
+45166,028-001-0127,Browning Sprocket H80BTB10,Browning H80BTB10 Sprocket,-,,,Browning,Brand,Browning,1,1,Product Type,Sprocket,1,1,Model,H80BTB10,1,1,Location,2013C8_LC7
+45147,033-239-0001,Brushes 30156,#REF!,-,,,,Brand,,1,1,Product Type,Brushes,1,1,Model,033-239-0001,1,1,Location,2013C8_LC6
+45086,010-001-0166,BUSSMANN Fuse (Dual Element) FRN-R-20,BUSSMANN FRN-R-20 Fuse,-,,,BUSSMANN,Brand,BUSSMANN,1,1,Product Type,Fuse,1,1,Model,FRN-R-20,1,1,Location,2013C8_LC4
+45095,022-038-0278,Cable (Pre Wired) GLE-PLUG-M-W-W/6,#REF!,-,,,,Brand,-,1,1,Product Type,Cable,1,1,Model,GLE-PLUG-M-W-W/6,1,1,Location,2013C8_LC4
+45104,022-038-0121,Cable 10' 1784-PCM2,Allen-Bradley 1784-PCM2/B Cable,-,,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,Cable,1,1,Model,1784-PCM2/B,1,1,Location,2013C8_LC4
+45097,022-038-0441,Cable 2090-UXNFBMP-S09,Allen-Bradley 2090-UX Cable,-,,,Allen-Bradley,Brand,Allen-Bradley,1,1,Product Type,Cable,1,1,Model,2090-UX,1,1,Location,2013C8_LC4
+45098,022-038-0675,Cable Extent XS2W-D421,Omron XS2W-D421 Cable,-,,,Omron,Brand,Omron,1,1,Product Type,Cable,1,1,Model,XS2W-D421,1,1,Location,2013C8_LC4
+44269,042-001-0454,CHICAGO RAWHIDE Oil Seal CR-4710,Chicago Rawhide CR-4710 Oil Seal,-,1,,Chicago Rawhide,Brand,Chicago Rawhide,1,1,Product Type,Oil Seal,1,1,Model,CR-4710,1,1,Location,2013C9_LC7
+22730,008-003-0081,CKD APE-FL223143 Pressure Switch,CKD APE-FL223143 Switch,-,3,,CKD,Brand,CKD,1,1,Product Type,Switch,1,1,Model,APE-FL223143,1,1,Location,2013c3_LC3
+22833,002-001-0260,CKD CHV2-20 Valve,CKD CHV2-20 Valve,-,1,,CKD,Brand,CKD,1,1,Product Type,Valve,1,1,Model,CHV2-20,1,1,Location,2013c3_LC3
+7732,MFG-000-0530,CKD CMK2-00-25-210-FL203788,CKD CMK2-00-25-210-FL203788 Cylinder,-,3,,CKD,Brand,CKD,1,1,Product Type,Cylinder,1,1,Model,CMK2-00-25-210-FL203788,1,1,Location,2013c8_LC2
+44209,039-006-0062,CKD Cyl Kit HCA-32K,#REF!,-,,,CKD,Brand,CKD,1,1,Product Type,Seal kit,1,1,Model,HCA-32K,1,1,Location,2013C10_LC4
+13500,039-003-1205,CKD Cylinder FCD-L-32-10,CKD FCD-L-32-10 Seal kit,-,3,,CKD,Brand,CKD,1,1,Product Type,Cylinder,1,1,Model,FCD-L-32-10,1,1,Location,2013c8_LC1
+44411,039-003-0181,CKD Cylinder HCA-FA-4OB-315 Pneumatic Cylinder,CKD HCA-FA-4OB-315 Cylinder,-,6,,CKD,Brand,CKD,1,1,Product Type,Cylinder,1,1,Model,HCA-FA-4OB-315,1,1,Location,2013c9
+22596,008-002-0046,CKD ET3 Auto Switch,CKD ET3 Switch,-,1,,CKD,Brand,CKD,1,1,Product Type,Switch,1,1,Model,ET3,1,1,Location,2013c3_LC1
+44298,MFG-000-2047,CKD Gauge,CKD HCA-32k Guage,-,,,CKD,Brand,CKD,1,1,Product Type,Guage,1,1,Model,HCA-32k,1,1,Location,2013C10_LC4
+22603,008-002-0125,CKD M3V Auto Switch,CKD M3V Switch,-,1,,CKD,Brand,CKD,1,1,Product Type,Switch,1,1,Model,M3V,1,1,Location,2013c3_LC1
+22750,008-002-0109,CKD S2 Sensor,CKD S2 Sensor,-,1,,CKD,Brand,CKD,1,1,Product Type,Sensor,1,1,Model,S2,1,1,Location,2013c3_LC2

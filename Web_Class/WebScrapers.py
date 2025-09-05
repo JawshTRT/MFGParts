@@ -14,13 +14,13 @@ class EbayScraper(BaseScraper):
         return f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}"
     def select_result_items(self):
         try:
-            return self.driver.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "li.s-item")
+            return self.driver.find_element(By.CSS_SELECTOR, "ul.srp-results").find_elements(By.CSS_SELECTOR, "div.su-card-container__content")
         except NoSuchElementException:
             print("No listings could be found")
             return []
     def parse_item(self, element):
-        title = element.find_element(By.CSS_SELECTOR, ".s-item__title").text
-        price = element.find_element(By.CSS_SELECTOR, ".s-item__price").text
+        title = element.find_element(By.CSS_SELECTOR, "div.s-card__title").text
+        price = element.find_element(By.CSS_SELECTOR, ".s-card__price").text
         try:
             float(price[1:].replace(',', ''))
         except ValueError:
@@ -33,9 +33,9 @@ class EbayScraper(BaseScraper):
             if not newprice.isnumeric():
                 print("Price is not a parsable number")
                 price = '$0'
-        url = element.find_element(By.CSS_SELECTOR, ".s-item__link").get_attribute("href")
+        url = element.find_element(By.CSS_SELECTOR, "a.su-link").get_attribute("href")
         try:
-            condition = element.find_element(By.CSS_SELECTOR, ".s-item__subtitle").text
+            condition = element.find_element(By.CSS_SELECTOR, "span.su-styled-text.secondary.default").text
         except NoSuchElementException:
             condition = "Invalid Condition Element"
             print("Invalid Condition Element found")
@@ -209,38 +209,10 @@ class MScraper(BaseScraper):
         wait = WebDriverWait(self.driver, 20)
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.product-list_results__a_env")))
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.flex.p-3")))
-class GoogleScraper(BaseScraper):
-
-    def get_search_url(self, query):
-        return f"https://www.google.com/search?tbm=shop&q={query.replace(" ", "+")}"
-
-    def select_result_items(self):
-        return self.driver.find_elements(By.CSS_SELECTOR, "div.njFjte")
-
-    def parse_item(self, element) -> dict:
-
-        title = element.find_element(By.CSS_SELECTOR, "div.gkQHve.SsM98d.RmEs5b").text
-
-        price = element.find_element(By.CSS_SELECTOR, "div.lmQWe").text
-
-        url = element.find_element(By.CSS_SELECTOR, "div.VeBrne").get_attribute("src")
-
-        merchant = element.find_element(By.CSS_SELECTOR, "span.WJMUdc.rw5ecc").text
-
-        return {"title": title, "price": price, "url": url, "condition": "New", "brand": merchant}
-
-    def check_Results(self):
-        no_match = self.driver.find_element(By.CSS_SELECTOR, "div.sh-np__message")
-        if no_match:
-            return True
-        else:
-            return False
-
-    def WaitResults(self):
-        wait = WebDriverWait(self.driver, 20)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.sh-dgr__grid-result, div.sh-dlr__list-result")))
 class PartsRus(BaseScraper):
     def get_search_url(self, query):
+        self.driver.get("https://industrialpartsrus.com/")
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input")))
         return f"https://industrialpartsrus.com/?srsltid=AfmBOoq_-k_U460E_UWtf7jdQpyCNMFA4c-HnMJ94uAB2u8oOM_1Q4du#fa57/fullscreen/m=or&q={query.replace(' ', '+').replace('/', '%2F')}"
     def select_result_items(self):
         return self.driver.find_elements(By.CSS_SELECTOR, "div.dfd-card.dfd-card-preset-product.dfd-card-type-product ")
@@ -284,13 +256,25 @@ class PartsRus(BaseScraper):
     def ApplyFilter(self, brand: str):
         try:
             # Trying to look for the checkbox or label that contains the brand text:
-            btn = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, f'[dfd-value-term="{brand}"]')))
+            btn = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, f'[dfd-value-term="{brand}"]')))
             btn.click()
             WebDriverWait(self.driver, 10).until(EC.staleness_of(btn))
         except (NoSuchElementException, TimeoutException):
             # Either the facet container was there or there were no options
             print("No filter for brand located")
             pass
+class MisumI(BaseScraper):
+    def get_search_url(self, query):
+        pass
+    def select_result_items(self):
+        pass
+    def parse_item(self, element):
+        pass
+    def check_Results(self):
+        pass
+    def WaitResults(self):
+        pass
+
 
 
 
